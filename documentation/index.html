@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developer Documentation Manual | SMSPulse Portal Template</title>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* Documentation Page Layout */
+    .doc-body {
+      background-color: var(--bg-secondary);
+      color: var(--text-primary);
+    }
+    
+    .doc-container {
+      max-width: 1100px;
+      margin: var(--space-3xl) auto;
+      background-color: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+    }
+    
+    @media (max-width: 768px) {
+      .doc-container {
+        grid-template-columns: 1fr;
+        margin: var(--space-md);
+      }
+    }
+    
+    .doc-sidebar {
+      background-color: var(--bg-secondary);
+      border-right: 1px solid var(--border-color);
+      padding: var(--space-xl);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+    
+    .doc-sidebar__title {
+      font-size: 1.15rem;
+      font-family: var(--font-headers);
+      font-weight: 700;
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: var(--space-xs);
+    }
+    
+    .doc-sidebar__menu {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+    
+    .doc-sidebar__link {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      transition: all var(--transition-fast);
+    }
+    
+    .doc-sidebar__link:hover, .doc-sidebar__link.active {
+      color: var(--primary-color);
+      background-color: var(--primary-light);
+    }
+    
+    .doc-content {
+      padding: var(--space-3xl);
+      text-align: left;
+    }
+    
+    @media (max-width: 480px) {
+      .doc-content {
+        padding: var(--space-xl);
+      }
+    }
+    
+    .doc-section {
+      margin-bottom: var(--space-4xl);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: var(--space-2xl);
+    }
+    
+    .doc-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    
+    .doc-section h2 {
+      font-size: 1.75rem;
+      margin-bottom: var(--space-md);
+      color: var(--text-primary);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: var(--space-xs);
+    }
+    
+    .doc-section h3 {
+      font-size: 1.25rem;
+      margin: var(--space-xl) 0 var(--space-sm);
+    }
+    
+    .doc-section p, .doc-section li {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    
+    .doc-section ul {
+      padding-left: var(--space-xl);
+      margin-top: var(--space-sm);
+    }
+    
+    /* Code block styling */
+    pre {
+      background-color: #1a221d;
+      color: #9fe2bf;
+      padding: var(--space-md);
+      border-radius: var(--radius-md);
+      font-family: monospace;
+      font-size: 0.85rem;
+      overflow-x: auto;
+      margin: var(--space-md) 0;
+      direction: ltr;
+      text-align: left;
+    }
+  </style>
+</head>
+<body class="doc-body">
+
+  <!-- Header Section -->
+  <header class="header">
+    <div class="header__container">
+      <a href="../pages/index.html" class="brand">
+        <div class="brand__logo"><i class="fa-solid fa-comment-sms"></i></div>
+        <span class="brand__name">SMSPulse</span>
+      </a>
+      <span class="section__badge">Technical Manual</span>
+      
+      <div class="header__controls" style="margin-left: auto;">
+        <button class="btn-icon theme-toggle-btn"><i class="fa-solid fa-moon"></i></button>
+        <a href="../pages/index.html" class="btn btn-login"><i class="fa-solid fa-house"></i> View Site</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Central Layout -->
+  <div class="doc-container">
+    
+    <!-- Left Sidebar links -->
+    <aside class="doc-sidebar">
+      <h3 class="doc-sidebar__title">Manual Sections</h3>
+      <ul class="doc-sidebar__menu">
+        <li><a href="#intro" class="doc-sidebar__link active">1. Overview Introduction</a></li>
+        <li><a href="#custom" class="doc-sidebar__link">2. Customizing Themes</a></li>
+        <li><a href="#js" class="doc-sidebar__link">3. Modular Javascripts</a></li>
+        <li><a href="#compliance" class="doc-sidebar__link">4. Compliance Workflows</a></li>
+        <li><a href="#faq" class="doc-sidebar__link">5. Developer Help</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Text contents -->
+    <main class="doc-content">
+      
+      <!-- Section 1 -->
+      <section class="doc-section" id="intro">
+        <h2>1. Template Overview</h2>
+        <p>This developer documentation serves as the primary configuration guideline for customizing, managing, and launching the <strong>SMSPulse Portfolio & Console Template</strong>. It features zero heavy pre-processors or node build tools, allowing you to run, deploy, and style the workspace with zero technical latency.</p>
+        
+        <h3>General Core Tech-Stack</h3>
+        <ul>
+          <li><strong>Markup Structure:</strong> Semantic HTML5 frameworking with WCAG 2.1 accessibility.</li>
+          <li><strong>Styling Sheet:</strong> Native CSS Variables with layout modularization overrides (`style.css`, `dark-mode.css`, `rtl.css`).</li>
+          <li><strong>Interactive Logic:</strong> Vanilla ES6+ modules (`main.js`, `dashboard.js`).</li>
+        </ul>
+      </section>
+
+      <!-- Section 2 -->
+      <section class="doc-section" id="custom">
+        <h2>2. Customizing Themes & Color Palettes</h2>
+        <p>Our palette is completely organized inside CSS custom properties. To swap color parameters, edit variables located under the `:root` selector inside <a href="../assets/css/style.css" style="color:var(--primary-color);">style.css</a> or `html[data-theme="dark"]` inside <a href="../assets/css/dark-mode.css" style="color:var(--primary-color);">dark-mode.css</a>.</p>
+        
+        <h3>Light Mode Code Sample (style.css):</h3>
+        <pre>:root {
+  --bg-primary: #f5eedc;       /* Organic warm beige sand */
+  --bg-secondary: #faf6ee;     /* Lighter cream background */
+  --primary-color: #be5a2b;    /* Terracotta Orange primary */
+  --accent-color: #4a6b53;     /* Deep forest green safe shield */
+}</pre>
+
+        <h3>Dark Mode Code Sample (dark-mode.css):</h3>
+        <pre>html[data-theme="dark"] {
+  --bg-primary: #121c15;       /* Forest green midnight block */
+  --bg-card: #18261e;          /* Darker charcoal container green */
+  --primary-color: #e57842;    /* Glowing copper primary */
+  --accent-color: #6f9f7d;     /* Lighter sage green accent */
+}</pre>
+      </section>
+
+      <!-- Section 3 -->
+      <section class="doc-section" id="js">
+        <h2>3. JS Modules & Sandbox Widgets</h2>
+        <p>All interactive behaviors are powered by native Javascript elements. You can configure sliders, calculators, and simulated lists without setting up heavy external frameworks.</p>
+        
+        <h3>Configuring simulated SMS responses (main.js)</h3>
+        <p>The conversation simulator dynamically appends chats to the phone screen container. To add customized triggers (e.g. coupon words, discount codes), append new keys to the match block:</p>
+        <pre>if (query.includes('coupon') || query.includes('discount')) {
+  appendMessage('SMSPulse: Here is your 20% code: DISCOUNT20. STOP to opt-out.', false);
+}</pre>
+      </section>
+
+      <!-- Section 4 -->
+      <section class="doc-section" id="compliance">
+        <h2>4. TCPA & Carrier Compliance Logic</h2>
+        <p>Under federal Telephone Consumer Protection Act laws, business texting is strictly audited. Our template utilizes built-in legal shield elements designed to protect your list acquisitions:</p>
+        <ul>
+          <li><strong>Explicit Checkboxes:</strong> Double opt-in checkboxes are marked as `required` on notify forms, preventing submission without explicit consent verification.</li>
+          <li><strong>Quiet Hours:</strong> Abandoned checkout sequences are structured with local-hour parameters to block SMS notifications between 8:00 PM and 9:00 AM recipient local time.</li>
+          <li><strong>Instant Suppression Keywords:</strong> Standard carrier unsubscribes (`STOP`, `END`, `CANCEL`) immediately trigger a localized unsubscribe suppress notice, preventing further texts in 0 seconds.</li>
+        </ul>
+      </section>
+
+      <!-- Section 5 -->
+      <section class="doc-section" id="faq">
+        <h2>5. Developer FAQ & Help</h2>
+        
+        <h3>How do I deploy this template to production?</h3>
+        <p>Since this project has no build pre-processing layers, you can deploy it instantly. Upload the entire folder straight to <strong>GitHub Pages</strong>, <strong>Netlify</strong>, <strong>Vercel</strong>, or any custom Apache/Nginx static host server. Root index handles paths automatically.</p>
+        
+        <h3>How do I integrate actual text dispatching APIs?</h3>
+        <p>To transition the static phone simulators or dashboard consoles to actual carrier platforms, replace simulated fetch blocks in `main.js` or `dashboard.js` with your active <strong>Twilio</strong>, <strong>Klaviyo</strong>, or <strong>Attentive</strong> API fetch sequences:</p>
+        <pre>fetch('https://api.twilio.com/2010-04-01/Accounts/{SID}/Messages.json', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Basic ' + btoa('username:password')
+  },
+  body: new URLSearchParams({
+    'To': recipientPhone,
+    'From': '+15558882000',
+    'Body': messageContent
+  })
+});</pre>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../assets/js/main.js"></script>
+  
+  <script>
+    // Smooth Scrolling Side menu handler
+    document.addEventListener('DOMContentLoaded', () => {
+      const docLinks = document.querySelectorAll('.doc-sidebar__link');
+      docLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          docLinks.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMSPulse | Marketing Funnels & Flow Builder (Home 2)</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Discover alternative high-impact, legal-compliant SMS flows. Connect Shopify checkout triggers, analyze ROI margins, and design custom marketing flows.">
+  <meta name="keywords" content="SMS Marketing Flow, Klaviyo, Shopify SMS Triggers, Attentive, TCPA, 10DLC">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* Unique Home 2 Interactive Flow Builder CSS */
+    .flow-builder-widget {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      max-width: 900px;
+      width: 100%;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xl);
+      margin: 0 auto;
+    }
+    
+    .builder-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+      justify-content: center;
+    }
+    
+    .builder-flow {
+      border: 1.5px dashed var(--border-color);
+      border-radius: var(--radius-md);
+      padding: var(--space-xl);
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-md);
+      background-color: var(--bg-secondary);
+      position: relative;
+    }
+    
+    .flow-node {
+      background-color: var(--bg-card);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: var(--space-md) var(--space-xl);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      animation: slideInUp 0.3s var(--transition-bounce) forwards;
+      width: 100%;
+      max-width: 400px;
+      justify-content: space-between;
+    }
+    
+    .flow-node__info {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      text-align: left;
+    }
+    
+    .flow-node i {
+      color: var(--primary-color);
+      font-size: 1.25rem;
+    }
+    
+    .flow-node__delete {
+      cursor: pointer;
+      color: var(--text-secondary);
+      transition: color var(--transition-fast);
+    }
+    
+    .flow-node__delete:hover {
+      color: var(--error);
+    }
+    
+    .flow-arrow {
+      color: var(--text-secondary);
+      font-size: 1.2rem;
+      animation: fadeIn 0.3s ease;
+    }
+    
+    /* FAQ Accordion Styling */
+    .faq-container {
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    
+    .faq-item {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: all var(--transition-smooth);
+    }
+    
+    .faq-trigger {
+      width: 100%;
+      padding: var(--space-lg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: var(--font-headers);
+      font-size: 1.1rem;
+      text-align: left;
+    }
+    
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0, 1, 0, 1), padding 0.3s ease;
+      padding: 0 var(--space-lg);
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      text-align: left;
+    }
+    
+    .faq-item.active .faq-content {
+      max-height: 1000px;
+      padding: 0 var(--space-lg) var(--space-lg);
+      transition: max-height 1s cubic-bezier(0.99, 0.01, 0.45, 1);
+    }
+    
+    .faq-item.active {
+      border-color: var(--primary-color);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .faq-icon {
+      transition: transform var(--transition-smooth);
+    }
+    
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+      color: var(--primary-color);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section (Identical responsive rules) -->
+  <header class="header">
+    <div class="header__container">
+      <a href="index.html" class="brand">
+        <div class="brand__logo"><i class="fa-solid fa-comment-sms"></i></div>
+        <span class="brand__name">SMSPulse</span>
+      </a>
+
+      <nav class="nav" id="main-nav">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="home2.html" class="nav__link active">Home 2</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="services.html" class="nav__link">Services</a></li>
+          <li><a href="blog.html" class="nav__link">Blog</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+          <li><a href="dashboard.html" class="nav__link nav__dashboard-link"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+        </ul>
+        
+        <div class="nav__mobile-controls">
+          <button class="btn-icon rtl-toggle-btn">RTL</button>
+          <button class="btn-icon theme-toggle-btn"><i class="fa-solid fa-moon"></i></button>
+          <a href="login.html" class="btn btn-login"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+        </div>
+      </nav>
+
+      <div class="header__controls">
+        <button class="btn-icon rtl-toggle-btn">RTL</button>
+        <button class="btn-icon theme-toggle-btn"><i class="fa-solid fa-moon"></i></button>
+        <a href="login.html" class="btn btn-login"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+      </div>
+
+      <button class="hamburger" aria-label="Toggle Mobile Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION 1: HERO (Alternative Style) -->
+    <section class="hero animate-fade">
+      <div class="hero__container">
+        <div class="hero__content">
+          <span class="section__badge hero__badge">Interactive Funnel Strategy</span>
+          <h1 class="hero__title">Turn Passive Visitors Into <span>Loyal Buyers</span></h1>
+          <p class="hero__text">We configure compliant and smart trigger logic designed to reach customers on their phones instantly. Accelerate conversion flow rates automatically.</p>
+          <div class="hero__actions">
+            <a href="#flow-builder-section" class="btn btn--primary"><i class="fa-solid fa-wand-magic-sparkles"></i> Try Live Flow Builder</a>
+            <a href="services.html" class="btn btn--secondary"><i class="fa-solid fa-calculator"></i> Calculate SMS ROI</a>
+          </div>
+          <div style="margin-top:var(--space-md); font-size:0.9rem; color:var(--text-secondary); display:flex; align-items:center; gap:var(--space-sm);">
+            <i class="fa-solid fa-shield-halved" style="color:var(--accent-color);"></i> TCPA compliant, CTIA & 10DLC Registered
+          </div>
+        </div>
+
+        <!-- Flowchart Style Visual Pattern -->
+        <div class="hero__visual" style="display: flex; justify-content: center;">
+          <div style="background-color: var(--bg-card); border: 1.5px solid var(--border-color); border-radius: var(--radius-lg); padding: var(--space-xl); width: 100%; max-width: 400px; box-shadow: var(--shadow-md);">
+            <h4 style="text-align: center; margin-bottom: var(--space-md); font-family: var(--font-headers);">Compliant Flow Pipeline</h4>
+            <div style="display: flex; flex-direction: column; gap: var(--space-md); align-items: center;">
+              <div style="background-color: var(--primary-light); color: var(--primary-color); padding: 10px; border-radius: 8px; font-weight: 600; width: 100%; text-align: center; font-size: 0.85rem;">1. Double Opt-In Checked</div>
+              <div style="color: var(--text-secondary);"><i class="fa-solid fa-down-long"></i></div>
+              <div style="background-color: var(--accent-light); color: var(--accent-color); padding: 10px; border-radius: 8px; font-weight: 600; width: 100%; text-align: center; font-size: 0.85rem;">2. Enforce Quiet Hours Suppress</div>
+              <div style="color: var(--text-secondary);"><i class="fa-solid fa-down-long"></i></div>
+              <div style="background-color: var(--primary-light); color: var(--primary-color); padding: 10px; border-radius: 8px; font-weight: 600; width: 100%; text-align: center; font-size: 0.85rem;">3. Deliver Personalized Code</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: INTERACTIVE CAMPAIGN STRATEGY BUILDER -->
+    <section class="section section--secondary" id="flow-builder-section">
+      <div class="section__header">
+        <span class="section__badge">Interactive Sandbox</span>
+        <h2 class="section__title">Build Your Custom SMS Flow</h2>
+        <p class="section__subtitle">Click triggers below to see how automated compliance check nodes stack together to build a robust SMS marketing campaign pipeline.</p>
+      </div>
+
+      <div class="flow-builder-widget">
+        <!-- Builder Controls Buttons -->
+        <div class="builder-controls">
+          <button class="btn btn--secondary" id="add-opt-in" style="padding: 10px 20px; font-size: 0.85rem;"><i class="fa-solid fa-circle-plus"></i> Opt-In Trigger</button>
+          <button class="btn btn--secondary" id="add-quiet-hour" style="padding: 10px 20px; font-size: 0.85rem;"><i class="fa-solid fa-circle-plus"></i> Quiet Hour Suppressor</button>
+          <button class="btn btn--secondary" id="add-discount" style="padding: 10px 20px; font-size: 0.85rem;"><i class="fa-solid fa-circle-plus"></i> Send Promo Code</button>
+          <button class="btn btn--secondary" id="add-stop-node" style="padding: 10px 20px; font-size: 0.85rem;"><i class="fa-solid fa-circle-plus"></i> Opt-Out Filter</button>
+          <button class="btn btn--primary" id="clear-flow-builder" style="padding: 10px 20px; font-size: 0.85rem; background-color: var(--error);"><i class="fa-solid fa-rotate-left"></i> Reset Builder</button>
+        </div>
+
+        <!-- Wireframe Flow Canvas -->
+        <div class="builder-flow" id="flow-canvas">
+          <!-- Default Node -->
+          <div class="flow-node" id="node-start">
+            <div class="flow-node__info">
+              <i class="fa-solid fa-flag-checkered"></i>
+              <div>
+                <strong style="font-size: 0.9rem;">Trigger Event Start</strong>
+                <p style="font-size: 0.75rem; margin: 0;">Customer signs up to list</p>
+              </div>
+            </div>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: THE SMS ADVANTAGE -->
+    <section class="section">
+      <div class="section__header">
+        <span class="section__badge">High Impact Performance</span>
+        <h2 class="section__title">SMS vs. Standard Digital Channels</h2>
+        <p class="section__subtitle">Direct communication represents the most personal, fast-acting channel to engage and convert shoppers.</p>
+      </div>
+
+      <div class="grid-container">
+        <!-- Card 1 -->
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-eye"></i></div>
+          <h3 class="card__title">98% Avg Open Rate</h3>
+          <p class="card__text">Compare this directly to email's average 20% open rate. Over 90% of text messages are opened within the initial three minutes of arrival.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-gauge-high"></i></div>
+          <h3 class="card__title">90s Response Average</h3>
+          <p class="card__text">SMS driving rapid engagement creates unparalleled momentum for flash offers, urgent cart checkout alerts, and live responses.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-sack-dollar"></i></div>
+          <h3 class="card__title">25x Verified ROI</h3>
+          <p class="card__text">With fractional setup expenditures and extremely low carrier utility cost, automated text copy triggers deliver unprecedented return margins.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: COMPLIANCE DEEP DIVE (Interactive TCPA Audit Checklist) -->
+    <section class="section section--secondary">
+      <div class="section__header">
+        <span class="section__badge">TCPA Regulation Guidelines</span>
+        <h2 class="section__title">SMS Policy Protocols</h2>
+        <p class="section__subtitle">Learn the exact carrier laws and legal mechanisms we implement into your portfolio setup to avoid liability issues.</p>
+      </div>
+
+      <div class="faq-container" style="max-width: 900px;">
+        <div class="card" style="align-items: flex-start; text-align: left; width: 100%;">
+          <h3 style="font-size:1.3rem; margin-bottom:var(--space-md); font-family:var(--font-headers);"><i class="fa-solid fa-clipboard-list" style="color:var(--primary-color);"></i> Essential Brand Auditing Protocol</h3>
+          <ul style="padding-left:var(--space-lg); display:flex; flex-direction:column; gap:var(--space-sm); font-size:0.95rem; color:var(--text-secondary);">
+            <li><strong>Express Written Consent:</strong> Never buy cold phone lead lists. Every contact on your phone file list must explicitly click to join.</li>
+            <li><strong>Direct Disclosure Terms:</strong> Pop-up checkouts must include legal links to Privacy Policy and terms highlighting that message & data rates can apply.</li>
+            <li><strong>CTIA Compliant Keywords:</strong> Carriers mandate keyword recognition. Sending STOP or END must block outgoing sequences in 0 seconds.</li>
+            <li><strong>Carrier Registry (10DLC):</strong> Brands must register brand identity and campaign flow copy directly with cellular networks to ensure high delivery.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: PRICING & PACKAGES -->
+    <section class="section">
+      <div class="section__header">
+        <span class="section__badge">Transparent Setup Fees</span>
+        <h2 class="section__title">High-Value Service Tiers</h2>
+        <p class="section__subtitle">Select a package tailored for your exact campaign scales, with double opt-in integrations and carrier registration handling.</p>
+      </div>
+
+      <div class="grid-container">
+        <!-- Basic Plan -->
+        <div class="card">
+          <span class="section__badge" style="margin-bottom:var(--space-md);">Automations Core</span>
+          <h3 class="card__title">Standard Funnels</h3>
+          <p style="font-size: 2.2rem; font-weight: 800; font-family: var(--font-headers); color: var(--text-primary); margin: var(--space-md) 0;">$1,499</p>
+          <p class="card__text">Perfect for growing Shopify/SaaS setups needing fundamental compliance-safe triggers.</p>
+          <ul style="list-style: none; padding: 0; margin-bottom: var(--space-xl); font-size: 0.9rem; text-align: left; display: flex; flex-direction: column; gap: var(--space-sm);">
+            <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Welcome Core Flow Setup</li>
+            <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> 10DLC Brand Registration Support</li>
+            <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Compliant Pop-up Layout Setup</li>
+            <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> STOP Keyword Triggering Autoreply</li>
+          </ul>
+          <a href="contact.html" class="btn btn--secondary" style="width: 100%;">Select Flow Plan</a>
+        </div>
+
+        <!-- Premium Plan -->
+        <div class="card" style="border-color: var(--primary-color); box-shadow: var(--shadow-md);">
+          <span class="section__badge" style="margin-bottom:var(--space-md); background-color: var(--primary-color); color: var(--white);">Most High-Yield</span>
+          <h3 class="card__title">Advanced Automation Suite</h3>
+          <p style="font-size: 2.2rem; font-weight: 800; font-family: var(--font-headers); color: var(--primary-color); margin: var(--space-md) 0;">$2,999</p>
+          <p class="card__text">Enterprise-level dual-opt-in configurations with dynamic client approval dashboards and audits.</p>
+          <ul style="list-style: none; padding: 0; margin-bottom: var(--space-xl); font-size: 0.9rem; text-align: left; display: flex; flex-direction: column; gap: var(--space-sm);">
+            <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> All Core Automation Flow Setups</li>
+            <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Abandoned Checkout Cart Sequences</li>
+            <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Custom Live Dashboard Configuration</li>
+            <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Complete TCPA Compliance Audit</li>
+            <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> 30-Day Launch Copy Support</li>
+          </ul>
+          <a href="contact.html" class="btn btn--primary" style="width: 100%;">Select Suite Plan</a>
+        </div>
+
+        <!-- Compliance Focus Plan -->
+        <div class="card">
+          <span class="section__badge" style="margin-bottom:var(--space-md);">Compliance Shield</span>
+          <h3 class="card__title">Enterprise TCPA Shield</h3>
+          <p style="font-size: 2.2rem; font-weight: 800; font-family: var(--font-headers); color: var(--text-primary); margin: var(--space-md) 0;">$4,499</p>
+          <p class="card__text">For brands facing high carrier blockages or list health liabilities. Absolute compliance protection.</p>
+          <ul style="list-style: none; padding: 0; margin-bottom: var(--space-xl); font-size: 0.9rem; text-align: left; display: flex; flex-direction: column; gap: var(--space-sm);">
+            <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Complete System Redesign & Clean</li>
+            <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Full Carrier Approval Submission</li>
+            <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Integration of Quiet-Hours Suppression</li>
+            <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Double Opt-In Legal Checkboxes</li>
+          </ul>
+          <a href="contact.html" class="btn btn--secondary" style="width: 100%;">Select Shield Plan</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: FAQ ACCORDION -->
+    <section class="section section--secondary">
+      <div class="section__header">
+        <span class="section__badge">FAQ</span>
+        <h2 class="section__title">Compliance & Automation Answers</h2>
+        <p class="section__subtitle">Common questions regarding legal requirements, 10DLC registrations, and integration procedures.</p>
+      </div>
+
+      <div class="faq-container">
+        <!-- Item 1 -->
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>What exactly is TCPA compliance and why does my brand need it?</span>
+            <i class="fa-solid fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-content">
+            <p>The Telephone Consumer Protection Act (TCPA) is a federal law regulating telemarketing. Violations carry massive penalties: $500 to $1,500 *per text message sent* without prior express written consent. Our compliance setup structures checkbox consent legal terms and dynamic opt-out keywords to insulate your business from these penalties.</p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>What is 10DLC brand registry?</span>
+            <i class="fa-solid fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-content">
+            <p>10-Digit Long Code (10DLC) is the system carrier networks (AT&T, Verizon, T-Mobile) require for business texting. If your brand is not registered, carrier spam filters will block up to 80% of your messages. We handle your registry submission, campaign descriptions, and use-case approvals to ensure high delivery scores.</p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Can we integrate with Klaviyo, Postscript, or Attentive?</span>
+            <i class="fa-solid fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-content">
+            <p>Absolutely. We build setups natively inside Klaviyo, Attentive, Shopify, or Salesforce SMS. We structure the campaign flows, consent collection fields, and automatic unsubscribes inside your current marketing platform.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section (Identical with at least 4 Topics) -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__brand">
+        <a href="index.html" class="brand">
+          <div class="brand__logo" style="background-color: var(--primary-color);"><i class="fa-solid fa-comment-sms"></i></div>
+          <span class="brand__name">SMSPulse</span>
+        </a>
+        <p class="footer__text">Compliance-first SMS automation design helping retail and e-commerce brands capture secure revenue triggers safely.</p>
+        <div class="footer__socials">
+          <a href="#" class="social-link" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="social-link" aria-label="Github"><i class="fa-brands fa-github"></i></a>
+          <a href="#" class="social-link" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
+        </div>
+      </div>
+
+      <div class="footer__column">
+        <h4 class="footer__title">Automations</h4>
+        <ul class="footer__links">
+          <li><a href="services.html" class="footer__link">Welcome SMS Sequences</a></li>
+          <li><a href="services.html" class="footer__link">Cart Recovery Flows</a></li>
+          <li><a href="services.html" class="footer__link">Keyword Trigger Codes</a></li>
+          <li><a href="services.html" class="footer__link">VIP Customer Tiers</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h4 class="footer__title">TCPA Standards</h4>
+        <ul class="footer__links">
+          <li><a href="about.html" class="footer__link">Consent Checklist</a></li>
+          <li><a href="about.html" class="footer__link">Quiet Hours Logic</a></li>
+          <li><a href="about.html" class="footer__link">10DLC Registration</a></li>
+          <li><a href="about.html" class="footer__link">Carrier Approval Audits</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h4 class="footer__title">Resources</h4>
+        <ul class="footer__links">
+          <li><a href="blog.html" class="footer__link">Marketing Compliance Blog</a></li>
+          <li><a href="blog.html" class="footer__link">SMS Copywriter Guides</a></li>
+          <li><a href="blog.html" class="footer__link">CTR Benchmark Reports</a></li>
+          <li><a href="blog.html" class="footer__link">Opt-In Incentive Ideas</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h4 class="footer__title">Company</h4>
+        <ul class="footer__links">
+          <li><a href="about.html" class="footer__link">About the Specialist</a></li>
+          <li><a href="services.html" class="footer__link">Consulting Pricing</a></li>
+          <li><a href="contact.html" class="footer__link">Direct Inquiry</a></li>
+          <li><a href="dashboard.html" class="footer__link">Real-time Dashboard</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; 2026 SMSPulse. Crafted with extreme premium care. All rights reserved.</p>
+      <p>TCPA/CTIA Specialist Portfolio. Compliance does not represent certified legal counsel.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../assets/js/main.js"></script>
+  
+  <script>
+    // Home 2 Specific Accordion and Sandbox code
+    document.addEventListener('DOMContentLoaded', () => {
+      // FAQ Accordion Trigger code
+      const faqTriggers = document.querySelectorAll('.faq-trigger');
+      faqTriggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          const item = trigger.closest('.faq-item');
+          const isOpen = item.classList.contains('active');
+          
+          // Close all items
+          document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+          
+          if (!isOpen) {
+            item.classList.add('active');
+          }
+        });
+      });
+
+      // Sandbox Custom SMS Funnel builder simulation code
+      const flowCanvas = document.getElementById('flow-canvas');
+      const addOptIn = document.getElementById('add-opt-in');
+      const addQuietHour = document.getElementById('add-quiet-hour');
+      const addDiscount = document.getElementById('add-discount');
+      const addStopNode = document.getElementById('add-stop-node');
+      const clearBtn = document.getElementById('clear-flow-builder');
+
+      const appendNode = (title, subtitle, iconClass) => {
+        // Append arrow first
+        const arrow = document.createElement('div');
+        arrow.className = 'flow-arrow';
+        arrow.innerHTML = '<i class="fa-solid fa-down-long"></i>';
+        flowCanvas.appendChild(arrow);
+
+        // Append node card
+        const node = document.createElement('div');
+        node.className = 'flow-node';
+        node.innerHTML = `
+          <div class="flow-node__info">
+            <i class="${iconClass}"></i>
+            <div>
+              <strong style="font-size: 0.9rem;">${title}</strong>
+              <p style="font-size: 0.75rem; margin: 0;">${subtitle}</p>
+            </div>
+          </div>
+          <span class="flow-node__delete"><i class="fa-solid fa-circle-minus"></i></span>
+        `;
+
+        // Delete trigger on single node delete
+        node.querySelector('.flow-node__delete').addEventListener('click', () => {
+          node.remove();
+          arrow.remove();
+        });
+
+        flowCanvas.appendChild(node);
+      };
+
+      if (addOptIn) {
+        addOptIn.addEventListener('click', () => {
+          appendNode('Opt-In Legal Checkbox Check', 'Confirms explicit prior written consent obtained', 'fa-solid fa-user-check');
+        });
+      }
+      
+      if (addQuietHour) {
+        addQuietHour.addEventListener('click', () => {
+          appendNode('Quiet Hour Suppressor', 'Enforces strict 8pm-9am silent routing logic', 'fa-solid fa-clock');
+        });
+      }
+
+      if (addDiscount) {
+        addDiscount.addEventListener('click', () => {
+          appendNode('Send Automated Code Promo', 'Dispatches SMS code with legal opt-out text', 'fa-solid fa-percent');
+        });
+      }
+
+      if (addStopNode) {
+        addStopNode.addEventListener('click', () => {
+          appendNode('Keyword Unsubscribe Router', 'Bridges STOP keyword straight to suppression database', 'fa-solid fa-ban');
+        });
+      }
+
+      if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+          flowCanvas.innerHTML = `
+            <div class="flow-node" id="node-start">
+              <div class="flow-node__info">
+                <i class="fa-solid fa-flag-checkered"></i>
+                <div>
+                  <strong style="font-size: 0.9rem;">Trigger Event Start</strong>
+                  <p style="font-size: 0.75rem; margin: 0;">Customer signs up to list</p>
+                </div>
+              </div>
+              <span></span>
+            </div>
+          `;
+        });
+      }
+    });
+  </script>
+</body>
+</html>

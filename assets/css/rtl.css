@@ -1,0 +1,109 @@
+/* ==========================================================================
+   SMSPulse - RTL Stylesheet
+   ========================================================================== */
+
+html[dir="rtl"] {
+  direction: rtl;
+  unicode-bidi: embed;
+}
+
+html[dir="rtl"] body {
+  text-align: right;
+}
+
+/* Float & Margin adjustments where physical properties are used */
+html[dir="rtl"] .brand {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .brand:hover .brand__logo {
+  transform: scale(1.08) rotate(5deg); /* Flip rotation angle on hover */
+}
+
+/* Nav links alignment */
+html[dir="rtl"] .nav__link::after {
+  left: auto;
+  right: 50%;
+  transform: translateX(50%) scaleX(0);
+}
+
+html[dir="rtl"] .nav__link:hover::after, 
+html[dir="rtl"] .nav__link.active::after {
+  transform: translateX(50%) scaleX(1);
+}
+
+/* Footer elements */
+html[dir="rtl"] .footer__title::after {
+  left: auto;
+  right: 0;
+}
+
+@media (max-width: 767px) {
+  html[dir="rtl"] .footer__title::after {
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+
+html[dir="rtl"] .footer__link:hover {
+  transform: translateX(-6px); /* Slide to the left instead of right */
+}
+
+@media (max-width: 767px) {
+  html[dir="rtl"] .footer__link:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* SMS Mockup flips */
+html[dir="rtl"] .sms-bubble--received {
+  align-self: flex-end;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 4px;
+}
+
+html[dir="rtl"] .sms-bubble--sent,
+html[dir="rtl"] .sms-bubble--primary {
+  align-self: flex-start;
+  border-bottom-right-radius: 18px;
+  border-bottom-left-radius: 4px;
+}
+
+html[dir="rtl"] .phone-contact {
+  flex-direction: row-reverse;
+}
+
+/* Checklist and custom selectors */
+html[dir="rtl"] .checker-option {
+  flex-direction: row-reverse;
+}
+
+/* Form layouts */
+html[dir="rtl"] .form-group {
+  text-align: right;
+}
+
+/* Sidebar structure inside Dashboard */
+html[dir="rtl"] .dashboard-layout {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .dashboard-sidebar {
+  border-right: none;
+  border-left: 1px solid var(--border-color);
+}
+
+html[dir="rtl"] .sidebar-nav__link {
+  text-align: right;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+
+html[dir="rtl"] .sidebar-nav__link i {
+  margin-right: 0;
+  margin-left: var(--space-md);
+}
+
+html[dir="rtl"] .dashboard-header__profile {
+  flex-direction: row-reverse;
+}

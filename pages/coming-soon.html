@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMSPulse | Core Suite Upgrades Coming Soon</title>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* Countdown Metric Layout */
+    .countdown-grid {
+      display: flex;
+      gap: var(--space-xl);
+      justify-content: center;
+      margin-top: var(--space-xl);
+    }
+    
+    .countdown-box {
+      background-color: var(--bg-card);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: var(--space-md) var(--space-xl);
+      min-width: 100px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .countdown-num {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary-color);
+      font-family: var(--font-headers);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="header">
+    <div class="header__container">
+      <a href="index.html" class="brand">
+        <div class="brand__logo"><i class="fa-solid fa-comment-sms"></i></div>
+        <span class="brand__name">SMSPulse</span>
+      </a>
+
+      <nav class="nav" id="main-nav">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="home2.html" class="nav__link">Home 2</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="services.html" class="nav__link">Services</a></li>
+          <li><a href="blog.html" class="nav__link">Blog</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+          <li><a href="dashboard.html" class="nav__link nav__dashboard-link"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+        </ul>
+        
+        <div class="nav__mobile-controls">
+          <button class="btn-icon rtl-toggle-btn">RTL</button>
+          <button class="btn-icon theme-toggle-btn"><i class="fa-solid fa-moon"></i></button>
+          <a href="login.html" class="btn btn-login"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+        </div>
+      </nav>
+
+      <div class="header__controls">
+        <button class="btn-icon rtl-toggle-btn">RTL</button>
+        <button class="btn-icon theme-toggle-btn"><i class="fa-solid fa-moon"></i></button>
+        <a href="login.html" class="btn btn-login"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+      </div>
+
+      <button class="hamburger" aria-label="Toggle Mobile Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION 1: COUNTDOWN GRAPHIC -->
+    <section class="section animate-fade">
+      <div class="section__header">
+        <span class="section__badge">Suite Launch Pending</span>
+        <h1 class="section__title">SMSPulse Automation Builder 2.0</h1>
+        <p class="section__subtitle">We are engineering our new visual dashboard sandbox, loaded with direct carrier connection interfaces and live TCPA legal compliance validators.</p>
+      </div>
+
+      <!-- Live countdown counters -->
+      <div class="countdown-grid">
+        <div class="countdown-box">
+          <div class="countdown-num">14</div>
+          <span style="font-size:0.75rem; text-transform:uppercase; color:var(--text-secondary); font-weight:600;">Days</span>
+        </div>
+        <div class="countdown-box">
+          <div class="countdown-num">08</div>
+          <span style="font-size:0.75rem; text-transform:uppercase; color:var(--text-secondary); font-weight:600;">Hours</span>
+        </div>
+        <div class="countdown-box">
+          <div class="countdown-num">45</div>
+          <span style="font-size:0.75rem; text-transform:uppercase; color:var(--text-secondary); font-weight:600;">Minutes</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: LAUNCH PREVIEW DECK -->
+    <section class="section section--secondary">
+      <div class="section__header">
+        <span class="section__badge">Product Features</span>
+        <h2 class="section__title">Advanced SMS Toolkits Pending</h2>
+        <p class="section__subtitle">Take a sneak preview at the high-fidelity features we are preparing for direct active deployment.</p>
+      </div>
+
+      <div class="grid-container">
+        <!-- Feature 1 -->
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3 class="card__title">Carrier API Integrators</h3>
+          <p class="card__text">Direct low-latency pipelines into AT&T and T-Mobile carrier networks to dispatch triggers with zero delays.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-user-shield"></i></div>
+          <h3 class="card__title">Real-Time Law Checkers</h3>
+          <p class="card__text">Automated algorithmic analysis that parses campaign copy to filter legal risks and silent routing hours.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: SIGN UP NOTIFY CONSENT -->
+    <section class="section">
+      <div class="section__header">
+        <span class="section__badge">Compliant Priority Drop</span>
+        <h2 class="section__title">Join the SMS Launch Priority List</h2>
+        <p class="section__subtitle">Provide your phone number below. We will send you a single automated compliant reminder when the dashboard goes live.</p>
+      </div>
+
+      <div class="card" style="max-width: 600px; width: 100%; text-align: left; padding: var(--space-2xl);">
+        <form class="needs-validation" novalidate style="width: 100%;">
+          <div class="form-group">
+            <label class="form-label" for="notify-phone">Your Mobile Phone Number <span>*</span></label>
+            <input type="tel" class="form-input" id="notify-phone" placeholder="+1 (555) 000-0000" required>
+            <span class="form-error-msg">Please provide a valid textable telephone number.</span>
+          </div>
+
+          <div style="font-size: 0.75rem; color: var(--text-secondary); margin-bottom: var(--space-lg); line-height: 1.4;">
+            <input type="checkbox" required style="margin-right: 5px; accent-color: var(--primary-color);"> By clicking here, you supply prior express written authorization to receive automated marketing texts from SMSPulse at the number provided. Consent is not a purchase condition. Message and data parameters apply. Reply STOP to suppress.
+          </div>
+
+          <button type="submit" class="btn btn--primary" style="width: 100%;"><i class="fa-solid fa-comment-dots"></i> Subscribe to Launch Alert</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__brand">
+        <a href="index.html" class="brand">
+          <div class="brand__logo" style="background-color: var(--primary-color);"><i class="fa-solid fa-comment-sms"></i></div>
+          <span class="brand__name">SMSPulse</span>
+        </a>
+        <p class="footer__text">Compliance-first SMS automation design helping retail and e-commerce brands capture secure revenue triggers safely.</p>
+        <div class="footer__socials">
+          <a href="#" class="social-link" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="social-link" aria-label="Github"><i class="fa-brands fa-github"></i></a>
+          <a href="#" class="social-link" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
+        </div>
+      </div>
+
+      <div class="footer__column">
+        <h4 class="footer__title">Automations</h4>
+        <ul class="footer__links">
+          <li><a href="services.html" class="footer__link">Welcome SMS Sequences</a></li>
+          <li><a href="services.html" class="footer__link">Cart Recovery Flows</a></li>
+          <li><a href="services.html" class="footer__link">Keyword Trigger Codes</a></li>
+          <li><a href="services.html" class="footer__link">VIP Customer Tiers</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h4 class="footer__title">TCPA Standards</h4>
+        <ul class="footer__links">
+          <li><a href="about.html" class="footer__link">Consent Checklist</a></li>
+          <li><a href="about.html" class="footer__link">Quiet Hours Logic</a></li>
+          <li><a href="about.html" class="footer__link">10DLC Registration</a></li>
+          <li><a href="about.html" class="footer__link">Carrier Approval Audits</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h4 class="footer__title">Resources</h4>
+        <ul class="footer__links">
+          <li><a href="blog.html" class="footer__link">Marketing Compliance Blog</a></li>
+          <li><a href="blog.html" class="footer__link">SMS Copywriter Guides</a></li>
+          <li><a href="blog.html" class="footer__link">CTR Benchmark Reports</a></li>
+          <li><a href="blog.html" class="footer__link">Opt-In Incentive Ideas</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h4 class="footer__title">Company</h4>
+        <ul class="footer__links">
+          <li><a href="about.html" class="footer__link">About the Specialist</a></li>
+          <li><a href="services.html" class="footer__link">Consulting Pricing</a></li>
+          <li><a href="contact.html" class="footer__link">Direct Inquiry</a></li>
+          <li><a href="dashboard.html" class="footer__link">Real-time Dashboard</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; 2026 SMSPulse. Crafted with extreme premium care. All rights reserved.</p>
+      <p>TCPA/CTIA Specialist Portfolio. Compliance does not represent certified legal counsel.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

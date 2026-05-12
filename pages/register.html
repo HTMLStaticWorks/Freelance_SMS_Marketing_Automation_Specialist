@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account | SMSPulse Portfolio Portal</title>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* Specific styles to perfectly match the Alpaca Farm screenshots */
+    body.register-body {
+      background-color: var(--bg-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-xl);
+      position: relative;
+    }
+    
+    .register-controls {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      display: flex;
+      gap: var(--space-sm);
+      z-index: 10;
+    }
+    
+    .register-card {
+      background-color: var(--bg-card);
+      border-radius: 32px;
+      width: 100%;
+      max-width: 500px;
+      padding: var(--space-3xl) var(--space-2xl);
+      box-shadow: 0 10px 40px rgba(27, 46, 36, 0.04);
+      border: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all var(--transition-smooth);
+    }
+    
+    .register-card__logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: var(--space-md);
+    }
+    
+    .register-card__logo-box {
+      width: 36px;
+      height: 36px;
+      background-color: var(--accent-color);
+      color: var(--white);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+    }
+    
+    .register-card__logo-name {
+      font-family: var(--font-headers);
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: var(--text-primary);
+    }
+    
+    .register-card__title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: var(--space-xs);
+      font-family: var(--font-headers);
+      color: var(--text-primary);
+    }
+    
+    .register-card__subtitle {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: var(--space-xl);
+    }
+    
+    /* Input wrapper for password eye icon */
+    .input-wrapper {
+      position: relative;
+      width: 100%;
+    }
+    
+    .input-wrapper input {
+      padding-right: 48px;
+    }
+    
+    .input-wrapper__icon {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-size: 1rem;
+      transition: color var(--transition-fast);
+    }
+    
+    .input-wrapper__icon:hover {
+      color: var(--primary-color);
+    }
+    
+    /* Double list checkbox rows */
+    .checkbox-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      text-align: left;
+      margin: var(--space-lg) 0;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+    
+    .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      cursor: pointer;
+    }
+    
+    .checkbox-row input {
+      margin-top: 3px;
+      width: 16px;
+      height: 16px;
+      accent-color: var(--primary-color);
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body class="register-body">
+
+  <!-- Corner controls -->
+  <div class="register-controls">
+    <button class="btn-icon rtl-toggle-btn">RTL</button>
+    <button class="btn-icon theme-toggle-btn"><i class="fa-solid fa-moon"></i></button>
+  </div>
+
+  <!-- Centered Register Card -->
+  <main class="register-card animate-slide-up">
+    <!-- Brand Logo -->
+    <div class="register-card__logo">
+      <div class="register-card__logo-box"><i class="fa-solid fa-comment-sms"></i></div>
+      <span class="register-card__logo-name">SMSPulse</span>
+    </div>
+
+    <h1 class="register-card__title">Join the Network</h1>
+    <p class="register-card__subtitle">Create your free dashboard developer account today</p>
+
+    <!-- Form Validation -->
+    <form class="needs-validation" novalidate style="width: 100%;" action="login.html" method="GET">
+      <div class="form-group">
+        <label class="form-label" for="reg-name">Full Name <span>*</span></label>
+        <input type="text" class="form-input" id="reg-name" placeholder="Johnathan Doe" required>
+        <span class="form-error-msg">Please enter your full name.</span>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="reg-email">Email Address <span>*</span></label>
+        <input type="email" class="form-input" id="reg-email" placeholder="name@yourbrand.com" required>
+        <span class="form-error-msg">Please supply a valid corporate email.</span>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="reg-pass">Password <span>*</span></label>
+        <div class="input-wrapper">
+          <input type="password" class="form-input" id="reg-pass" placeholder="Create a strong password" required>
+          <span class="input-wrapper__icon eye-toggle" data-target="reg-pass" aria-label="Toggle password visibility">
+            <i class="fa-regular fa-eye"></i>
+          </span>
+        </div>
+        <span class="form-error-msg">Please supply a password.</span>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="reg-confirm">Confirm Password <span>*</span></label>
+        <div class="input-wrapper">
+          <input type="password" class="form-input" id="reg-confirm" placeholder="Repeat your password" required>
+          <span class="input-wrapper__icon eye-toggle" data-target="reg-confirm" aria-label="Toggle password visibility">
+            <i class="fa-regular fa-eye"></i>
+          </span>
+        </div>
+        <span class="form-error-msg">Please confirm your password matches.</span>
+      </div>
+
+      <!-- Specific double checkbox stack from reference screenshot -->
+      <div class="checkbox-stack">
+        <label class="checkbox-row">
+          <input type="checkbox" required>
+          <span>I agree to the <a href="coming-soon.html" style="color:var(--primary-color); font-weight:600;">Terms of Service</a> and <a href="coming-soon.html" style="color:var(--primary-color); font-weight:600;">Privacy Policy</a> *</span>
+        </label>
+        <label class="checkbox-row">
+          <input type="checkbox">
+          <span>Send me platform updates, new workshop announcements, and marketing compliance briefings.</span>
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn--primary" style="width: 100%; padding: 14px var(--space-2xl); font-size: 1rem;"><i class="fa-solid fa-user-plus"></i> CREATE ACCOUNT</button>
+    </form>
+
+    <!-- Footer link -->
+    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: var(--space-xl);">Already have an account? <a href="login.html" style="color: var(--primary-color); font-weight:700;">Sign in here</a></p>
+  </main>
+
+  <!-- Scripts -->
+  <script src="../assets/js/main.js"></script>
+  
+  <script>
+    // Dual Password Reveal Logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const eyeToggles = document.querySelectorAll('.eye-toggle');
+      eyeToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const targetId = toggle.dataset.target;
+          const targetField = document.getElementById(targetId);
+          
+          if (targetField) {
+            const isPass = targetField.type === 'password';
+            targetField.type = isPass ? 'text' : 'password';
+            
+            const icon = toggle.querySelector('i');
+            if (icon) {
+              icon.className = isPass ? 'fa-regular fa-eye-slash' : 'fa-regular fa-eye';
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

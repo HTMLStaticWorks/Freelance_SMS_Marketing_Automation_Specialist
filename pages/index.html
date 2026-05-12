@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMSPulse | Compliant SMS Marketing Automation Specialist</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio and interactive dashboard of a compliance-focused SMS Marketing Automation Specialist. Boost opt-ins, scale revenue, and stay TCPA/10DLC compliant.">
+  <meta name="keywords" content="SMS Marketing, SMS Automation, TCPA Compliance, 10DLC, Klaviyo SMS, Attentive SMS, Freelance SMS Developer">
+  <meta name="author" content="SMSPulse">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="SMSPulse | Compliant SMS Marketing Automation Specialist">
+  <meta property="og:description" content="Discover revenue-driving, compliance-first SMS automation workflows. View campaign performance analytics in real-time.">
+  <meta property="og:type" content="website">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header Section (Fully Responsive as requested) -->
+  <header class="header">
+    <div class="header__container">
+      <!-- Brand Logo and Name (Left Side) -->
+      <a href="index.html" class="brand" id="brand-logo">
+        <div class="brand__logo"><i class="fa-solid fa-comment-sms"></i></div>
+        <span class="brand__name">SMSPulse</span>
+      </a>
+
+      <!-- Main Navigation Menu (Center/Right-Center on Desktop, Mobile Toggle Hamburger) -->
+      <nav class="nav" id="main-nav" aria-label="Primary Navigation">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link active">Home</a></li>
+          <li><a href="home2.html" class="nav__link">Home 2</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="services.html" class="nav__link">Services</a></li>
+          <li><a href="blog.html" class="nav__link">Blog</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+          <!-- Dashboard menu link appears in center right-side after contact on desktop -->
+          <li><a href="dashboard.html" class="nav__link nav__dashboard-link"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+        </ul>
+        
+        <!-- Mobile Drawer Specific Controls -->
+        <div class="nav__mobile-controls">
+          <button class="btn-icon rtl-toggle-btn" aria-label="Toggle Layout Direction">RTL</button>
+          <button class="btn-icon theme-toggle-btn" aria-label="Toggle Dark Theme"><i class="fa-solid fa-moon"></i></button>
+          <a href="login.html" class="btn btn-login"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+        </div>
+      </nav>
+
+      <!-- Desktop Header Controls (Right Side) -->
+      <div class="header__controls">
+        <button class="btn-icon rtl-toggle-btn" aria-label="Toggle Layout Direction">RTL</button>
+        <button class="btn-icon theme-toggle-btn" aria-label="Toggle Dark Theme"><i class="fa-solid fa-moon"></i></button>
+        <a href="login.html" class="btn btn-login"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+      </div>
+
+      <!-- Hamburger Menu Icon (Mobile Right Side) -->
+      <button class="hamburger" aria-label="Toggle Mobile Navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION 1: HERO SECTION -->
+    <section class="hero animate-fade">
+      <div class="hero__container">
+        <div class="hero__content">
+          <span class="section__badge hero__badge">Compliance-First Growth</span>
+          <h1 class="hero__title">Scale Your Sales Compliantly via <span>Automated SMS</span></h1>
+          <p class="hero__text">We engineer automated text message sequences that secure 98% open rates, drive 25x ROI, and comply 100% with TCPA and carrier rules.</p>
+          <div class="hero__actions">
+            <a href="contact.html" class="btn btn--primary"><i class="fa-solid fa-calendar-check"></i> Book TCPA Audit</a>
+            <a href="dashboard.html" class="btn btn--secondary"><i class="fa-solid fa-chart-simple"></i> View Dashboard</a>
+          </div>
+          <div class="hero__metrics">
+            <div class="metric">
+              <span class="metric__value">98%</span>
+              <span class="metric__label">Average Open Rate</span>
+            </div>
+            <div class="metric">
+              <span class="metric__value">25.4%</span>
+              <span class="metric__label">Click-Through Rate</span>
+            </div>
+            <div class="metric">
+              <span class="metric__value">100%</span>
+              <span class="metric__label">TCPA Compliance Rate</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Live SMS Interactive Phone Simulator -->
+        <div class="hero__visual">
+          <div class="phone-mockup" id="hero-phone">
+            <div class="phone-header">
+              <div class="phone-status-bar">
+                <span>9:41</span>
+                <div>
+                  <i class="fa-solid fa-signal"></i>
+                  <i class="fa-solid fa-wifi"></i>
+                  <i class="fa-solid fa-battery-full"></i>
+                </div>
+              </div>
+              <div class="phone-contact">
+                <div class="phone-avatar">SP</div>
+                <div>
+                  <h4 style="font-size:12px; color:#fff; line-height:1.1;">SMSPulse Automations</h4>
+                  <p style="font-size:9px; color:#aaa; margin:0;">Active Now</p>
+                </div>
+              </div>
+            </div>
+            <div class="phone-screen" id="chat-screen">
+              <!-- Messages will load dynamically from main.js -->
+            </div>
+            <div class="phone-input-bar">
+              <input type="text" class="phone-input" placeholder="Text JOIN or START..." aria-label="Type message">
+              <button class="phone-send" aria-label="Send SMS"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: CORE SERVICES -->
+    <section class="section section--secondary">
+      <div class="section__header">
+        <span class="section__badge">Expert Specializations</span>
+        <h2 class="section__title">SMS Automations Built For Conversions</h2>
+        <p class="section__subtitle">Compliance-driven setups integrated with your CRM and e-commerce platforms like Klaviyo, Attentive, and Shopify.</p>
+      </div>
+      
+      <div class="grid-container">
+        <!-- Card 1 -->
+        <article class="card">
+          <div class="card__icon"><i class="fa-solid fa-bolt"></i></div>
+          <h3 class="card__title">Welcome Triggers</h3>
+          <p class="card__text">Acquire compliant subscribers and deliver instant, tailored welcome discounts with double opt-in validation systems.</p>
+          <a href="services.html" class="btn btn--tertiary">Explore Setup <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card">
+          <div class="card__icon"><i class="fa-solid fa-cart-shopping"></i></div>
+          <h3 class="card__title">Abandoned Carts</h3>
+          <p class="card__text">Recover lost e-commerce carts with compliant, personalized reminder flows structured inside TCPA-approved hours.</p>
+          <a href="services.html" class="btn btn--tertiary">Explore Setup <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card">
+          <div class="card__icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 class="card__title">TCPA Audit & Fix</h3>
+          <p class="card__text">Review your subscriber lists, opt-in disclosures, and quiet-hour rules to protect your brand from catastrophic compliance fines.</p>
+          <a href="services.html" class="btn btn--tertiary">Explore Setup <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 3: TCPA COMPLIANCE SUITE (Interactive Tool) -->
+    <section class="section">
+      <div class="section__header">
+        <span class="section__badge">Compliance Risk Analyzer</span>
+        <h2 class="section__title">Is Your SMS Program Actually Legal?</h2>
+        <p class="section__subtitle">Take our 30-second rapid TCPA audit to discover vulnerability indicators and security score in real-time.</p>
+      </div>
+
+      <!-- Live Interactive Compliance Widget -->
+      <div class="compliance-checker" id="compliance-widget">
+        <!-- Step 1 -->
+        <div class="checker-step active">
+          <h3 style="font-size: 1.25rem; font-family: var(--font-headers);">Step 1: Written consent verification</h3>
+          <p style="margin-bottom: var(--space-md);">Do you collect separate, express written agreement (with custom checkbox disclosures) before texting?</p>
+          <div class="checker-options">
+            <label class="checker-option">
+              <input type="radio" name="consent" value="yes">
+              <span>Yes, we have explicit checkbox disclosures.</span>
+            </label>
+            <label class="checker-option">
+              <input type="radio" name="consent" value="no">
+              <span>No, they join during checkout or standard fields automatically.</span>
+            </label>
+          </div>
+          <div style="display:flex; justify-content: flex-end; margin-top: var(--space-lg);">
+            <button class="btn btn--primary wizard-next" data-step="consent">Next Question <i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="checker-step">
+          <h3 style="font-size: 1.25rem; font-family: var(--font-headers);">Step 2: Unsubscribe automation</h3>
+          <p style="margin-bottom: var(--space-md);">Does your platform automatically honor keyword unsubscribes (STOP, CANCEL, QUIT) with instant confirmation?</p>
+          <div class="checker-options">
+            <label class="checker-option">
+              <input type="radio" name="optout" value="yes">
+              <span>Yes, they are immediately opt-out suppressed automatically.</span>
+            </label>
+            <label class="checker-option">
+              <input type="radio" name="optout" value="no">
+              <span>No, we filter or remove unsubscribes manually weekly.</span>
+            </label>
+          </div>
+          <div style="display:flex; justify-content: space-between; margin-top: var(--space-lg);">
+            <button class="btn btn--secondary wizard-prev"><i class="fa-solid fa-chevron-left"></i> Back</button>
+            <button class="btn btn--primary wizard-next" data-step="optout">Next Question <i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="checker-step">
+          <h3 style="font-size: 1.25rem; font-family: var(--font-headers);">Step 3: Quiet Hours</h3>
+          <p style="margin-bottom: var(--space-md);">Are you suppressing marketing messages during local quiet hours (between 8:00 PM and 9:00 AM recipient local time)?</p>
+          <div class="checker-options">
+            <label class="checker-option">
+              <input type="radio" name="hours" value="yes">
+              <span>Yes, quiet hours are enforced automatically in the flow.</span>
+            </label>
+            <label class="checker-option">
+              <input type="radio" name="hours" value="no">
+              <span>No, messages send immediately based on trigger time.</span>
+            </label>
+          </div>
+          <div style="display:flex; justify-content: space-between; margin-top: var(--space-lg);">
+            <button class="btn btn--secondary wizard-prev"><i class="fa-solid fa-chevron-left"></i> Back</button>
+            <button class="btn btn--primary wizard-next" data-step="hours">Generate Compliance Report <i class="fa-solid fa-square-poll-vertical"></i></button>
+          </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div class="checker-step checker-result" id="compliance-report">
+          <h3 style="font-size: 1.5rem; font-family: var(--font-headers); margin-bottom: var(--space-md);">Your Compliance Audit Result</h3>
+          <div class="checker-score" id="compliance-score">--%</div>
+          <p style="margin: var(--space-md) 0;" id="compliance-result-msg">Calculating your core scores...</p>
+          <div style="display: flex; gap: var(--space-md); justify-content: center; margin-top: var(--space-xl);">
+            <a href="contact.html" class="btn btn--primary"><i class="fa-solid fa-user-shield"></i> Get Free Legal Audit</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: OPT-IN INCENTIVE SAMPLES (Live Text Previewer) -->
+    <section class="section section--secondary">
+      <div class="section__header">
+        <span class="section__badge">Incentive Sample Tool</span>
+        <h2 class="section__title">Interactive SMS Copy Generator</h2>
+        <p class="section__subtitle">Craft high-conversion text copywriting and see exactly how it formats inside cellular carrier segments in real-time.</p>
+      </div>
+
+      <div class="grid-container" style="align-items: center; max-width: 1000px;">
+        <!-- Input Selector Form -->
+        <div class="card" style="align-items: stretch; text-align: start;">
+          <h3 class="card__title" style="align-self: center;">SMS Copywriter Panel</h3>
+          <p class="card__text" style="align-self: center;">Customize the draft below to preview on the mockup phone.</p>
+          
+          <div class="form-group">
+            <label class="form-label" for="sms-preview-input">Message Copy</label>
+            <textarea class="form-input" id="sms-preview-input" rows="5" style="resize: none;" aria-label="Write message to preview">SMSPulse: Join our priority program! Reply YES for early VIP offers, coupon triggers, and automated updates. Msg&data rates may apply. Reply STOP to end.</textarea>
+          </div>
+          
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-secondary); margin-top: -10px;">
+            <span id="char-count">175 chars | 2 SMS Segments</span>
+            <span>Max 160 chars / segment</span>
+          </div>
+        </div>
+
+        <!-- Live Cellphone Preview Mockup -->
+        <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
+          <div class="phone-mockup" style="height: 450px;">
+            <div class="phone-header" style="height: 50px;">
+              <div class="phone-status-bar">
+                <span>12:00</span>
+                <div><i class="fa-solid fa-battery-full"></i></div>
+              </div>
+              <p style="font-size: 11px; color: #fff; font-weight: 600; margin-top: 10px;">Live Preview (555-888)</p>
+            </div>
+            <div class="phone-screen" style="justify-content: flex-end; padding: var(--space-md);">
+              <div class="sms-bubble sms-bubble--primary animate-fade" id="live-sms-bubble" style="font-size: 11.5px; line-height: 1.4;">
+                SMSPulse: Join our priority program! Reply YES for early VIP offers, coupon triggers, and automated updates. Msg&data rates may apply. Reply STOP to end.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: PORTFOLIO CASE STUDIES -->
+    <section class="section">
+      <div class="section__header">
+        <span class="section__badge">Case Studies</span>
+        <h2 class="section__title">Campaign Outcomes That Speak</h2>
+        <p class="section__subtitle">Explore results achieved for active clients across various compliance-sensitive retail landscapes.</p>
+      </div>
+
+      <div class="grid-container">
+        <!-- Case Card 1 -->
+        <div class="card">
+          <div class="card__icon" style="background-color: var(--primary-light); color: var(--primary-color);"><i class="fa-solid fa-arrow-trend-up"></i></div>
+          <h3 class="card__title">The Wellness Depot</h3>
+          <p class="card__text"><strong>Klaviyo Integration:</strong> Revamped pop-ups to ensure double opt-in TCPA compliance. Unlocked automated retention flows.</p>
+          <div style="display:flex; justify-content:space-around; width:100%; border-top:1px solid var(--border-color); padding-top:var(--space-md); margin-bottom:var(--space-md);">
+            <div>
+              <p style="font-size:1.5rem; font-weight:800; color:var(--primary-color);">44x</p>
+              <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.5px;">SMS ROI</p>
+            </div>
+            <div>
+              <p style="font-size:1.5rem; font-weight:800; color:var(--accent-color);">+32%</p>
+              <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.5px;">Opt-In Rate</p>
+            </div>
+          </div>
+          <a href="services.html" class="btn btn--tertiary">Review Case Specs <i class="fa-solid fa-circle-info"></i></a>
+        </div>
+
+        <!-- Case Card 2 -->
+        <div class="card">
+          <div class="card__icon" style="background-color: var(--primary-light); color: var(--primary-color);"><i class="fa-solid fa-tags"></i></div>
+          <h3 class="card__title">Aura Apparel</h3>
+          <p class="card__text"><strong>Keyword Triggers & Flows:</strong> Built interactive SMS keyword strategy paired with legal opt-in terms on checkout pages.</p>
+          <div style="display:flex; justify-content:space-around; width:100%; border-top:1px solid var(--border-color); padding-top:var(--space-md); margin-bottom:var(--space-md);">
+            <div>
+              <p style="font-size:1.5rem; font-weight:800; color:var(--primary-color);">$145k</p>
+              <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.5px;">Revenue Generated</p>
+            </div>
+            <div>
+              <p style="font-size:1.5rem; font-weight:800; color:var(--accent-color);">24.8%</p>
+              <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.5px;">Click-Through</p>
+            </div>
+          </div>
+          <a href="services.html" class="btn btn--tertiary">Review Case Specs <i class="fa-solid fa-circle-info"></i></a>
+        </div>
+
+        <!-- Case Card 3 -->
+        <div class="card">
+          <div class="card__icon" style="background-color: var(--primary-light); color: var(--primary-color);"><i class="fa-solid fa-user-lock"></i></div>
+          <h3 class="card__title">SaaS Lead Vault</h3>
+          <p class="card__text"><strong>Compliance Re-Audit:</strong> Cleaned un-consented records, set quiet hour restrictions, and registered carrier 10DLC triggers.</p>
+          <div style="display:flex; justify-content:space-around; width:100%; border-top:1px solid var(--border-color); padding-top:var(--space-md); margin-bottom:var(--space-md);">
+            <div>
+              <p style="font-size:1.5rem; font-weight:800; color:var(--primary-color);">0</p>
+              <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.5px;">Carrier Blocks</p>
+            </div>
+            <div>
+              <p style="font-size:1.5rem; font-weight:800; color:var(--accent-color);">100%</p>
+              <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.5px;">TCPA Compliant</p>
+            </div>
+          </div>
+          <a href="services.html" class="btn btn--tertiary">Review Case Specs <i class="fa-solid fa-circle-info"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: COMPLIANT AUDIT CTA FORM -->
+    <section class="section section--secondary">
+      <div class="section__header">
+        <span class="section__badge">Start Compliantly Today</span>
+        <h2 class="section__title">Get a Free SMS Compliance Audit</h2>
+        <p class="section__subtitle">Provide your brand details below. I'll personally review your current opt-in checkout forms, scripts, and provide actionable fixes.</p>
+      </div>
+
+      <div class="card" style="max-width: 600px; width: 100%; text-align: left; padding: var(--space-2xl);">
+        <form class="needs-validation" novalidate style="width: 100%;">
+          <div class="form-group">
+            <label class="form-label" for="audit-name">Full Name <span>*</span></label>
+            <input type="text" class="form-input" id="audit-name" placeholder="John Doe" required>
+            <span class="form-error-msg">Please enter your name.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="audit-email">Email Address <span>*</span></label>
+            <input type="email" class="form-input" id="audit-email" placeholder="john@example.com" required>
+            <span class="form-error-msg">Please supply a valid corporate email.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="audit-website">Website URL <span>*</span></label>
+            <input type="url" class="form-input" id="audit-website" placeholder="https://example.com" required>
+            <span class="form-error-msg">Please enter your website URL.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="audit-msg">What tool do you use? (e.g. Klaviyo, Attentive, Postscript)</label>
+            <select class="form-input" id="audit-msg">
+              <option value="klaviyo">Klaviyo</option>
+              <option value="attentive">Attentive</option>
+              <option value="postscript">Postscript</option>
+              <option value="other">Other / Not Sure</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn--primary" style="width:100%; margin-top:var(--space-md);"><i class="fa-solid fa-shield-heart"></i> Submit Audit Request</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section (With at least 4 Topics & Hover effects on options as required) -->
+  <footer class="footer">
+    <div class="footer__container">
+      <!-- Footer Brand Info -->
+      <div class="footer__brand">
+        <a href="index.html" class="brand">
+          <div class="brand__logo" style="background-color: var(--primary-color);"><i class="fa-solid fa-comment-sms"></i></div>
+          <span class="brand__name">SMSPulse</span>
+        </a>
+        <p class="footer__text">Compliance-first SMS automation design helping retail and e-commerce brands capture secure revenue triggers safely.</p>
+        <div class="footer__socials">
+          <a href="#" class="social-link" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="social-link" aria-label="Github"><i class="fa-brands fa-github"></i></a>
+          <a href="#" class="social-link" aria-label="Book a call"><i class="fa-solid fa-phone"></i></a>
+        </div>
+      </div>
+
+      <!-- Topic Column 1 (SMS Strategy) -->
+      <div class="footer__column">
+        <h4 class="footer__title">Automations</h4>
+        <ul class="footer__links">
+          <li><a href="services.html" class="footer__link">Welcome SMS Sequences</a></li>
+          <li><a href="services.html" class="footer__link">Cart Recovery Flows</a></li>
+          <li><a href="services.html" class="footer__link">Keyword Trigger Codes</a></li>
+          <li><a href="services.html" class="footer__link">VIP Customer Tiers</a></li>
+        </ul>
+      </div>
+
+      <!-- Topic Column 2 (Compliance Legal) -->
+      <div class="footer__column">
+        <h4 class="footer__title">TCPA Standards</h4>
+        <ul class="footer__links">
+          <li><a href="about.html" class="footer__link">Consent Checklist</a></li>
+          <li><a href="about.html" class="footer__link">Quiet Hours Logic</a></li>
+          <li><a href="about.html" class="footer__link">10DLC Registration</a></li>
+          <li><a href="about.html" class="footer__link">Carrier Approval Audits</a></li>
+        </ul>
+      </div>
+
+      <!-- Topic Column 3 (Resource Hub) -->
+      <div class="footer__column">
+        <h4 class="footer__title">Resources</h4>
+        <ul class="footer__links">
+          <li><a href="blog.html" class="footer__link">Marketing Compliance Blog</a></li>
+          <li><a href="blog.html" class="footer__link">SMS Copywriter Guides</a></li>
+          <li><a href="blog.html" class="footer__link">CTR Benchmark Reports</a></li>
+          <li><a href="blog.html" class="footer__link">Opt-In Incentive Ideas</a></li>
+        </ul>
+      </div>
+
+      <!-- Topic Column 4 (Direct Links) -->
+      <div class="footer__column">
+        <h4 class="footer__title">Company</h4>
+        <ul class="footer__links">
+          <li><a href="about.html" class="footer__link">About the Specialist</a></li>
+          <li><a href="services.html" class="footer__link">Consulting Pricing</a></li>
+          <li><a href="contact.html" class="footer__link">Direct Inquiry</a></li>
+          <li><a href="dashboard.html" class="footer__link">Real-time Dashboard</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom footer details -->
+    <div class="footer__bottom">
+      <p>&copy; 2026 SMSPulse. Crafted with extreme premium care. All rights reserved.</p>
+      <p>TCPA/CTIA Specialist Portfolio. Compliance does not represent certified legal counsel.</p>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

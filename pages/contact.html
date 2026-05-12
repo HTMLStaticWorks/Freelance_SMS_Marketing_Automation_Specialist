@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMSPulse | Book an SMS Compliance Consultation</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Reach out to initiate a complete SMS compliance list review, Klaviyo sequence setups, or custom trigger creations. Clear responses in <2 hours.">
+  <meta name="keywords" content="Book SMS Consultation, TCPA Audit, Klaviyo Setup Freelance">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* Contact Specific Calendar Select Layout */
+    .calendar-slots-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-sm);
+      margin-top: var(--space-md);
+    }
+    
+    @media (max-width: 480px) {
+      .calendar-slots-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    .slot-item {
+      border: 1px solid var(--border-color);
+      padding: 10px;
+      text-align: center;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all var(--transition-fast);
+      background-color: var(--bg-secondary);
+    }
+    
+    .slot-item:hover, .slot-item.active {
+      border-color: var(--primary-color);
+      color: var(--white);
+      background-color: var(--primary-color);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="header">
+    <div class="header__container">
+      <a href="index.html" class="brand">
+        <div class="brand__logo"><i class="fa-solid fa-comment-sms"></i></div>
+        <span class="brand__name">SMSPulse</span>
+      </a>
+
+      <nav class="nav" id="main-nav">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="home2.html" class="nav__link">Home 2</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="services.html" class="nav__link">Services</a></li>
+          <li><a href="blog.html" class="nav__link">Blog</a></li>
+          <li><a href="contact.html" class="nav__link active">Contact</a></li>
+          <li><a href="dashboard.html" class="nav__link nav__dashboard-link"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+        </ul>
+        
+        <div class="nav__mobile-controls">
+          <button class="btn-icon rtl-toggle-btn">RTL</button>
+          <button class="btn-icon theme-toggle-btn"><i class="fa-solid fa-moon"></i></button>
+          <a href="login.html" class="btn btn-login"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+        </div>
+      </nav>
+
+      <div class="header__controls">
+        <button class="btn-icon rtl-toggle-btn">RTL</button>
+        <button class="btn-icon theme-toggle-btn"><i class="fa-solid fa-moon"></i></button>
+        <a href="login.html" class="btn btn-login"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+      </div>
+
+      <button class="hamburger" aria-label="Toggle Mobile Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION 1: COMMUNICATION CHANNELS -->
+    <section class="section animate-fade">
+      <div class="section__header">
+        <span class="section__badge">Direct Support</span>
+        <h1 class="section__title">Initiate Your Campaign Blueprint</h1>
+        <p class="section__subtitle">Direct communication represents the baseline for tailored business relations. We are active across key support channels.</p>
+      </div>
+
+      <div class="grid-container">
+        <!-- Card 1 -->
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-envelope"></i></div>
+          <h3 class="card__title">Direct Email</h3>
+          <p class="card__text">Shoot our compliance desk a message directly. We reply in under 2 corporate hours.</p>
+          <a href="mailto:support@smspulse.com" class="btn btn--tertiary">support@smspulse.com</a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-clock"></i></div>
+          <h3 class="card__title">Timezone Hours</h3>
+          <p class="card__text">Based in Eastern Standard Time. Available for direct sync channels Mon-Fri.</p>
+          <p style="font-weight: 700; color: var(--primary-color);">09:00 AM - 05:00 PM EST</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+          <div class="card__icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 class="card__title">Urgent Audits</h3>
+          <p class="card__text">Receiving regulatory warning flags? Let us lock down your subscription list immediately.</p>
+          <a href="tel:+15558882000" class="btn btn--tertiary">+1 (555) 888-2000</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: INTERACTIVE CONSULTATION CALENDAR FORM -->
+    <section class="section section--secondary">
+      <div class="section__header">
+        <span class="section__badge">Schedule sync</span>
+        <h2 class="section__title">Book a 15-Min Free Discovery Call</h2>
+        <p class="section__subtitle">Secure your targeted compliance diagnostic call on our calendar below. Completely validated schedule integration.</p>
+      </div>
+
+      <div class="card" style="max-width: 650px; width:100%; text-align: left; padding: var(--space-2xl);">
+        <form class="needs-validation" novalidate style="width:100%;">
+          <div class="form-group">
+            <label class="form-label" for="booking-name">Full Corporate Name <span>*</span></label>
+            <input type="text" class="form-input" id="booking-name" placeholder="Johnathan Doe" required>
+            <span class="form-error-msg">Please provide your corporate identity name.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="booking-email">Work Email Address <span>*</span></label>
+            <input type="email" class="form-input" id="booking-email" placeholder="john@company.com" required>
+            <span class="form-error-msg">Please enter a valid business email.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Select Consultation Day <span>*</span></label>
+            <select class="form-input" required>
+              <option value="">-- Choose a Date --</option>
+              <option value="monday">Monday, May 18 (Available)</option>
+              <option value="tuesday">Tuesday, May 19 (Available)</option>
+              <option value="wednesday">Wednesday, May 20 (Available)</option>
+            </select>
+          </div>
+
+          <!-- Interactive Time Slots Selector -->
+          <div class="form-group">
+            <label class="form-label">Select Available Slot (EST) <span>*</span></label>
+            <div class="calendar-slots-grid">
+              <div class="slot-item">10:00 AM</div>
+              <div class="slot-item">11:30 AM</div>
+              <div class="slot-item">02:00 PM</div>
+              <div class="slot-item">04:30 PM</div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn--primary" style="width:100%; margin-top:var(--space-md);"><i class="fa-solid fa-calendar-plus"></i> Secure Call Slot</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- SECTION 3: FREE COMPLIANCE REVIEW FORM -->
+    <section class="section">
+      <div class="section__header">
+        <span class="section__badge">Draft Reviewer</span>
+        <h2 class="section__title">Submit SMS Draft Copy for Legal Sanity Check</h2>
+        <p class="section__subtitle">Paste your intended marketing text copy, opt-in pop-up disclaimer language, or lists collection terms for a free review.</p>
+      </div>
+
+      <div class="card" style="max-width: 650px; width: 100%; text-align: left; padding: var(--space-2xl);">
+        <form class="needs-validation" novalidate style="width: 100%;">
+          <div class="form-group">
+            <label class="form-label" for="review-brand">Brand / Shopify Store Name <span>*</span></label>
+            <input type="text" class="form-input" id="review-brand" placeholder="My Organic Shop" required>
+            <span class="form-error-msg">Please provide your brand identifier.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="review-copy">Your Draft Text Message/Disclosures Copy <span>*</span></label>
+            <textarea class="form-input" id="review-copy" rows="6" placeholder="Paste your opt-in popup legal text, or abandoned cart copy draft here..." required></textarea>
+            <span class="form-error-msg">Please paste some draft copy for the compliance check.</span>
+          </div>
+
+          <button type="submit" class="btn btn--secondary" style="width: 100%;"><i class="fa-solid fa-file-shield"></i> Submit Copy for Compliant Review</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__brand">
+        <a href="index.html" class="brand">
+          <div class="brand__logo" style="background-color: var(--primary-color);"><i class="fa-solid fa-comment-sms"></i></div>
+          <span class="brand__name">SMSPulse</span>
+        </a>
+        <p class="footer__text">Compliance-first SMS automation design helping retail and e-commerce brands capture secure revenue triggers safely.</p>
+        <div class="footer__socials">
+          <a href="#" class="social-link" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="social-link" aria-label="Github"><i class="fa-brands fa-github"></i></a>
+          <a href="#" class="social-link" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
+        </div>
+      </div>
+
+      <div class="footer__column">
+        <h4 class="footer__title">Automations</h4>
+        <ul class="footer__links">
+          <li><a href="services.html" class="footer__link">Welcome SMS Sequences</a></li>
+          <li><a href="services.html" class="footer__link">Cart Recovery Flows</a></li>
+          <li><a href="services.html" class="footer__link">Keyword Trigger Codes</a></li>
+          <li><a href="services.html" class="footer__link">VIP Customer Tiers</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h4 class="footer__title">TCPA Standards</h4>
+        <ul class="footer__links">
+          <li><a href="about.html" class="footer__link">Consent Checklist</a></li>
+          <li><a href="about.html" class="footer__link">Quiet Hours Logic</a></li>
+          <li><a href="about.html" class="footer__link">10DLC Registration</a></li>
+          <li><a href="about.html" class="footer__link">Carrier Approval Audits</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h4 class="footer__title">Resources</h4>
+        <ul class="footer__links">
+          <li><a href="blog.html" class="footer__link">Marketing Compliance Blog</a></li>
+          <li><a href="blog.html" class="footer__link">SMS Copywriter Guides</a></li>
+          <li><a href="blog.html" class="footer__link">CTR Benchmark Reports</a></li>
+          <li><a href="blog.html" class="footer__link">Opt-In Incentive Ideas</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h4 class="footer__title">Company</h4>
+        <ul class="footer__links">
+          <li><a href="about.html" class="footer__link">About the Specialist</a></li>
+          <li><a href="services.html" class="footer__link">Consulting Pricing</a></li>
+          <li><a href="contact.html" class="footer__link">Direct Inquiry</a></li>
+          <li><a href="dashboard.html" class="footer__link">Real-time Dashboard</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; 2026 SMSPulse. Crafted with extreme premium care. All rights reserved.</p>
+      <p>TCPA/CTIA Specialist Portfolio. Compliance does not represent certified legal counsel.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../assets/js/main.js"></script>
+  
+  <script>
+    // Contact Specific Calendar Interactive Selection
+    document.addEventListener('DOMContentLoaded', () => {
+      const slotItems = document.querySelectorAll('.slot-item');
+      slotItems.forEach(slot => {
+        slot.addEventListener('click', () => {
+          slotItems.forEach(s => s.classList.remove('active'));
+          slot.classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+/* ==========================================================================
+   SMSPulse - Dark Mode Overrides
+   ========================================================================== */
+
+html[data-theme="dark"] {
+  /* Dark Color System (Midnight Green & Charcoal) */
+  --bg-primary: #121c15;
+  --bg-secondary: #0a110d;
+  --bg-card: #18261e;
+  --text-primary: #f5eedc;
+  --text-secondary: #a3b2a8;
+  --primary-color: #e57842; /* Glowing warm terracotta for high visibility */
+  --primary-hover: #f19163;
+  --primary-light: rgba(229, 120, 66, 0.15);
+  --accent-color: #6f9f7d;
+  --accent-hover: #8db598;
+  --accent-light: rgba(111, 159, 125, 0.15);
+  --border-color: #283a30;
+  --border-focus: #e57842;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
+  --white: #ffffff;
+  --error: #f4624c;
+  --success: #51c473;
+}
+
+/* Specific Dark Mode overrides for premium feel */
+html[data-theme="dark"] .phone-mockup {
+  border-color: #2b3a32;
+  box-shadow: var(--shadow-lg), 0 0 40px rgba(229, 120, 66, 0.05);
+}
+
+html[data-theme="dark"] .phone-screen {
+  background-color: #0d1410;
+}
+
+html[data-theme="dark"] .sms-bubble--received {
+  background-color: #1c2a21;
+  color: #f5eedc;
+  border-color: #283a30;
+}
+
+html[data-theme="dark"] .sms-bubble--sent {
+  background-color: #4a6b53;
+  color: #fff;
+}
+
+html[data-theme="dark"] .social-link {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+html[data-theme="dark"] .social-link:hover {
+  background-color: var(--primary-color);
+}
+
+html[data-theme="dark"] .checker-option:hover {
+  background-color: #1e3025;
+}
+
+/* Skeleton animation adjustment for dark environment */
+@keyframes loading-skeleton {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+html[data-theme="dark"] .skeleton {
+  background: linear-gradient(90deg, #18261e 25%, #283a30 50%, #18261e 75%);
+  background-size: 200% 100%;
+}
