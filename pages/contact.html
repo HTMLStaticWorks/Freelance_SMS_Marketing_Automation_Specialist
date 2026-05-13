@@ -49,6 +49,35 @@
       color: var(--white);
       background-color: var(--primary-color);
     }
+
+    /* Contact Responsive Grid Fixes */
+    .contact-main-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: var(--space-3xl);
+      max-width: 1440px;
+      margin: 0 auto;
+      align-items: start;
+    }
+    
+    .contact-booking-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-md);
+    }
+
+    @media (max-width: 1023px) {
+      .contact-main-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-2xl);
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .contact-booking-form {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -69,7 +98,7 @@
           <li><a href="services.html" class="nav__link">Services</a></li>
           <li><a href="blog.html" class="nav__link">Blog</a></li>
           <li><a href="contact.html" class="nav__link active">Contact</a></li>
-          <li><a href="dashboard.html" class="nav__link nav__dashboard-link"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+          <li><a href="dashboard.html" class="nav__link nav__dashboard-link">Dashboard</a></li>
         </ul>
         
         <div class="nav__mobile-controls">
@@ -94,86 +123,132 @@
   </header>
 
   <main>
-    <!-- SECTION 1: COMMUNICATION CHANNELS -->
-    <section class="section animate-fade">
-      <div class="section__header">
-        <span class="section__badge">Direct Support</span>
-        <h1 class="section__title">Initiate Your Campaign Blueprint</h1>
-        <p class="section__subtitle">Direct communication represents the baseline for tailored business relations. We are active across key support channels.</p>
-      </div>
-
-      <div class="grid-container">
-        <!-- Card 1 -->
-        <div class="card">
-          <div class="card__icon"><i class="fa-solid fa-envelope"></i></div>
-          <h3 class="card__title">Direct Email</h3>
-          <p class="card__text">Shoot our compliance desk a message directly. We reply in under 2 corporate hours.</p>
-          <a href="mailto:support@smspulse.com" class="btn btn--tertiary">support@smspulse.com</a>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="card">
-          <div class="card__icon"><i class="fa-solid fa-clock"></i></div>
-          <h3 class="card__title">Timezone Hours</h3>
-          <p class="card__text">Based in Eastern Standard Time. Available for direct sync channels Mon-Fri.</p>
-          <p style="font-weight: 700; color: var(--primary-color);">09:00 AM - 05:00 PM EST</p>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="card">
-          <div class="card__icon"><i class="fa-solid fa-shield-halved"></i></div>
-          <h3 class="card__title">Urgent Audits</h3>
-          <p class="card__text">Receiving regulatory warning flags? Let us lock down your subscription list immediately.</p>
-          <a href="tel:+15558882000" class="btn btn--tertiary">+1 (555) 888-2000</a>
+    <!-- HERO SECTION -->
+    <section class="hero animate-fade">
+      <div class="hero__container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <div class="hero__content" style="text-align: center; align-items: center; max-width: 800px; margin: 0 auto;">
+          <span class="section__badge hero__badge">Direct Support</span>
+          <h1 class="hero__title">Initiate Your <span>Campaign Blueprint</span></h1>
+          <p class="hero__text">Reach out to initiate a complete SMS compliance list review, Klaviyo sequence setups, or custom trigger creations. Clear responses in <2 hours.</p>
+          <div class="hero__actions">
+            <a href="#channels" class="btn btn--primary">View Support Channels</a>
+            <a href="#booking-form" class="btn btn--secondary">Book Discovery Call</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 2: INTERACTIVE CONSULTATION CALENDAR FORM -->
-    <section class="section section--secondary">
+    <!-- SECTION 1: COMMUNICATION CHANNELS -->
+    <section class="section section--secondary" id="channels">
       <div class="section__header">
-        <span class="section__badge">Schedule sync</span>
-        <h2 class="section__title">Book a 15-Min Free Discovery Call</h2>
-        <p class="section__subtitle">Secure your targeted compliance diagnostic call on our calendar below. Completely validated schedule integration.</p>
+        <span class="section__badge">Direct Support</span>
+        <h2 class="section__title">Contact Our Compliance Center</h2>
+        <p class="section__subtitle">We maintain dedicated channels for legal audits, carrier registration, and marketing automation support.</p>
       </div>
 
-      <div class="card" style="max-width: 650px; width:100%; text-align: left; padding: var(--space-2xl);">
-        <form class="needs-validation" novalidate style="width:100%;">
-          <div class="form-group">
-            <label class="form-label" for="booking-name">Full Corporate Name <span>*</span></label>
-            <input type="text" class="form-input" id="booking-name" placeholder="Johnathan Doe" required>
-            <span class="form-error-msg">Please provide your corporate identity name.</span>
+      <div class="grid-container">
+        <!-- Card 1 -->
+        <article class="card-glass">
+          <div class="card__content">
+            <div class="card__icon" style="background: var(--primary-light); color: var(--primary-color);"><i class="fa-solid fa-headset"></i></div>
+            <h3 class="card__title">Priority Support</h3>
+            <p class="card__text">For active project clients needing immediate technical assistance with Klaviyo or Shopify hooks.</p>
+            <a href="mailto:support@smspulse.com" class="btn btn--tertiary" style="padding-left: 0;"><i class="fa-solid fa-envelope"></i> support@smspulse.com</a>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card-glass">
+          <div class="card__content">
+            <div class="card__icon" style="background: var(--accent-light); color: var(--accent-color);"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3 class="card__title">Compliance Desk</h3>
+            <p class="card__text">Submit urgent TCPA warning letters or carrier blockage reports for immediate legal strategy review.</p>
+            <a href="tel:+15558882000" class="btn btn--tertiary" style="padding-left: 0;"><i class="fa-solid fa-phone"></i> +1 (555) 888-2000</a>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card-glass">
+          <div class="card__content">
+            <div class="card__icon" style="background: var(--success-light); color: var(--success);"><i class="fa-solid fa-clock"></i></div>
+            <h3 class="card__title">Operating Hours</h3>
+            <p class="card__text">Global remote operations based in EST. Available for scheduled syncs during core market hours.</p>
+            <p style="font-weight: 700; color: var(--text-primary); margin-top: var(--space-sm);"><i class="fa-solid fa-earth-americas"></i> Mon-Fri: 9AM - 5PM EST</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 2: CONSOLIDATED CONTACT CENTER -->
+    <section class="section" id="booking-form">
+      <div class="contact-main-grid">
+        <!-- Column 1: Booking Form -->
+        <div>
+          <div class="section__header" style="text-align: left; margin-bottom: var(--space-xl);">
+            <span class="section__badge" style="margin-left: 0;">Schedule sync</span>
+            <h2 class="section__title" style="text-align: left; margin-left: 0;">Book Your Discovery Call</h2>
+            <p class="section__subtitle" style="text-align: left; margin-left: 0; max-width: 100%;">Secure a 15-minute compliance diagnostic. We'll review your current SMS health and potential revenue gaps.</p>
           </div>
 
-          <div class="form-group">
-            <label class="form-label" for="booking-email">Work Email Address <span>*</span></label>
-            <input type="email" class="form-input" id="booking-email" placeholder="john@company.com" required>
-            <span class="form-error-msg">Please enter a valid business email.</span>
+          <div class="card-glass" style="padding: var(--space-2xl); text-align: left;">
+              <div class="form-group">
+                <label class="form-label" for="booking-name">Full Name <span>*</span></label>
+                <input type="text" class="form-input" id="booking-name" placeholder="" required style="width:100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px;">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="booking-company">Brand Name <span>*</span></label>
+                <input type="text" class="form-input" id="booking-company" placeholder="" required style="width:100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px;">
+              </div>
+              <div class="form-group" style="grid-column: span 2;">
+                <label class="form-label" for="booking-email">Work Email <span>*</span></label>
+                <input type="email" class="form-input" id="booking-email" placeholder="" required style="width:100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px;">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Consultation Day <span>*</span></label>
+                <select class="form-input" required style="width:100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px;">
+                  <option value="monday">Mon, May 18</option>
+                  <option value="tuesday">Tue, May 19</option>
+                  <option value="wednesday">Wed, May 20</option>
+                </select>
+              </div>
+             
+              <button type="submit" class="btn btn--primary" style="grid-column: span 2; margin-top: var(--space-sm);"><i class="fa-solid fa-calendar-check"></i> Appointment</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Column 2: Map & Location -->
+        <div style="position: sticky; top: var(--header-height);">
+          <div class="section__header" style="text-align: left; margin-bottom: var(--space-xl);">
+            <span class="section__badge" style="margin-left: 0;">Our Location</span>
+            <h2 class="section__title" style="text-align: left; margin-left: 0;">Global Presence</h2>
+            <p class="section__subtitle" style="text-align: left; margin-left: 0; max-width: 100%;">Headquartered in New York with remote specialists operating worldwide.</p>
           </div>
 
-          <div class="form-group">
-            <label class="form-label">Select Consultation Day <span>*</span></label>
-            <select class="form-input" required>
-              <option value="">-- Choose a Date --</option>
-              <option value="monday">Monday, May 18 (Available)</option>
-              <option value="tuesday">Tuesday, May 19 (Available)</option>
-              <option value="wednesday">Wednesday, May 20 (Available)</option>
-            </select>
+          <div class="card-glass" style="padding: 0; overflow: hidden; border-radius: var(--radius-lg); height: 400px; box-shadow: var(--shadow-lg);">
+            <!-- Interactive Map Iframe -->
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1684000000000!5m2!1sen!2sus" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
           </div>
 
-          <!-- Interactive Time Slots Selector -->
-          <div class="form-group">
-            <label class="form-label">Select Available Slot (EST) <span>*</span></label>
-            <div class="calendar-slots-grid">
-              <div class="slot-item">10:00 AM</div>
-              <div class="slot-item">11:30 AM</div>
-              <div class="slot-item">02:00 PM</div>
-              <div class="slot-item">04:30 PM</div>
+          <!-- Social Links Below Map -->
+          <div class="card-glass" style="margin-top: var(--space-lg); padding: var(--space-lg); display: flex; flex-direction: column; align-items: center; gap: var(--space-md); text-align: center;">
+            <h4 style="margin: 0; font-family: var(--font-headers); font-size: 1rem; color: var(--text-primary);">Follow Our Compliance Updates</h4>
+            <div style="display: flex; gap: var(--space-xl); align-items: center;">
+              <a href="#" style="color: #000000; font-size: 1.6rem; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'" aria-label="Follow us on X"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="#" style="color: #000000; font-size: 1.6rem; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'" aria-label="Follow us on LinkedIn"><i class="fa-brands fa-apple"></i></a>
+              <a href="#" style="color: #E4405F; font-size: 1.6rem; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'" aria-label="Follow us on Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" style="color: #FF0000; font-size: 1.6rem; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'" aria-label="Follow us on YouTube"><i class="fa-brands fa-youtube"></i></a>
             </div>
           </div>
-
-          <button type="submit" class="btn btn--primary" style="width:100%; margin-top:var(--space-md);"><i class="fa-solid fa-calendar-plus"></i> Secure Call Slot</button>
-        </form>
+        </div>
       </div>
     </section>
 
@@ -185,21 +260,21 @@
         <p class="section__subtitle">Paste your intended marketing text copy, opt-in pop-up disclaimer language, or lists collection terms for a free review.</p>
       </div>
 
-      <div class="card" style="max-width: 650px; width: 100%; text-align: left; padding: var(--space-2xl);">
+      <div class="card-glass" style="max-width: 650px; width: 100%; text-align: left; padding: var(--space-2xl);">
         <form class="needs-validation" novalidate style="width: 100%;">
           <div class="form-group">
             <label class="form-label" for="review-brand">Brand / Shopify Store Name <span>*</span></label>
-            <input type="text" class="form-input" id="review-brand" placeholder="My Organic Shop" required>
+            <input type="text" class="form-input" id="review-brand" placeholder="My Organic Shop" required style="width:100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px;">
             <span class="form-error-msg">Please provide your brand identifier.</span>
           </div>
 
           <div class="form-group">
             <label class="form-label" for="review-copy">Your Draft Text Message/Disclosures Copy <span>*</span></label>
-            <textarea class="form-input" id="review-copy" rows="6" placeholder="Paste your opt-in popup legal text, or abandoned cart copy draft here..." required></textarea>
+            <textarea class="form-input" id="review-copy" rows="6" placeholder="Paste your opt-in popup legal text, or abandoned cart copy draft here..." required style="width:100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; resize: vertical;"></textarea>
             <span class="form-error-msg">Please paste some draft copy for the compliance check.</span>
           </div>
 
-          <button type="submit" class="btn btn--secondary" style="width: 100%;"><i class="fa-solid fa-file-shield"></i> Submit Copy for Compliant Review</button>
+          <button type="submit" class="btn btn--secondary" style="width: 100%;"><i class="fa-solid fa-file-shield"></i> Submit Copy</button>
         </form>
       </div>
     </section>
@@ -208,6 +283,7 @@
   <!-- Footer Section -->
   <footer class="footer">
     <div class="footer__container">
+      <!-- Footer Brand Info -->
       <div class="footer__brand">
         <a href="index.html" class="brand">
           <div class="brand__logo" style="background-color: var(--primary-color);"><i class="fa-solid fa-comment-sms"></i></div>
@@ -215,13 +291,14 @@
         </a>
         <p class="footer__text">Compliance-first SMS automation design helping retail and e-commerce brands capture secure revenue triggers safely.</p>
         <div class="footer__socials">
-          <a href="#" class="social-link" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="social-link" aria-label="Twitter"><i class="fa-brands fa-apple"></i></a>
           <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
           <a href="#" class="social-link" aria-label="Github"><i class="fa-brands fa-github"></i></a>
-          <a href="#" class="social-link" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
+          <a href="#" class="social-link" aria-label="Book a call"><i class="fa-solid fa-phone"></i></a>
         </div>
       </div>
 
+      <!-- Topic Column 1 (SMS Strategy) -->
       <div class="footer__column">
         <h4 class="footer__title">Automations</h4>
         <ul class="footer__links">
@@ -232,16 +309,10 @@
         </ul>
       </div>
 
-      <div class="footer__column">
-        <h4 class="footer__title">TCPA Standards</h4>
-        <ul class="footer__links">
-          <li><a href="about.html" class="footer__link">Consent Checklist</a></li>
-          <li><a href="about.html" class="footer__link">Quiet Hours Logic</a></li>
-          <li><a href="about.html" class="footer__link">10DLC Registration</a></li>
-          <li><a href="about.html" class="footer__link">Carrier Approval Audits</a></li>
-        </ul>
-      </div>
+      <!-- Topic Column 2 (Contact Info) -->
+      
 
+      <!-- Topic Column 3 (Resource Hub) -->
       <div class="footer__column">
         <h4 class="footer__title">Resources</h4>
         <ul class="footer__links">
@@ -253,16 +324,17 @@
       </div>
 
       <div class="footer__column">
-        <h4 class="footer__title">Company</h4>
+        <h4 class="footer__title">Contact Info</h4>
         <ul class="footer__links">
-          <li><a href="about.html" class="footer__link">About the Specialist</a></li>
-          <li><a href="services.html" class="footer__link">Consulting Pricing</a></li>
-          <li><a href="contact.html" class="footer__link">Direct Inquiry</a></li>
-          <li><a href="dashboard.html" class="footer__link">Real-time Dashboard</a></li>
+          <li><a href="mailto:support@smspulse.com" class="footer__link"><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i> suppo@smlse.com</a></li>
+          <li><a href="tel:+15558882000" class="footer__link"><i class="fa-solid fa-phone" style="margin-right: 8px;"></i> +1 (555) 888-2000</a></li>
+          <li><span class="footer__link"><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i> Global Remote / NY</span></li>
+          <li><span class="footer__link"><i class="fa-solid fa-clock" style="margin-right: 8px;"></i> Mon-Fri: 9am-5pm</span></li>
         </ul>
       </div>
     </div>
 
+    <!-- Bottom footer details -->
     <div class="footer__bottom">
       <p>&copy; 2026 SMSPulse. Crafted with extreme premium care. All rights reserved.</p>
       <p>TCPA/CTIA Specialist Portfolio. Compliance does not represent certified legal counsel.</p>

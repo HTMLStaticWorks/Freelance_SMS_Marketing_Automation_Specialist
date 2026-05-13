@@ -60,7 +60,7 @@
           <li><a href="services.html" class="nav__link">Services</a></li>
           <li><a href="blog.html" class="nav__link active">Blog</a></li>
           <li><a href="contact.html" class="nav__link">Contact</a></li>
-          <li><a href="dashboard.html" class="nav__link nav__dashboard-link"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+          <li><a href="dashboard.html" class="nav__link nav__dashboard-link">Dashboard</a></li>
         </ul>
         
         <div class="nav__mobile-controls">
@@ -85,29 +85,88 @@
   </header>
 
   <main>
+    <!-- HERO SECTION -->
+    <section class="hero animate-fade">
+      <div class="hero__container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <div class="hero__content" style="text-align: center; align-items: center; max-width: 800px; margin: 0 auto;">
+          <span class="section__badge hero__badge">Knowledge Hub</span>
+          <h1 class="hero__title">SMS Compliance & <span>Growth Insights</span></h1>
+          <p class="hero__text">Stay informed with weekly analysis on FCC policy shifts, TCPA litigation cases, carrier filtration standards, and high-CTR marketing strategies.</p>
+          <div class="hero__actions">
+            <a href="#featured" class="btn btn--primary">Read Latest Update</a>
+            <a href="contact.html" class="btn btn--secondary">Get a Compliance Audit</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- SECTION 1: FEATURED ARTICLE -->
-    <section class="section animate-fade">
+    <section class="section section--secondary" id="featured">
       <div class="section__header">
         <span class="section__badge">Featured Legislation Analysis</span>
-        <h1 class="section__title">SMS Policy Shifts: The 2026 TCPA Updates</h1>
-        <p class="section__subtitle">Stay ahead of the game. Explore the FCC's recent strict changes regarding individual checkboxes and consent sharing parameters.</p>
+        <h2 class="section__title">The 2026 TCPA Policy Shifts</h2>
+        <p class="section__subtitle">Explore the FCC's recent strict changes regarding individual checkboxes and consent sharing parameters.</p>
       </div>
 
-      <div class="featured-blog-card">
-        <div>
-          <span class="section__badge" style="margin-bottom: var(--space-md); font-size: 0.7rem;">TCPA Litigation</span>
-          <h2 style="font-family: var(--font-headers); margin-bottom: var(--space-sm);">The Death of 'Co-Registration' Consent Sharing</h2>
-          <p style="color: var(--text-secondary); margin-bottom: var(--space-md); line-height: 1.7;">For years, lead networks shared consumer phone lists via small pre-checked terms. Under the new FCC 'one-to-one' consent decree, businesses are forbidden from buying these bulk shared lists. Consumers must explicitly check a separate box for *each specific company* they wish to receive text updates from. Failure to implement this immediately results in automatic TCPA prosecution.</p>
+      <div class="card-glass featured-blog-card" id="featured-article-card">
+        <div class="featured-blog-card__main">
+          <span class="section__badge" style="margin-bottom: var(--space-md); font-size: 0.7rem;">TCPA Legislation</span>
+          <h2 style="font-family: var(--font-headers); margin-bottom: var(--space-sm); font-weight: 800;">The Death of 'Co-Registration' Consent Sharing</h2>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-md); line-height: 1.7;">For years, lead networks shared consumer phone lists via small pre-checked terms. Under the new FCC 'one-to-one' consent decree, businesses are forbidden from buying these bulk shared lists. Consumers must explicitly check a separate box for *each specific company* they wish to receive text updates from.</p>
           <a href="contact.html" class="btn btn--primary" style="padding: 10px 24px;"><i class="fa-solid fa-shield-halved"></i> Fix Consent Flow</a>
         </div>
         
-        <div style="background-color: var(--bg-secondary); border: 1px dashed var(--border-color); border-radius: var(--radius-md); padding: var(--space-xl); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+        <div class="featured-blog-card__aside">
           <i class="fa-solid fa-gavel" style="font-size: 3rem; color: var(--primary-color); margin-bottom: var(--space-md);"></i>
-          <h4 style="font-family: var(--font-headers); margin-bottom: var(--space-sm);">Audit List Health</h4>
+          <h4 style="font-family: var(--font-headers); margin-bottom: var(--space-sm); font-weight: 700;">Audit List Health</h4>
           <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: var(--space-lg);">Discover if your historical data contacts comply with the new one-to-one federal rule parameters.</p>
           <a href="contact.html" class="btn btn--secondary" style="padding: 8px 16px; font-size: 0.8rem;">Review List Legality</a>
         </div>
       </div>
+
+      <style>
+        .featured-blog-card {
+          display: grid;
+          grid-template-columns: 1.2fr 0.8fr;
+          gap: 0;
+          padding: 0;
+          overflow: hidden;
+          max-width: 1000px;
+          margin: 0 auto;
+          text-align: left;
+        }
+        .featured-blog-card__main {
+          padding: var(--space-2xl);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        .featured-blog-card__aside {
+          background: rgba(var(--primary-rgb), 0.05);
+          border-left: 1px solid var(--border-color);
+          padding: var(--space-xl);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+        @media (max-width: 1023px) {
+          .featured-blog-card {
+            grid-template-columns: 1fr;
+          }
+          .featured-blog-card__aside {
+            border-left: none;
+            border-top: 1px solid var(--border-color);
+          }
+        }
+        @media (max-width: 480px) {
+          .featured-blog-card__main {
+            padding: var(--space-xl);
+          }
+        }
+      </style>
     </section>
 
     <!-- SECTION 2: ARTICLES GRID -->
@@ -120,29 +179,29 @@
 
       <div class="grid-container">
         <!-- Article 1 -->
-        <article class="card">
-          <div class="card__icon" style="color: var(--primary-color); background-color: var(--primary-light);"><i class="fa-solid fa-pen-nib"></i></div>
-          <span style="font-size:0.75rem; color: var(--text-secondary); margin-bottom:var(--space-sm);">Copywriting Tips &bull; May 2026</span>
-          <h3 class="card__title">Scribbling Compliant Promos</h3>
-          <p class="card__text">Master the layout of brief campaign alerts. Integrate mandatory STOP and MSG rules seamlessly without wasting characters.</p>
+        <article class="card-glass">
+          <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=600&h=600" alt="Scribbling Compliant Promos" style="aspect-ratio: 1/1; height: auto;">
+          <span style="font-size:0.75rem; color: var(--text-secondary); margin-bottom:var(--space-sm); font-weight: 600;">Copywriting Tips &bull; May 2026</span>
+          <h3 class="card__title">Scribbling Promos</h3>
+          <p class="card__text">Master the layout of brief campaign alerts. Integrate mandatory STOP and MSG rules seamlessly.</p>
           <a href="contact.html" class="btn btn--tertiary">Read Guide <i class="fa-solid fa-book-open"></i></a>
         </article>
 
         <!-- Article 2 -->
-        <article class="card">
-          <div class="card__icon" style="color: var(--primary-color); background-color: var(--primary-light);"><i class="fa-solid fa-database"></i></div>
-          <span style="font-size:0.75rem; color: var(--text-secondary); margin-bottom:var(--space-sm);">Carrier Network &bull; April 2026</span>
-          <h3 class="card__title">What Blocks 10DLC Delivery?</h3>
-          <p class="card__text">Understand how spam rating systems on Verizon and T-Mobile filter non-registered company phone lines and keyword links.</p>
+        <article class="card-glass">
+          <img src="https://www.sendhub.com/wp-content/uploads/2025/05/10DLC-Texting.png" alt="10DLC Delivery" style="aspect-ratio: 1/1; height: auto;">
+          <span style="font-size:0.75rem; color: var(--text-secondary); margin-bottom:var(--space-sm); font-weight: 600;">Carrier Network &bull; April 2026</span>
+          <h3 class="card__title">What Blocks 10DLC?</h3>
+          <p class="card__text">Understand how spam rating systems filter non-registered company phone lines and keyword links.</p>
           <a href="contact.html" class="btn btn--tertiary">Read Guide <i class="fa-solid fa-book-open"></i></a>
         </article>
 
         <!-- Article 3 -->
-        <article class="card">
-          <div class="card__icon" style="color: var(--primary-color); background-color: var(--primary-light);"><i class="fa-solid fa-user-plus"></i></div>
-          <span style="font-size:0.75rem; color: var(--text-secondary); margin-bottom:var(--space-sm);">List Growth &bull; March 2026</span>
+        <article class="card-glass">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600&h=600" alt="Opt-In Growth" style="aspect-ratio: 1/1; height: auto;">
+          <span style="font-size:0.75rem; color: var(--text-secondary); margin-bottom:var(--space-sm); font-weight: 600;">List Growth &bull; March 2026</span>
           <h3 class="card__title">Opt-In Growth Incentives</h3>
-          <p class="card__text">How premium brands safely double opt-in list sizes by offering legal downloadable guides, codes, and priority drops.</p>
+          <p class="card__text">How premium brands safely double opt-in list sizes by offering legal downloadable guides and codes.</p>
           <a href="contact.html" class="btn btn--tertiary">Read Guide <i class="fa-solid fa-book-open"></i></a>
         </article>
       </div>
@@ -156,11 +215,11 @@
         <p class="section__subtitle">Get short, critical compliance changes, copywriting models, and regulatory alerts dispatched directly to your inbox. No fluff, ever.</p>
       </div>
 
-      <div class="card" style="max-width: 600px; width: 100%; text-align: left; padding: var(--space-2xl);">
+      <div class="card-glass" style="max-width: 600px; width: 100%; text-align: left; padding: var(--space-2xl);">
         <form class="needs-validation" novalidate style="width: 100%;">
           <div class="form-group">
             <label class="form-label" for="sub-email">Your Work Email Address <span>*</span></label>
-            <input type="email" class="form-input" id="sub-email" placeholder="compliance@yourbrand.com" required>
+            <input type="email" class="form-input" id="sub-email" placeholder="compliance@yourbrand.com" required style="width:100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px;">
             <span class="form-error-msg">Please input a valid work email.</span>
           </div>
           <button type="submit" class="btn btn--primary" style="width: 100%;"><i class="fa-solid fa-envelope-circle-check"></i> Join Briefing List</button>
@@ -172,6 +231,7 @@
   <!-- Footer Section -->
   <footer class="footer">
     <div class="footer__container">
+      <!-- Footer Brand Info -->
       <div class="footer__brand">
         <a href="index.html" class="brand">
           <div class="brand__logo" style="background-color: var(--primary-color);"><i class="fa-solid fa-comment-sms"></i></div>
@@ -179,13 +239,14 @@
         </a>
         <p class="footer__text">Compliance-first SMS automation design helping retail and e-commerce brands capture secure revenue triggers safely.</p>
         <div class="footer__socials">
-          <a href="#" class="social-link" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="social-link" aria-label="Twitter"><i class="fa-brands fa-apple"></i></a>
           <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
           <a href="#" class="social-link" aria-label="Github"><i class="fa-brands fa-github"></i></a>
-          <a href="#" class="social-link" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
+          <a href="#" class="social-link" aria-label="Book a call"><i class="fa-solid fa-phone"></i></a>
         </div>
       </div>
 
+      <!-- Topic Column 1 (SMS Strategy) -->
       <div class="footer__column">
         <h4 class="footer__title">Automations</h4>
         <ul class="footer__links">
@@ -196,16 +257,10 @@
         </ul>
       </div>
 
-      <div class="footer__column">
-        <h4 class="footer__title">TCPA Standards</h4>
-        <ul class="footer__links">
-          <li><a href="about.html" class="footer__link">Consent Checklist</a></li>
-          <li><a href="about.html" class="footer__link">Quiet Hours Logic</a></li>
-          <li><a href="about.html" class="footer__link">10DLC Registration</a></li>
-          <li><a href="about.html" class="footer__link">Carrier Approval Audits</a></li>
-        </ul>
-      </div>
+      <!-- Topic Column 2 (Contact Info) -->
+      
 
+      <!-- Topic Column 3 (Resource Hub) -->
       <div class="footer__column">
         <h4 class="footer__title">Resources</h4>
         <ul class="footer__links">
@@ -217,16 +272,17 @@
       </div>
 
       <div class="footer__column">
-        <h4 class="footer__title">Company</h4>
+        <h4 class="footer__title">Contact Info</h4>
         <ul class="footer__links">
-          <li><a href="about.html" class="footer__link">About the Specialist</a></li>
-          <li><a href="services.html" class="footer__link">Consulting Pricing</a></li>
-          <li><a href="contact.html" class="footer__link">Direct Inquiry</a></li>
-          <li><a href="dashboard.html" class="footer__link">Real-time Dashboard</a></li>
+          <li><a href="mailto:support@smspulse.com" class="footer__link"><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i> suppo@smlse.com</a></li>
+          <li><a href="tel:+15558882000" class="footer__link"><i class="fa-solid fa-phone" style="margin-right: 8px;"></i> +1 (555) 888-2000</a></li>
+          <li><span class="footer__link"><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i> Global Remote / NY</span></li>
+          <li><span class="footer__link"><i class="fa-solid fa-clock" style="margin-right: 8px;"></i> Mon-Fri: 9am-5pm</span></li>
         </ul>
       </div>
     </div>
 
+    <!-- Bottom footer details -->
     <div class="footer__bottom">
       <p>&copy; 2026 SMSPulse. Crafted with extreme premium care. All rights reserved.</p>
       <p>TCPA/CTIA Specialist Portfolio. Compliance does not represent certified legal counsel.</p>

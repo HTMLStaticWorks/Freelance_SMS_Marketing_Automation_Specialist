@@ -46,6 +46,12 @@
       transition: background-color var(--transition-smooth), border-color var(--transition-smooth);
     }
     
+    @media (max-width: 767px) {
+      .dashboard-header {
+        padding: 0 var(--space-md);
+      }
+    }
+    
     .dashboard-header__left {
       display: flex;
       align-items: center;
@@ -63,6 +69,17 @@
       display: flex;
       align-items: center;
       gap: var(--space-lg);
+    }
+    
+    @media (max-width: 480px) {
+      .dashboard-header__right {
+        gap: var(--space-xs);
+      }
+      .dashboard-header__right .btn-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 0.9rem;
+      }
     }
     
     .dashboard-header__profile {
@@ -84,6 +101,14 @@
       text-align: left;
     }
     
+    @media (max-width: 480px) {
+      .profile-avatar {
+        width: 32px;
+        height: 32px;
+        font-size: 11px !important;
+      }
+    }
+    
     @media (max-width: 1023px) {
       .profile-info {
         display: none; /* Hide text on mobile for clean UI */
@@ -95,7 +120,7 @@
     
     /* Left Sidebar: Fixed Desktop, Hamburger Drawer on Mobile */
     .dashboard-sidebar {
-      width: 260px;
+      width: 280px;
       background-color: var(--bg-card);
       border-right: 1px solid var(--border-color);
       display: flex;
@@ -142,6 +167,7 @@
       transition: all var(--transition-fast);
       width: 100%;
       text-align: left;
+      white-space: nowrap;
     }
     
     .sidebar-nav__link i {
@@ -183,6 +209,12 @@
       position: relative;
     }
     
+    @media (max-width: 767px) {
+      .dashboard-main {
+        padding: var(--space-lg) var(--space-md);
+      }
+    }
+    
     .dashboard-panel {
       display: none;
       flex-direction: column;
@@ -201,7 +233,7 @@
       gap: var(--space-lg);
     }
     
-    @media (max-width: 1023px) {
+    @media (max-width: 1280px) {
       .stats-row {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -255,6 +287,16 @@
       font-weight: 500;
     }
     
+    @media (max-width: 380px) {
+      .stat-card {
+        padding: var(--space-md);
+        gap: var(--space-md);
+      }
+      .stat-card__num {
+        font-size: 1.3rem;
+      }
+    }
+    
     /* Text Approval Card Deck */
     .approvals-deck {
       display: grid;
@@ -274,11 +316,12 @@
       border-radius: var(--radius-lg);
       padding: var(--space-xl);
       box-shadow: var(--shadow-sm);
-      text-align: left;
+      text-align: center;
       display: flex;
       flex-direction: column;
       gap: var(--space-md);
       transition: all var(--transition-fast);
+      align-items: center;
     }
     
     .approval-card__meta {
@@ -333,6 +376,7 @@
     .approval-card__actions {
       display: flex;
       gap: var(--space-sm);
+      justify-content: center;
     }
     
     /* Table styling for Keyword Triggers */
@@ -450,7 +494,6 @@
         <div class="brand__logo"><i class="fa-solid fa-comment-sms"></i></div>
         <span class="brand__name">SMSPulse</span>
       </a>
-      <span class="section__badge" style="font-size:0.7rem; padding: 2px 10px; margin-left: 10px;">Live Portal</span>
     </div>
 
     <div class="dashboard-header__right">
@@ -538,7 +581,7 @@
 
       <!-- PANEL 1: OVERVIEW/STATISTICS (Active by default) -->
       <div class="dashboard-panel active" id="overview">
-        <div class="section__header" style="text-align: left; margin-bottom: 0; max-width: none; align-items: flex-start;">
+        <div class="section__header" style="text-align: center; margin-bottom: var(--space-xl); max-width: 800px; margin-left: auto; margin-right: auto; align-items: center;">
           <span class="section__badge">Real-Time Metrics</span>
           <h1 style="font-size: 1.8rem;">Campaign Analytics Overview</h1>
           <p style="font-size:0.95rem;">Track SMS opt-in acquisitions, active message deliveries, click rates, and ROI gains in real-time.</p>
@@ -581,16 +624,16 @@
         </div>
 
         <!-- Overview campaign summary card -->
-        <div class="card" style="align-items: stretch; text-align: left;">
+        <div class="card" style="align-items: center; text-align: center;">
           <h3 class="card__title" style="margin-bottom: var(--space-md); font-size: 1.2rem;"><i class="fa-solid fa-bell" style="color:var(--primary-color);"></i> Active Flow Tasks pending action</h3>
           <p style="font-size:0.9rem; margin-bottom:var(--space-lg); color:var(--text-secondary);">You have <strong>2 campaign copy versions</strong> awaiting prior review and written approval before networks allow active dispatching.</p>
-          <a href="#text-approvals" class="btn btn--primary" style="align-self: flex-start; padding: 10px 20px; font-size: 0.85rem;" onclick="document.querySelector('[href=\'#text-approvals\']').click();">Navigate to Approvals <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#text-approvals" class="btn btn--primary" style="padding: 10px 20px; font-size: 0.85rem;" onclick="document.querySelector('[href=\'#text-approvals\']').click();">Navigate to Approvals <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
 
       <!-- PANEL 2: CAMPAIGN FLOWS -->
       <div class="dashboard-panel" id="campaign-flows">
-        <div class="section__header" style="text-align: left; margin-bottom: 0; max-width: none; align-items: flex-start;">
+        <div class="section__header" style="text-align: center; margin-bottom: var(--space-xl); max-width: 800px; margin-left: auto; margin-right: auto; align-items: center;">
           <span class="section__badge">Automations Pipeline</span>
           <h1 style="font-size: 1.8rem;">Configured Active SMS Flows</h1>
           <p style="font-size:0.95rem;">Review active checkout hooks, welcome delays, and sequence routing schedules.</p>
@@ -601,7 +644,7 @@
           <div class="card" style="align-items: flex-start; text-align: left;">
             <div style="display:flex; justify-content:space-between; width:100%; margin-bottom:var(--space-md); align-items:center;">
               <span class="status-badge status-badge--active"><i class="fa-solid fa-circle"></i> Running</span>
-              <span style="font-size:0.75rem; color:var(--text-secondary);">Trigger: Signup</span>
+              <span style="font-size:0.75rem; color:var(--text-secondary);"></span>
             </div>
             <h3 class="card__title" style="font-size: 1.2rem;">Compliant Welcome Flow</h3>
             <p class="card__text">Acquires consent, validates double opt-in, and sends coupon trigger code in 0 seconds.</p>
@@ -612,7 +655,7 @@
           <div class="card" style="align-items: flex-start; text-align: left;">
             <div style="display:flex; justify-content:space-between; width:100%; margin-bottom:var(--space-md); align-items:center;">
               <span class="status-badge status-badge--active"><i class="fa-solid fa-circle"></i> Running</span>
-              <span style="font-size:0.75rem; color:var(--text-secondary);">Trigger: Checkout Abandon</span>
+              <span style="font-size:0.75rem; color:var(--text-secondary);"></span>
             </div>
             <h3 class="card__title" style="font-size: 1.2rem;">Abandoned Cart Recovery</h3>
             <p class="card__text">Triggers 30 minutes post checkout abandon. Recovers lost shopper checkout steps.</p>
@@ -623,7 +666,7 @@
 
       <!-- PANEL 3: TEXT COPY APPROVALS -->
       <div class="dashboard-panel" id="text-approvals">
-        <div class="section__header" style="text-align: left; margin-bottom: 0; max-width: none; align-items: flex-start;">
+        <div class="section__header" style="text-align: center; margin-bottom: var(--space-xl); max-width: 800px; margin-left: auto; margin-right: auto; align-items: center;">
           <span class="section__badge">Written Approvals Protocol</span>
           <h1 style="font-size: 1.8rem;">Awaiting Client Text Copy Approvals</h1>
           <p style="font-size:0.95rem;">Review the designed copy drafts. Click "Approve" to authorize launch into the active carrier network flows.</p>
@@ -633,32 +676,32 @@
           <!-- Copy Card A -->
           <div class="approval-card">
             <div class="approval-card__meta">
-              <span><strong>Flow:</strong> Welcome Offer Promo</span>
-              <span class="status-badge status-badge--pending"><i class="fa-regular fa-clock"></i> Awaiting Action</span>
+              <span><strong>Flow:</strong>  Offer Promo</span>
+              <span class="status-badge status-badge--pending"><i class="fa-regular fa-clock"></i> Awaiting</span>
             </div>
             <h3 style="font-size:1.15rem; font-family:var(--font-headers);">Coupon Offer Campaign</h3>
             <div class="approval-card__msg">
-              "The Wellness Depot: Thank you for opting in! Enjoy 15% off using code RECOVERY15. Terms: wellness.com/terms. Msg&data rates apply. Reply STOP to opt-out."
+              "The Wellness Depot: Thank you for opting in! Enjoy 15% off using code RECOVERY15. Terms: wellness.com/terms."
             </div>
             <div class="approval-card__actions">
-              <button class="btn btn--primary btn-approve" style="padding:8px 16px; font-size:0.8rem;"><i class="fa-solid fa-circle-check"></i> Approve Draft</button>
-              <button class="btn btn--secondary btn-reject" style="padding:8px 16px; font-size:0.8rem; border-color:var(--error); color:var(--error);"><i class="fa-solid fa-circle-xmark"></i> Reject Draft</button>
+              <button class="btn btn--primary btn-approve" style="padding:8px 16px; font-size:0.8rem;"><i class="fa-solid fa-circle-check"></i> Approve</button>
+              <button class="btn btn--secondary btn-reject" style="padding:8px 16px; font-size:0.8rem; border-color:var(--error); color:var(--error);"><i class="fa-solid fa-circle-xmark"></i> Reject</button>
             </div>
           </div>
 
           <!-- Copy Card B -->
           <div class="approval-card">
             <div class="approval-card__meta">
-              <span><strong>Flow:</strong> Abandoned Cart Follow-Up</span>
-              <span class="status-badge status-badge--pending"><i class="fa-regular fa-clock"></i> Awaiting Action</span>
+              <span><strong>Flow:</strong>Follow-Up</span>
+              <span class="status-badge status-badge--pending"><i class="fa-regular fa-clock"></i> Awaiting</span>
             </div>
-            <h3 style="font-size:1.15rem; font-family:var(--font-headers);">Cart Recover Sequence (30m delay)</h3>
+            <h3 style="font-size:1.15rem; font-family:var(--font-headers);"> Recover Sequence (30m delay)</h3>
             <div class="approval-card__msg">
               "The Wellness Depot: Hey there! We saved your items. Tap to resume check out: wellness.co/cart38. Reply STOP to cancel."
             </div>
             <div class="approval-card__actions">
-              <button class="btn btn--primary btn-approve" style="padding:8px 16px; font-size:0.8rem;"><i class="fa-solid fa-circle-check"></i> Approve Draft</button>
-              <button class="btn btn--secondary btn-reject" style="padding:8px 16px; font-size:0.8rem; border-color:var(--error); color:var(--error);"><i class="fa-solid fa-circle-xmark"></i> Reject Draft</button>
+              <button class="btn btn--primary btn-approve" style="padding:8px 16px; font-size:0.8rem;"><i class="fa-solid fa-circle-check"></i> Approve</button>
+              <button class="btn btn--secondary btn-reject" style="padding:8px 16px; font-size:0.8rem; border-color:var(--error); color:var(--error);"><i class="fa-solid fa-circle-xmark"></i> Reject</button>
             </div>
           </div>
         </div>
@@ -666,16 +709,16 @@
 
       <!-- PANEL 4: KEYWORD TRIGGERS -->
       <div class="dashboard-panel" id="keyword-triggers">
-        <div class="section__header" style="text-align: left; margin-bottom: 0; max-width: none; align-items: flex-start;">
+        <div class="section__header" style="text-align: center; margin-bottom: var(--space-xl); max-width: 800px; margin-left: auto; margin-right: auto; align-items: center;">
           <span class="section__badge">Direct Trigger Codes</span>
           <h1 style="font-size: 1.8rem;">Keyword Opt-In Trigger Registry</h1>
           <p style="font-size:0.95rem;">Manage keywords. Registered triggers instantly initiate the corresponding compliant replies.</p>
         </div>
 
         <!-- Add Keyword Widget Form -->
-        <div class="card" style="align-items: stretch; text-align: left; padding: var(--space-xl);">
+        <div class="card" style="align-items: center; text-align: center; padding: var(--space-xl);">
           <h3 style="font-size:1.15rem; font-family:var(--font-headers); margin-bottom:var(--space-md);"><i class="fa-solid fa-plus" style="color:var(--primary-color);"></i> Register New SMS Keyword</h3>
-          <div style="display:grid; grid-template-columns: 1fr 2fr auto; gap:var(--space-md); align-items: flex-end;">
+          <div class="keyword-form-grid">
             <div class="form-group" style="margin-bottom:0;">
               <label class="form-label" for="new-keyword">Keyword Code</label>
               <input type="text" class="form-input" id="new-keyword" placeholder="e.g. WELLNESS" style="text-transform: uppercase;">
@@ -684,19 +727,44 @@
               <label class="form-label" for="new-keyword-msg">Automated Reply Text Message Copy</label>
               <input type="text" class="form-input" id="new-keyword-msg" placeholder="e.g. Thanks! Get 10% off at checkout. Reply STOP to end.">
             </div>
-            <button class="btn btn--primary" id="add-keyword-trigger" style="padding:12px 24px;"><i class="fa-solid fa-circle-plus"></i> Add Trigger</button>
+            <button class="btn btn--primary btn--center" id="add-keyword-trigger" style="padding:12px 24px; margin-top: var(--space-md);"><i class="fa-solid fa-circle-plus"></i> Add Trigger</button>
           </div>
         </div>
+
+        <style>
+          .keyword-form-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: var(--space-md);
+          }
+          .btn--center {
+            grid-column: span 2;
+            justify-self: center;
+          }
+          @media (max-width: 1023px) {
+            .keyword-form-grid {
+              grid-template-columns: 1fr 1fr;
+            }
+          }
+          @media (max-width: 480px) {
+            .keyword-form-grid {
+              grid-template-columns: 1fr;
+            }
+            .btn--center {
+              grid-column: span 1;
+            }
+          }
+        </style>
 
         <!-- Existing Keywords List Table -->
         <div class="table-container">
           <table class="dashboard-table">
             <thead>
               <tr>
-                <th>Keyword Code</th>
+                <th>Keyword</th>
                 <th>Status</th>
-                <th>Automated Message Reply Draft</th>
-                <th>Trigger Count</th>
+                <th>Automated Message </th>
+                <th>Trigger</th>
                 <th>CTR</th>
                 <th>Actions</th>
               </tr>
@@ -729,7 +797,7 @@
 
       <!-- PANEL 5: REPORTS & CTR -->
       <div class="dashboard-panel" id="reports">
-        <div class="section__header" style="text-align: left; margin-bottom: 0; max-width: none; align-items: flex-start;">
+        <div class="section__header" style="text-align: center; margin-bottom: var(--space-xl); max-width: 800px; margin-left: auto; margin-right: auto; align-items: center;">
           <span class="section__badge">Performance Chart</span>
           <h1 style="font-size: 1.8rem;">Opt-In Rates & Conversion reports</h1>
           <p style="font-size:0.95rem;">Review weekly list acquisition rates, delivery metrics, and click stats.</p>
@@ -782,7 +850,7 @@
 
       <!-- PANEL 6: TCPA LIVE AUDITS -->
       <div class="dashboard-panel" id="tcpa-audits">
-        <div class="section__header" style="text-align: left; margin-bottom: 0; max-width: none; align-items: flex-start;">
+        <div class="section__header" style="text-align: center; margin-bottom: var(--space-xl); max-width: 800px; margin-left: auto; margin-right: auto; align-items: center;">
           <span class="section__badge">Brand Compliance Protection</span>
           <h1 style="font-size: 1.8rem;">Interactive Brand TCPA Compliance Auditor</h1>
           <p style="font-size:0.95rem;">Review policy settings. Select checkboxes to trigger active safety logic parameters.</p>
@@ -839,36 +907,36 @@
 
       <!-- PANEL 7: SETTINGS -->
       <div class="dashboard-panel" id="settings">
-        <div class="section__header" style="text-align: left; margin-bottom: 0; max-width: none; align-items: flex-start;">
+        <div class="section__header" style="text-align: center; margin-bottom: var(--space-xl); max-width: 800px; margin-left: auto; margin-right: auto; align-items: center;">
           <span class="section__badge">Console Config</span>
           <h1 style="font-size: 1.8rem;">System Settings & API Keys</h1>
           <p style="font-size:0.95rem;">Review 10DLC registrations, sync variables, and profile information.</p>
         </div>
 
-        <div class="card" style="align-items: stretch; text-align: left; max-width:700px;">
-          <form class="needs-validation" novalidate style="width:100%;">
+        <div class="card" style="align-items: center; text-align: center; max-width:700px; margin: 0 auto;">
+          <form class="needs-validation" novalidate style="width:100%; display: flex; flex-direction: column; align-items: center;">
             <div style="display:grid; grid-template-columns: 1fr 1fr; gap:var(--space-md);">
               <div class="form-group">
                 <label class="form-label" for="set-fname">Full Name</label>
-                <input type="text" class="form-input" id="set-fname" value="John Doe">
+                <input type="text" class="form-input" id="set-fname" value="">
               </div>
               <div class="form-group">
-                <label class="form-label" for="set-brand">Brand / Corporation name</label>
-                <input type="text" class="form-input" id="set-brand" value="The Wellness Depot">
+                <label class="form-label" for="set-brand">Brand name</label>
+                <input type="text" class="form-input" id="set-brand" value="">
               </div>
             </div>
 
             <div class="form-group">
               <label class="form-label" for="set-10dlc">TCR 10DLC Registry ID</label>
-              <input type="text" class="form-input" id="set-10dlc" value="REG-9382-DL">
+              <input type="text" class="form-input" id="set-10dlc" value="">
             </div>
 
             <div class="form-group">
               <label class="form-label" for="set-carrier">API Key / Token</label>
-              <input type="password" class="form-input" id="set-carrier" value="••••••••••••••••••••••••••••">
+              <input type="password" class="form-input" id="set-carrier" value="">
             </div>
 
-            <button type="submit" class="btn btn--primary" style="padding:10px 20px; font-size:0.85rem;"><i class="fa-solid fa-floppy-disk"></i> Save Configurations</button>
+            <button type="submit" class="btn btn--primary" style="padding:10px 24px; font-size:0.85rem; align-self: center;"><i class="fa-solid fa-floppy-disk"></i> Save Configurations</button>
           </form>
         </div>
       </div>

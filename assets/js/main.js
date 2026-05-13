@@ -143,6 +143,22 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         appendMessage('Text "JOIN" to get compliant updates & 15% discount!', false);
       }, 500);
+
+      setTimeout(() => {
+        appendMessage('JOIN', true);
+      }, 2000);
+
+      setTimeout(() => {
+        appendMessage('SMSPulse: Thank you for opting in! Reply YES to confirm. Msg&data rates may apply. Reply STOP to cancel at any time.', false, 'sms-bubble--primary');
+      }, 3500);
+
+      setTimeout(() => {
+        appendMessage('YES', true);
+      }, 5500);
+
+      setTimeout(() => {
+        appendMessage('SMSPulse: Subscription Confirmed! Here is your compliant code: COMPLIANT15. Get 15% off your next checkout. Enjoy!', false, 'sms-bubble--primary');
+      }, 7000);
     }
   };
 

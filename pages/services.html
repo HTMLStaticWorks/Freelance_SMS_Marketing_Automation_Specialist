@@ -81,6 +81,7 @@
     @media (max-width: 767px) {
       .timeline::after {
         left: 24px;
+        transform: none;
       }
     }
     
@@ -146,13 +147,61 @@
     
     .timeline-container:hover .timeline-content {
       transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-lg), var(--shadow-glow);
       border-color: var(--primary-color);
     }
     
     .timeline-container:hover .timeline-circle {
       background-color: var(--accent-color);
     }
+
+    /* Calculator Widget Fixes */
+    .calc-card {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: var(--space-2xl);
+      text-align: left;
+      align-items: stretch;
+      padding: var(--space-2xl);
+    }
+    .calc-outputs {
+      background: rgba(var(--primary-rgb), 0.05);
+      border-radius: var(--radius-md);
+      padding: var(--space-xl);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border: 1px solid var(--border-color);
+      gap: var(--space-md);
+    }
+    @media (max-width: 1023px) {
+      .card-glass {
+        padding: var(--space-xl);
+      }
+    }
+    @media (max-width: 767px) {
+      .calc-card {
+        grid-template-columns: 1fr;
+        padding: var(--space-xl);
+      }
+    }
+      @media (max-width: 380px) {
+        .timeline-container {
+          padding-left: 48px;
+        }
+        .timeline::after {
+          left: 18px;
+          transform: none;
+        }
+        .timeline-circle {
+          left: 6px;
+        }
+        .calc-card {
+          padding: var(--space-lg);
+        }
+      }
   </style>
 </head>
 <body>
@@ -173,7 +222,7 @@
           <li><a href="services.html" class="nav__link active">Services</a></li>
           <li><a href="blog.html" class="nav__link">Blog</a></li>
           <li><a href="contact.html" class="nav__link">Contact</a></li>
-          <li><a href="dashboard.html" class="nav__link nav__dashboard-link"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+          <li><a href="dashboard.html" class="nav__link nav__dashboard-link">Dashboard</a></li>
         </ul>
         
         <div class="nav__mobile-controls">
@@ -198,62 +247,83 @@
   </header>
 
   <main>
+    <!-- HERO SECTION -->
+    <section class="hero animate-fade">
+      <div class="hero__container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <div class="hero__content" style="text-align: center; align-items: center; max-width: 800px; margin: 0 auto;">
+          <span class="section__badge hero__badge">Services Catalog</span>
+          <h1 class="hero__title">Smarter SMS <span>Automation Consulting</span></h1>
+          <p class="hero__text">High-fidelity sequence setups optimized for Shopify, Klaviyo, and major CRM ecosystems. Scale your revenue with compliance-first logic.</p>
+          <div class="hero__actions">
+            <a href="#services-list" class="btn btn--primary">Explore Core Services</a>
+            <a href="#calculator-box" class="btn btn--secondary">Calculate SMS ROI</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- SECTION 1: SERVICES LIST -->
-    <section class="section animate-fade">
+    <section class="section section--secondary" id="services-list">
       <div class="section__header">
-        <span class="section__badge">Services Catalog</span>
-        <h1 class="section__title">Smarter SMS Automation Consulting</h1>
-        <p class="section__subtitle">High-fidelity sequence setups optimized for Shopify, Klaviyo, and major CRM ecosystems.</p>
+        <span class="section__badge">Expert Specializations</span>
+        <h2 class="section__title">Strategic SMS Architecture</h2>
+        <p class="section__subtitle">We build the technical bridge between your marketing goals and cellular network requirements.</p>
       </div>
 
       <div class="grid-container">
         <!-- Service 1 -->
-        <article class="card">
-          <div class="card__icon"><i class="fa-solid fa-shuffle"></i></div>
-          <h3 class="card__title">Double-Opt-In Integration</h3>
-          <p class="card__text">We structure the perfect, legal checkout disclosures and keyword subscription sequences. Double-checks secure authorization parameters immediately.</p>
+        <article class="card-glass">
+          <img src="https://mailbluster.com/blog/wp-content/uploads/2025/11/GDPR-Double-Opt-in.jpg" alt="Double-Opt-In Integration" style="aspect-ratio: 1/1; width: 100%; height: auto; object-fit: cover;">
+          <div style="padding: var(--space-xl);">
+            <h3 class="card__title">Double-Opt-In Integration</h3>
+            <p class="card__text">We structure the perfect, legal checkout disclosures and keyword subscription sequences. Double-checks secure authorization parameters immediately.</p>
+          </div>
         </article>
 
         <!-- Service 2 -->
-        <article class="card">
-          <div class="card__icon"><i class="fa-solid fa-comment-dots"></i></div>
-          <h3 class="card__title">Interactive SMS Copywriting</h3>
-          <p class="card__text">We script short, punchy marketing alerts containing call-to-actions, specific unsubscribe codes, and custom tracking urls to optimize performance.</p>
+        <article class="card-glass">
+          <img src="https://external-preview.redd.it/writing-the-perfect-sms-marketing-copy-top-10-tips-v0-fUF1SQEW7mJQmi5YrEjzlRV8xxWyquIQzCgkzZn3IIs.jpg?auto=webp&s=be170426106492ef5ddae90e97a3d6af46025e99" alt="Interactive SMS Copywriting" style="aspect-ratio: 1/1; width: 100%; height: auto; object-fit: cover;">
+          <div style="padding: var(--space-xl);">
+            <h3 class="card__title">Interactive SMS Copywriting</h3>
+            <p class="card__text">We script short, punchy marketing alerts containing call-to-actions, specific unsubscribe codes, and custom tracking urls to optimize performance.</p>
+          </div>
         </article>
 
         <!-- Service 3 -->
-        <article class="card">
-          <div class="card__icon"><i class="fa-solid fa-scale-balanced"></i></div>
-          <h3 class="card__title">10DLC Carrier Registration</h3>
-          <p class="card__text">We submit your brand credentials directly to the TCR carrier registers, preventing spam blocking and keeping deliverability rates locked above 98%.</p>
+        <article class="card-glass">
+          <img src="https://i0.wp.com/textp2p.com/wp-content/uploads/2021/03/BC65899A-0A78-47DC-8B2B-2EB6F4ECA3D7.png?resize=1024%2C838&ssl=1" alt="10DLC Carrier Registration" style="aspect-ratio: 1/1; width: 100%; height: auto; object-fit: cover;">
+          <div style="padding: var(--space-xl);">
+            <h3 class="card__title">10DLC Carrier Registration</h3>
+            <p class="card__text">We submit your brand credentials directly to the TCR carrier registers, preventing spam blocking and keeping deliverability rates locked above 98%.</p>
+          </div>
         </article>
       </div>
     </section>
 
     <!-- SECTION 2: LIVE SMS ROI CALCULATOR -->
-    <section class="section section--secondary">
+    <section class="section">
       <div class="section__header">
         <span class="section__badge">Live Revenue Tool</span>
         <h2 class="section__title">Calculate Your Targeted SMS ROI</h2>
         <p class="section__subtitle">Enter your active customer database parameters below to view dynamic revenue projections and average return statistics.</p>
       </div>
 
-      <div class="calc-card" id="calculator-box">
+      <div class="card-glass calc-card" id="calculator-box">
         <!-- Inputs -->
-        <div class="calc-inputs">
-          <h3 style="font-size: 1.25rem; font-family: var(--font-headers);">Database Properties</h3>
+        <div class="calc-inputs" style="display: flex; flex-direction: column; gap: var(--space-md);">
+          <h3 style="font-size: 1.25rem; font-family: var(--font-headers); font-weight: 800;">Database Properties</h3>
           
           <div class="form-group">
             <label class="form-label" for="calc-list-size">Customer List Size (Numbers)</label>
-            <input type="number" class="form-input" id="calc-list-size" value="10000" min="500" step="500">
+            <input type="number" class="form-input" id="calc-list-size" value="10000" min="500" step="500" style="width:100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px;">
           </div>
           
           <div class="form-group">
             <label class="form-label" for="calc-aov">Average Order Value ($)</label>
-            <input type="number" class="form-input" id="calc-aov" value="75" min="5" step="5">
+            <input type="number" class="form-input" id="calc-aov" value="75" min="5" step="5" style="width:100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px;">
           </div>
           
-          <button class="btn btn--primary" id="calc-trigger" style="margin-top:var(--space-sm);"><i class="fa-solid fa-calculator"></i> Calculate Revenue Model</button>
+          <button class="btn btn--primary" id="calc-trigger" style="margin-top:var(--space-sm); width: 100%;"><i class="fa-solid fa-calculator"></i> Calculate Revenue Model</button>
         </div>
 
         <!-- Projections Display -->
@@ -312,6 +382,7 @@
   <!-- Footer Section -->
   <footer class="footer">
     <div class="footer__container">
+      <!-- Footer Brand Info -->
       <div class="footer__brand">
         <a href="index.html" class="brand">
           <div class="brand__logo" style="background-color: var(--primary-color);"><i class="fa-solid fa-comment-sms"></i></div>
@@ -319,13 +390,14 @@
         </a>
         <p class="footer__text">Compliance-first SMS automation design helping retail and e-commerce brands capture secure revenue triggers safely.</p>
         <div class="footer__socials">
-          <a href="#" class="social-link" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="social-link" aria-label="Twitter"><i class="fa-brands fa-apple"></i></a>
           <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
           <a href="#" class="social-link" aria-label="Github"><i class="fa-brands fa-github"></i></a>
-          <a href="#" class="social-link" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
+          <a href="#" class="social-link" aria-label="Book a call"><i class="fa-solid fa-phone"></i></a>
         </div>
       </div>
 
+      <!-- Topic Column 1 (SMS Strategy) -->
       <div class="footer__column">
         <h4 class="footer__title">Automations</h4>
         <ul class="footer__links">
@@ -336,16 +408,10 @@
         </ul>
       </div>
 
-      <div class="footer__column">
-        <h4 class="footer__title">TCPA Standards</h4>
-        <ul class="footer__links">
-          <li><a href="about.html" class="footer__link">Consent Checklist</a></li>
-          <li><a href="about.html" class="footer__link">Quiet Hours Logic</a></li>
-          <li><a href="about.html" class="footer__link">10DLC Registration</a></li>
-          <li><a href="about.html" class="footer__link">Carrier Approval Audits</a></li>
-        </ul>
-      </div>
+      <!-- Topic Column 2 (Contact Info) -->
+      
 
+      <!-- Topic Column 3 (Resource Hub) -->
       <div class="footer__column">
         <h4 class="footer__title">Resources</h4>
         <ul class="footer__links">
@@ -357,16 +423,17 @@
       </div>
 
       <div class="footer__column">
-        <h4 class="footer__title">Company</h4>
+        <h4 class="footer__title">Contact Info</h4>
         <ul class="footer__links">
-          <li><a href="about.html" class="footer__link">About the Specialist</a></li>
-          <li><a href="services.html" class="footer__link">Consulting Pricing</a></li>
-          <li><a href="contact.html" class="footer__link">Direct Inquiry</a></li>
-          <li><a href="dashboard.html" class="footer__link">Real-time Dashboard</a></li>
+          <li><a href="mailto:support@smspulse.com" class="footer__link"><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i> suppo@smlse.com</a></li>
+          <li><a href="tel:+15558882000" class="footer__link"><i class="fa-solid fa-phone" style="margin-right: 8px;"></i> +1 (555) 888-2000</a></li>
+          <li><span class="footer__link"><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i> Global Remote / NY</span></li>
+          <li><span class="footer__link"><i class="fa-solid fa-clock" style="margin-right: 8px;"></i> Mon-Fri: 9am-5pm</span></li>
         </ul>
       </div>
     </div>
 
+    <!-- Bottom footer details -->
     <div class="footer__bottom">
       <p>&copy; 2026 SMSPulse. Crafted with extreme premium care. All rights reserved.</p>
       <p>TCPA/CTIA Specialist Portfolio. Compliance does not represent certified legal counsel.</p>

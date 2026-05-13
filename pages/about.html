@@ -35,7 +35,7 @@
           <li><a href="services.html" class="nav__link">Services</a></li>
           <li><a href="blog.html" class="nav__link">Blog</a></li>
           <li><a href="contact.html" class="nav__link">Contact</a></li>
-          <li><a href="dashboard.html" class="nav__link nav__dashboard-link"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+          <li><a href="dashboard.html" class="nav__link nav__dashboard-link">Dashboard</a></li>
         </ul>
         
         <div class="nav__mobile-controls">
@@ -60,19 +60,52 @@
   </header>
 
   <main>
-    <!-- SECTION 1: STORY & MISSION -->
-    <section class="section animate-fade">
-      <div class="section__header">
-        <span class="section__badge">The Specialist Story</span>
-        <h1 class="section__title">Blending High Revenue with Total Compliance</h1>
-        <p class="section__subtitle">SMSPulse was founded to solve a critical issue: helping e-commerce and retail brands capture high SMS profits without risking devastating legal penalties.</p>
+    <!-- HERO SECTION -->
+    <section class="hero animate-fade">
+      <div class="hero__container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <div class="hero__content" style="text-align: center; align-items: center; max-width: 800px; margin: 0 auto;">
+          <span class="section__badge hero__badge">The Specialist Story</span>
+          <h1 class="hero__title">Blending High Revenue with <span>Total Compliance</span></h1>
+          <p class="hero__text">SMSPulse was founded to solve a critical issue: helping e-commerce and retail brands capture high SMS profits without risking legal penalties.</p>
+          <div class="hero__actions">
+            <a href="contact.html" class="btn btn--primary">Book a Compliance Audit</a>
+            <a href="#specialist" class="btn btn--secondary">Meet the Specialist</a>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="card" style="max-width: 800px; width: 100%; text-align: center; padding: var(--space-2xl);">
-        <div style="background-color: var(--primary-light); color: var(--primary-color); width: 80px; height: 80px; border-radius: var(--radius-round); display: flex; align-items: center; justify-content: center; font-size: 2.2rem; margin: 0 auto var(--space-lg);"><i class="fa-solid fa-user-shield"></i></div>
-        <h2 style="font-family: var(--font-headers); margin-bottom: var(--space-md);">Meet Your Specialist</h2>
-        <p style="color: var(--text-secondary); margin-bottom: var(--space-md); font-size: 1.05rem; line-height: 1.7;">Hello! I am a Freelance SMS Marketing Automation Specialist with active background in legal privacy frameworks, mobile carrier protocols (10DLC), and revenue funnel configurations. I work hand-in-hand with brands on platforms like Klaviyo, Attentive, and Salesforce to design, build, and optimize automated text message funnels that drive sustainable, compliance-safe customer relationships.</p>
-        <p style="color: var(--text-secondary); font-style: italic; font-size: 0.95rem;">"A list that does not comply with TCPA rules is not a business asset—it is a legal liability waiting to explode."</p>
+    <!-- SECTION 1: MEET THE SPECIALIST -->
+    <section class="section section--secondary" id="specialist">
+      <div class="specialist-grid">
+        <div class="hero__visual" style="display: flex; align-items: center; justify-content: center;">
+          <div class="card-glass" style="padding: 0; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-xl); border: 2px solid var(--primary-color);">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600" alt="SMS Specialist" style="width: 100%; height: 450px; object-fit: cover;">
+          </div>
+        </div>
+        
+        <div class="specialist-content" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+          <span class="section__badge" style="margin-bottom: var(--space-md); align-self: center;">Founded on Integrity</span>
+          <h2 style="font-family: var(--font-headers); margin-bottom: var(--space-md); font-weight: 800; text-align: center;">Meet Your Specialist</h2>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-md); font-size: 1.05rem; line-height: 1.7; text-align: center;">Hello! I am a Freelance SMS Marketing Automation Specialist with active background in legal privacy frameworks, mobile carrier protocols (10DLC), and revenue funnel configurations.</p>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-xl); font-size: 1.05rem; line-height: 1.7; text-align: center;">I work hand-in-hand with brands on platforms like Klaviyo, Attentive, and Salesforce to design, build, and optimize automated text message funnels that drive sustainable, compliance-safe customer relationships.</p>
+          
+          <div style="display: flex; flex-direction: column; gap: var(--space-md); align-items: center;">
+            <div style="display: flex; align-items: center; gap: var(--space-sm); font-weight: 700; color: var(--primary-color); text-align: center;">
+              <i class="fa-solid fa-certificate"></i> TCPA & CTIA CERTIFIED SPECIALIST
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--space-sm); font-weight: 700; color: var(--accent-color); text-align: center;">
+              <i class="fa-solid fa-check-double"></i> 10DLC BRAND REGISTRATION EXPERT
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: MISSION QUOTE -->
+    <section class="section">
+      <div class="card-glass" style="max-width: 900px; width: 100%; text-align: center; padding: var(--space-xl);">
+        <p style="color: var(--text-secondary); font-style: italic; font-size: 1.1rem; line-height: 1.6; margin: 0;">"A list that does not comply with TCPA rules is not a business asset—it is a legal liability waiting to explode. I ensure your list remains your most powerful revenue engine."</p>
       </div>
     </section>
 
@@ -84,27 +117,36 @@
         <p class="section__subtitle">We do not just connect systems; we audit every trigger, opt-in checkout, and data disclosure to create a robust legal shield around your text operations.</p>
       </div>
 
-      <div class="grid-container">
+      <div class="grid-container pricing-grid">
         <!-- Step 1 -->
-        <div class="card">
-          <div class="card__icon"><i class="fa-solid fa-signature"></i></div>
-          <h3 class="card__title">1. Prior Written Consent</h3>
-          <p class="card__text">We configure legal checkbox disclosures, opt-in terms, and dual opt-in confirmations to guarantee clear consent records for T-Mobile, AT&T, and the FCC.</p>
-        </div>
+        <article class="card-glass">
+          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800" alt="Consent Records">
+          <div class="card__content">
+            <div class="card__icon"><i class="fa-solid fa-signature"></i></div>
+            <h3 class="card__title">1. Written Consent</h3>
+            <p class="card__text">We configure legal checkbox disclosures, opt-in terms, and dual opt-in confirmations to guarantee clear consent records for carriers.</p>
+          </div>
+        </article>
 
         <!-- Step 2 -->
-        <div class="card">
-          <div class="card__icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
-          <h3 class="card__title">2. Silent Quiet Hours</h3>
-          <p class="card__text">We inject active quiet-hour delays into your abandoned cart and transactional flows, preventing texts from triggering during restricted evening slots (8 PM - 9 AM).</p>
-        </div>
+        <article class="card-glass">
+          <img src="https://i.ytimg.com/vi/wbZqwbhz00U/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYACugWKAgwIABABGC4gXShyMA8=&rs=AOn4CLB8Pr_et_P6oZrf4nMqTheKqmxORw" alt="Quiet Hours">
+          <div class="card__content">
+            <div class="card__icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+            <h3 class="card__title">2. Silent Quiet Hours</h3>
+            <p class="card__text">We inject active quiet-hour delays into your flows, preventing texts from triggering during restricted evening slots (8 PM - 9 AM).</p>
+          </div>
+        </article>
 
         <!-- Step 3 -->
-        <div class="card">
-          <div class="card__icon"><i class="fa-solid fa-database"></i></div>
-          <h3 class="card__title">3. Instant Opt-Out Suppression</h3>
-          <p class="card__text">We engineer automated STOP triggers that instantly flag and remove opting-out clients in 0 seconds, neutralizing the number one risk indicator for lawsuits.</p>
-        </div>
+        <article class="card-glass">
+          <img src="https://snov.io/blog/wp-content/uploads/2024/12/Opt-in-opt-out-strategies-1024x586.png" alt="Opt-Out Automation">
+          <div class="card__content">
+            <div class="card__icon"><i class="fa-solid fa-database"></i></div>
+            <h3 class="card__title">3. Instant Opt-Out</h3>
+            <p class="card__text">We engineer automated STOP triggers that instantly flag and remove opting-out clients, neutralizing major legal risk indicators.</p>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -118,18 +160,24 @@
 
       <div class="grid-container" style="max-width: 900px;">
         <!-- Certification 1 -->
-        <div class="card" style="padding: var(--space-xl);">
-          <div class="card__icon" style="background-color: var(--accent-light); color: var(--accent-color);"><i class="fa-solid fa-graduation-cap"></i></div>
-          <h3 class="card__title">TCPA Compliance Specialist</h3>
-          <p class="card__text">Expert certificate verifying comprehensive knowledge of the Telephone Consumer Protection Act, legal disclosures, and list consent scrubbing laws.</p>
-        </div>
+        <article class="card-glass">
+          <img src="https://www.lawcrossing.com/images/articleimages/Compliance-Specialist-is-a-New-Role-Law-Firms-are-Considering-Join-the-Crowd.jpg" alt="TCPA Certification">
+          <div class="card__content">
+            <div class="card__icon" style="background: var(--accent-light); color: var(--accent-color);"><i class="fa-solid fa-graduation-cap"></i></div>
+            <h3 class="card__title">Compliance Specialist</h3>
+            <p class="card__text">Expert certificate verifying knowledge of the Telephone Consumer Protection Act and list consent scrubbing laws.</p>
+          </div>
+        </article>
 
         <!-- Certification 2 -->
-        <div class="card" style="padding: var(--space-xl);">
-          <div class="card__icon" style="background-color: var(--accent-light); color: var(--accent-color);"><i class="fa-solid fa-handshake-angle"></i></div>
-          <h3 class="card__title">Klaviyo Certified Partner</h3>
-          <p class="card__text">Certified developer capability for advanced segment configuration, checkouts trigger hooks, dynamic variables, and custom platform integrations.</p>
-        </div>
+        <article class="card-glass">
+          <img src="https://i.vimeocdn.com/video/2041563772-44f3eaa1376ede91a63169551d0a365d58807cad2ec0c6bb0929d44a41d31f34-d?f=webp" alt="Klaviyo Partner">
+          <div class="card__content">
+            <div class="card__icon" style="background: var(--accent-light); color: var(--accent-color);"><i class="fa-solid fa-handshake-angle"></i></div>
+            <h3 class="card__title">Klaviyo Certified Partner</h3>
+            <p class="card__text">Certified developer capability for advanced segment configuration, checkouts trigger hooks, and custom integrations.</p>
+          </div>
+        </article>
       </div>
     </section>
   </main>
@@ -137,6 +185,7 @@
   <!-- Footer Section -->
   <footer class="footer">
     <div class="footer__container">
+      <!-- Footer Brand Info -->
       <div class="footer__brand">
         <a href="index.html" class="brand">
           <div class="brand__logo" style="background-color: var(--primary-color);"><i class="fa-solid fa-comment-sms"></i></div>
@@ -144,13 +193,14 @@
         </a>
         <p class="footer__text">Compliance-first SMS automation design helping retail and e-commerce brands capture secure revenue triggers safely.</p>
         <div class="footer__socials">
-          <a href="#" class="social-link" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="social-link" aria-label="Twitter"><i class="fa-brands fa-apple"></i></a>
           <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
           <a href="#" class="social-link" aria-label="Github"><i class="fa-brands fa-github"></i></a>
-          <a href="#" class="social-link" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
+          <a href="#" class="social-link" aria-label="Book a call"><i class="fa-solid fa-phone"></i></a>
         </div>
       </div>
 
+      <!-- Topic Column 1 (SMS Strategy) -->
       <div class="footer__column">
         <h4 class="footer__title">Automations</h4>
         <ul class="footer__links">
@@ -161,16 +211,10 @@
         </ul>
       </div>
 
-      <div class="footer__column">
-        <h4 class="footer__title">TCPA Standards</h4>
-        <ul class="footer__links">
-          <li><a href="about.html" class="footer__link">Consent Checklist</a></li>
-          <li><a href="about.html" class="footer__link">Quiet Hours Logic</a></li>
-          <li><a href="about.html" class="footer__link">10DLC Registration</a></li>
-          <li><a href="about.html" class="footer__link">Carrier Approval Audits</a></li>
-        </ul>
-      </div>
+      <!-- Topic Column 2 (Contact Info) -->
+      
 
+      <!-- Topic Column 3 (Resource Hub) -->
       <div class="footer__column">
         <h4 class="footer__title">Resources</h4>
         <ul class="footer__links">
@@ -182,16 +226,17 @@
       </div>
 
       <div class="footer__column">
-        <h4 class="footer__title">Company</h4>
+        <h4 class="footer__title">Contact Info</h4>
         <ul class="footer__links">
-          <li><a href="about.html" class="footer__link">About the Specialist</a></li>
-          <li><a href="services.html" class="footer__link">Consulting Pricing</a></li>
-          <li><a href="contact.html" class="footer__link">Direct Inquiry</a></li>
-          <li><a href="dashboard.html" class="footer__link">Real-time Dashboard</a></li>
+          <li><a href="mailto:support@smspulse.com" class="footer__link"><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i> suppo@smlse.com</a></li>
+          <li><a href="tel:+15558882000" class="footer__link"><i class="fa-solid fa-phone" style="margin-right: 8px;"></i> +1 (555) 888-2000</a></li>
+          <li><span class="footer__link"><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i> Global Remote / NY</span></li>
+          <li><span class="footer__link"><i class="fa-solid fa-clock" style="margin-right: 8px;"></i> Mon-Fri: 9am-5pm</span></li>
         </ul>
       </div>
     </div>
 
+    <!-- Bottom footer details -->
     <div class="footer__bottom">
       <p>&copy; 2026 SMSPulse. Crafted with extreme premium care. All rights reserved.</p>
       <p>TCPA/CTIA Specialist Portfolio. Compliance does not represent certified legal counsel.</p>

@@ -29,7 +29,7 @@
       box-shadow: var(--shadow-md);
       display: flex;
       flex-direction: column;
-      gap: var(--space-xl);
+      gap: var(--space-lg);
       margin: 0 auto;
     }
     
@@ -43,8 +43,8 @@
     .builder-flow {
       border: 1.5px dashed var(--border-color);
       border-radius: var(--radius-md);
-      padding: var(--space-xl);
-      min-height: 250px;
+      padding: var(--space-md);
+      min-height: 120px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -156,6 +156,31 @@
       transform: rotate(180deg);
       color: var(--primary-color);
     }
+    
+    .hero__visual-card {
+      background-color: var(--bg-card);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      width: 100%;
+      max-width: 400px;
+      box-shadow: var(--shadow-md);
+      transition: all var(--transition-smooth);
+    }
+    
+    @media (min-width: 1440px) {
+      .hero__visual-card {
+        max-width: 550px;
+        padding: var(--space-2xl);
+      }
+      .hero__visual-card h4 {
+        font-size: 1.5rem;
+      }
+      .flow-pipeline-step {
+        padding: 15px !important;
+        font-size: 1rem !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -176,7 +201,7 @@
           <li><a href="services.html" class="nav__link">Services</a></li>
           <li><a href="blog.html" class="nav__link">Blog</a></li>
           <li><a href="contact.html" class="nav__link">Contact</a></li>
-          <li><a href="dashboard.html" class="nav__link nav__dashboard-link"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+          <li><a href="dashboard.html" class="nav__link nav__dashboard-link">Dashboard</a></li>
         </ul>
         
         <div class="nav__mobile-controls">
@@ -210,23 +235,22 @@
           <p class="hero__text">We configure compliant and smart trigger logic designed to reach customers on their phones instantly. Accelerate conversion flow rates automatically.</p>
           <div class="hero__actions">
             <a href="#flow-builder-section" class="btn btn--primary"><i class="fa-solid fa-wand-magic-sparkles"></i> Try Live Flow Builder</a>
-            <a href="services.html" class="btn btn--secondary"><i class="fa-solid fa-calculator"></i> Calculate SMS ROI</a>
           </div>
           <div style="margin-top:var(--space-md); font-size:0.9rem; color:var(--text-secondary); display:flex; align-items:center; gap:var(--space-sm);">
-            <i class="fa-solid fa-shield-halved" style="color:var(--accent-color);"></i> TCPA compliant, CTIA & 10DLC Registered
+            <i class="fa-solid fa-shield-halved" style="color:var(--accent-color);"></i> TCPA compliant, CTIA & 10DLC
           </div>
         </div>
 
         <!-- Flowchart Style Visual Pattern -->
         <div class="hero__visual" style="display: flex; justify-content: center;">
-          <div style="background-color: var(--bg-card); border: 1.5px solid var(--border-color); border-radius: var(--radius-lg); padding: var(--space-xl); width: 100%; max-width: 400px; box-shadow: var(--shadow-md);">
+          <div class="hero__visual-card">
             <h4 style="text-align: center; margin-bottom: var(--space-md); font-family: var(--font-headers);">Compliant Flow Pipeline</h4>
             <div style="display: flex; flex-direction: column; gap: var(--space-md); align-items: center;">
-              <div style="background-color: var(--primary-light); color: var(--primary-color); padding: 10px; border-radius: 8px; font-weight: 600; width: 100%; text-align: center; font-size: 0.85rem;">1. Double Opt-In Checked</div>
+              <div class="flow-pipeline-step" style="background-color: var(--primary-light); color: var(--primary-color); padding: 10px; border-radius: 8px; font-weight: 600; width: 100%; text-align: center; font-size: 0.85rem;">1. Double Opt-In Checked</div>
               <div style="color: var(--text-secondary);"><i class="fa-solid fa-down-long"></i></div>
-              <div style="background-color: var(--accent-light); color: var(--accent-color); padding: 10px; border-radius: 8px; font-weight: 600; width: 100%; text-align: center; font-size: 0.85rem;">2. Enforce Quiet Hours Suppress</div>
+              <div class="flow-pipeline-step" style="background-color: var(--accent-light); color: var(--accent-color); padding: 10px; border-radius: 8px; font-weight: 600; width: 100%; text-align: center; font-size: 0.85rem;">2. Enforce Quiet Hours Suppress</div>
               <div style="color: var(--text-secondary);"><i class="fa-solid fa-down-long"></i></div>
-              <div style="background-color: var(--primary-light); color: var(--primary-color); padding: 10px; border-radius: 8px; font-weight: 600; width: 100%; text-align: center; font-size: 0.85rem;">3. Deliver Personalized Code</div>
+              <div class="flow-pipeline-step" style="background-color: var(--primary-light); color: var(--primary-color); padding: 10px; border-radius: 8px; font-weight: 600; width: 100%; text-align: center; font-size: 0.85rem;">3. Deliver Personalized Code</div>
             </div>
           </div>
         </div>
@@ -241,28 +265,31 @@
         <p class="section__subtitle">Click triggers below to see how automated compliance check nodes stack together to build a robust SMS marketing campaign pipeline.</p>
       </div>
 
-      <div class="flow-builder-widget">
+      <div class="card-glass flow-builder-widget">
         <!-- Builder Controls Buttons -->
         <div class="builder-controls">
-          <button class="btn btn--secondary" id="add-opt-in" style="padding: 10px 20px; font-size: 0.85rem;"><i class="fa-solid fa-circle-plus"></i> Opt-In Trigger</button>
-          <button class="btn btn--secondary" id="add-quiet-hour" style="padding: 10px 20px; font-size: 0.85rem;"><i class="fa-solid fa-circle-plus"></i> Quiet Hour Suppressor</button>
-          <button class="btn btn--secondary" id="add-discount" style="padding: 10px 20px; font-size: 0.85rem;"><i class="fa-solid fa-circle-plus"></i> Send Promo Code</button>
-          <button class="btn btn--secondary" id="add-stop-node" style="padding: 10px 20px; font-size: 0.85rem;"><i class="fa-solid fa-circle-plus"></i> Opt-Out Filter</button>
-          <button class="btn btn--primary" id="clear-flow-builder" style="padding: 10px 20px; font-size: 0.85rem; background-color: var(--error);"><i class="fa-solid fa-rotate-left"></i> Reset Builder</button>
+          <button class="btn btn--secondary" id="add-opt-in" style="padding: 10px 20px; font-size: 0.85rem;"><i class="fa-solid fa-user-shield"></i> Consent Step</button>
+          <button class="btn btn--secondary" id="add-quiet-hour" style="padding: 10px 20px; font-size: 0.85rem;"><i class="fa-solid fa-moon"></i> Time Filter</button>
+          <button class="btn btn--secondary" id="add-discount" style="padding: 10px 20px; font-size: 0.85rem;"><i class="fa-solid fa-tag"></i> Message Content</button>
+          <button class="btn btn--secondary" id="add-stop-node" style="padding: 10px 20px; font-size: 0.85rem;"><i class="fa-solid fa-hand"></i> Stop Filter</button>
+          <button class="btn btn--primary" id="clear-flow-builder" style="padding: 10px 20px; font-size: 0.85rem; background-color: var(--error);"><i class="fa-solid fa-trash-can"></i> Clear All</button>
         </div>
 
         <!-- Wireframe Flow Canvas -->
-        <div class="builder-flow" id="flow-canvas">
+        <div class="builder-flow" id="flow-canvas" style="background: rgba(var(--primary-rgb), 0.03); border: 1px dashed var(--border-color); border-radius: var(--radius-md); padding: var(--space-md); min-height: 120px; display: flex; flex-direction: column; align-items: center; gap: var(--space-md);">
           <!-- Default Node -->
-          <div class="flow-node" id="node-start">
-            <div class="flow-node__info">
-              <i class="fa-solid fa-flag-checkered"></i>
+          <div class="flow-node animate-slide-up" id="node-start" style="background: var(--bg-card); border: 2px solid var(--primary-color); border-radius: var(--radius-md); padding: 12px 20px; box-shadow: var(--shadow-md); display: flex; align-items: center; gap: var(--space-xl); width: 100%; max-width: 440px; justify-content: space-between; position: relative;">
+            <div class="flow-node__info" style="display: flex; align-items: center; gap: var(--space-md); text-align: left;">
+              <div style="position: relative;">
+                <i class="fa-solid fa-play-circle" style="color: var(--primary-color); font-size: 1.25rem;"></i>
+                <span style="position: absolute; top: -1px; right: -1px; width: 8px; height: 8px; background: var(--success); border-radius: 50%; border: 1.5px solid var(--bg-card); animation: pulse 2s infinite;"></span>
+              </div>
               <div>
-                <strong style="font-size: 0.9rem;">Trigger Event Start</strong>
-                <p style="font-size: 0.75rem; margin: 0;">Customer signs up to list</p>
+                <strong style="font-size: 0.9rem; color: var(--text-primary);">Trigger: Event Entry</strong>
+                <p style="font-size: 0.7rem; margin: 0; color: var(--text-secondary);">Checkout/Sign-up hook</p>
               </div>
             </div>
-            <span></span>
+            <div style="font-size: 0.65rem; background: var(--primary-light); color: var(--primary-color); padding: 3px 6px; border-radius: 4px; font-weight: 700;">ACTIVE</div>
           </div>
         </div>
       </div>
@@ -276,26 +303,35 @@
         <p class="section__subtitle">Direct communication represents the most personal, fast-acting channel to engage and convert shoppers.</p>
       </div>
 
-      <div class="grid-container">
+      <div class="grid-container pricing-grid">
         <!-- Card 1 -->
-        <div class="card">
-          <div class="card__icon"><i class="fa-solid fa-eye"></i></div>
-          <h3 class="card__title">98% Avg Open Rate</h3>
-          <p class="card__text">Compare this directly to email's average 20% open rate. Over 90% of text messages are opened within the initial three minutes of arrival.</p>
+        <div class="card-glass">
+          <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=800" alt="SMS Open Rates">
+          <div class="card__content">
+            <div class="card__icon"><i class="fa-solid fa-eye"></i></div>
+            <h3 class="card__title">98% Avg Open Rate</h3>
+            <p class="card__text">Compare this directly to email's average 20% open rate. Over 90% of text messages are opened within the initial three minutes of arrival.</p>
+          </div>
         </div>
 
         <!-- Card 2 -->
-        <div class="card">
-          <div class="card__icon"><i class="fa-solid fa-gauge-high"></i></div>
-          <h3 class="card__title">90s Response Average</h3>
-          <p class="card__text">SMS driving rapid engagement creates unparalleled momentum for flash offers, urgent cart checkout alerts, and live responses.</p>
+        <div class="card-glass">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" alt="SMS Speed">
+          <div class="card__content">
+            <div class="card__icon"><i class="fa-solid fa-gauge-high"></i></div>
+            <h3 class="card__title">90s Response</h3>
+            <p class="card__text">SMS driving rapid engagement creates unparalleled momentum for flash offers, urgent cart checkout alerts, and live responses.</p>
+          </div>
         </div>
 
         <!-- Card 3 -->
-        <div class="card">
-          <div class="card__icon"><i class="fa-solid fa-sack-dollar"></i></div>
-          <h3 class="card__title">25x Verified ROI</h3>
-          <p class="card__text">With fractional setup expenditures and extremely low carrier utility cost, automated text copy triggers deliver unprecedented return margins.</p>
+        <div class="card-glass">
+          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800" alt="SMS ROI">
+          <div class="card__content">
+            <div class="card__icon"><i class="fa-solid fa-sack-dollar"></i></div>
+            <h3 class="card__title">25x Verified ROI</h3>
+            <p class="card__text">With fractional setup expenditures and extremely low carrier utility cost, automated text copy triggers deliver unprecedented return margins.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -329,51 +365,57 @@
         <p class="section__subtitle">Select a package tailored for your exact campaign scales, with double opt-in integrations and carrier registration handling.</p>
       </div>
 
-      <div class="grid-container">
+      <div class="grid-container pricing-grid">
         <!-- Basic Plan -->
-        <div class="card">
-          <span class="section__badge" style="margin-bottom:var(--space-md);">Automations Core</span>
-          <h3 class="card__title">Standard Funnels</h3>
-          <p style="font-size: 2.2rem; font-weight: 800; font-family: var(--font-headers); color: var(--text-primary); margin: var(--space-md) 0;">$1,499</p>
-          <p class="card__text">Perfect for growing Shopify/SaaS setups needing fundamental compliance-safe triggers.</p>
-          <ul style="list-style: none; padding: 0; margin-bottom: var(--space-xl); font-size: 0.9rem; text-align: left; display: flex; flex-direction: column; gap: var(--space-sm);">
-            <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Welcome Core Flow Setup</li>
-            <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> 10DLC Brand Registration Support</li>
-            <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Compliant Pop-up Layout Setup</li>
-            <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> STOP Keyword Triggering Autoreply</li>
-          </ul>
-          <a href="contact.html" class="btn btn--secondary" style="width: 100%;">Select Flow Plan</a>
+        <div class="card-glass">
+          <div class="card__content">
+            <span class="section__badge" style="margin-bottom:var(--space-md);">Automations Core</span>
+            <h3 class="card__title">Standard Funnels</h3>
+            <p style="font-size: 2.2rem; font-weight: 800; font-family: var(--font-headers); color: var(--text-primary); margin: var(--space-md) 0;">$1,499</p>
+            <p class="card__text">Perfect for growing Shopify/SaaS setups needing fundamental compliance-safe triggers.</p>
+            <ul style="list-style: none; padding: 0; margin: 0 auto var(--space-xl); font-size: 0.9rem; text-align: left; display: inline-block; gap: var(--space-sm);">
+              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Welcome Core Flow Setup</li>
+              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> 10DLC Brand Registration </li>
+              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Compliant Pop-up Layout </li>
+              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> STOP Keyword Triggering </li>
+            </ul>
+            <a href="contact.html" class="btn btn--secondary" style="width: 100%;">Select Flow Plan</a>
+          </div>
         </div>
 
         <!-- Premium Plan -->
-        <div class="card" style="border-color: var(--primary-color); box-shadow: var(--shadow-md);">
-          <span class="section__badge" style="margin-bottom:var(--space-md); background-color: var(--primary-color); color: var(--white);">Most High-Yield</span>
-          <h3 class="card__title">Advanced Automation Suite</h3>
-          <p style="font-size: 2.2rem; font-weight: 800; font-family: var(--font-headers); color: var(--primary-color); margin: var(--space-md) 0;">$2,999</p>
-          <p class="card__text">Enterprise-level dual-opt-in configurations with dynamic client approval dashboards and audits.</p>
-          <ul style="list-style: none; padding: 0; margin-bottom: var(--space-xl); font-size: 0.9rem; text-align: left; display: flex; flex-direction: column; gap: var(--space-sm);">
-            <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> All Core Automation Flow Setups</li>
-            <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Abandoned Checkout Cart Sequences</li>
-            <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Custom Live Dashboard Configuration</li>
-            <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Complete TCPA Compliance Audit</li>
-            <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> 30-Day Launch Copy Support</li>
-          </ul>
-          <a href="contact.html" class="btn btn--primary" style="width: 100%;">Select Suite Plan</a>
+        <div class="card-glass" style="border-color: var(--primary-color); box-shadow: var(--shadow-lg), var(--shadow-glow);">
+          <div class="card__content">
+            <span class="section__badge" style="margin-bottom:var(--space-md); background-color: var(--primary-color); color: var(--white);">Most High-Yield</span>
+            <h3 class="card__title">Automation Suite</h3>
+            <p style="font-size: 2.2rem; font-weight: 800; font-family: var(--font-headers); color: var(--primary-color); margin: var(--space-md) 0;">$2,999</p>
+            <p class="card__text">Enterprise-level dual-opt-in configurations with dynamic client approval dashboards and audits.</p>
+            <ul style="list-style: none; padding: 0; margin: 0 auto var(--space-xl); font-size: 0.9rem; text-align: left; display: inline-block; gap: var(--space-sm);">
+              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> All Core Automation Flow </li>
+              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Abandoned Checkout Cart </li>
+              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Custom Live Dashboard </li>
+              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Complete TCPA Compliance </li>
+              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> 30-Day Launch Copy Support</li>
+            </ul>
+            <a href="contact.html" class="btn btn--primary" style="width: 100%;">Select Suite Plan</a>
+          </div>
         </div>
 
         <!-- Compliance Focus Plan -->
-        <div class="card">
-          <span class="section__badge" style="margin-bottom:var(--space-md);">Compliance Shield</span>
-          <h3 class="card__title">Enterprise TCPA Shield</h3>
-          <p style="font-size: 2.2rem; font-weight: 800; font-family: var(--font-headers); color: var(--text-primary); margin: var(--space-md) 0;">$4,499</p>
-          <p class="card__text">For brands facing high carrier blockages or list health liabilities. Absolute compliance protection.</p>
-          <ul style="list-style: none; padding: 0; margin-bottom: var(--space-xl); font-size: 0.9rem; text-align: left; display: flex; flex-direction: column; gap: var(--space-sm);">
-            <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Complete System Redesign & Clean</li>
-            <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Full Carrier Approval Submission</li>
-            <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Integration of Quiet-Hours Suppression</li>
-            <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Double Opt-In Legal Checkboxes</li>
-          </ul>
-          <a href="contact.html" class="btn btn--secondary" style="width: 100%;">Select Shield Plan</a>
+        <div class="card-glass">
+          <div class="card__content">
+            <span class="section__badge" style="margin-bottom:var(--space-md);">Compliance Shield</span>
+            <h3 class="card__title">Enterprise TCPA</h3>
+            <p style="font-size: 2.2rem; font-weight: 800; font-family: var(--font-headers); color: var(--text-primary); margin: var(--space-md) 0;">$4,499</p>
+            <p class="card__text">For brands facing high carrier blockages or list health liabilities. Absolute compliance protection.</p>
+            <ul style="list-style: none; padding: 0; margin: 0 auto var(--space-xl); font-size: 0.9rem; text-align: left; display: inline-block; gap: var(--space-sm);">
+              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Complete System Redesign </li>
+              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Full Carrier Approval </li>
+              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Integration of Quiet-Hours </li>
+              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Double Opt-In Legal </li>
+            </ul>
+            <a href="contact.html" class="btn btn--secondary" style="width: 100%;">Select  Plan</a>
+          </div>
         </div>
       </div>
     </section>
@@ -426,6 +468,7 @@
   <!-- Footer Section (Identical with at least 4 Topics) -->
   <footer class="footer">
     <div class="footer__container">
+      <!-- Footer Brand Info -->
       <div class="footer__brand">
         <a href="index.html" class="brand">
           <div class="brand__logo" style="background-color: var(--primary-color);"><i class="fa-solid fa-comment-sms"></i></div>
@@ -433,13 +476,14 @@
         </a>
         <p class="footer__text">Compliance-first SMS automation design helping retail and e-commerce brands capture secure revenue triggers safely.</p>
         <div class="footer__socials">
-          <a href="#" class="social-link" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="social-link" aria-label="Twitter"><i class="fa-brands fa-apple"></i></a>
           <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
           <a href="#" class="social-link" aria-label="Github"><i class="fa-brands fa-github"></i></a>
-          <a href="#" class="social-link" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
+          <a href="#" class="social-link" aria-label="Book a call"><i class="fa-solid fa-phone"></i></a>
         </div>
       </div>
 
+      <!-- Topic Column 1 (SMS Strategy) -->
       <div class="footer__column">
         <h4 class="footer__title">Automations</h4>
         <ul class="footer__links">
@@ -450,16 +494,10 @@
         </ul>
       </div>
 
-      <div class="footer__column">
-        <h4 class="footer__title">TCPA Standards</h4>
-        <ul class="footer__links">
-          <li><a href="about.html" class="footer__link">Consent Checklist</a></li>
-          <li><a href="about.html" class="footer__link">Quiet Hours Logic</a></li>
-          <li><a href="about.html" class="footer__link">10DLC Registration</a></li>
-          <li><a href="about.html" class="footer__link">Carrier Approval Audits</a></li>
-        </ul>
-      </div>
+      <!-- Topic Column 2 (Contact Info) -->
+      
 
+      <!-- Topic Column 3 (Resource Hub) -->
       <div class="footer__column">
         <h4 class="footer__title">Resources</h4>
         <ul class="footer__links">
@@ -471,16 +509,17 @@
       </div>
 
       <div class="footer__column">
-        <h4 class="footer__title">Company</h4>
+        <h4 class="footer__title">Contact Info</h4>
         <ul class="footer__links">
-          <li><a href="about.html" class="footer__link">About the Specialist</a></li>
-          <li><a href="services.html" class="footer__link">Consulting Pricing</a></li>
-          <li><a href="contact.html" class="footer__link">Direct Inquiry</a></li>
-          <li><a href="dashboard.html" class="footer__link">Real-time Dashboard</a></li>
+          <li><a href="mailto:support@smspulse.com" class="footer__link"><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i> suppo@smlse.com</a></li>
+          <li><a href="tel:+15558882000" class="footer__link"><i class="fa-solid fa-phone" style="margin-right: 8px;"></i> +1 (555) 888-2000</a></li>
+          <li><span class="footer__link"><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i> Global Remote / NY</span></li>
+          <li><span class="footer__link"><i class="fa-solid fa-clock" style="margin-right: 8px;"></i> Mon-Fri: 9am-5pm</span></li>
         </ul>
       </div>
     </div>
 
+    <!-- Bottom footer details -->
     <div class="footer__bottom">
       <p>&copy; 2026 SMSPulse. Crafted with extreme premium care. All rights reserved.</p>
       <p>TCPA/CTIA Specialist Portfolio. Compliance does not represent certified legal counsel.</p>
@@ -517,7 +556,7 @@
       const addStopNode = document.getElementById('add-stop-node');
       const clearBtn = document.getElementById('clear-flow-builder');
 
-      const appendNode = (title, subtitle, iconClass) => {
+      const appendNode = (title, subtitle, iconClass, imgUrl) => {
         // Append arrow first
         const arrow = document.createElement('div');
         arrow.className = 'flow-arrow';
@@ -525,17 +564,17 @@
         flowCanvas.appendChild(arrow);
 
         // Append node card
-        const node = document.createElement('div');
-        node.className = 'flow-node';
+        node.style.cssText = 'background: var(--bg-card); border: 1.5px solid var(--border-color); border-radius: var(--radius-md); padding: 12px 20px; box-shadow: var(--shadow-sm); display: flex; align-items: center; gap: var(--space-xl); width: 100%; max-width: 440px; justify-content: space-between; overflow: hidden;';
+        
         node.innerHTML = `
-          <div class="flow-node__info">
-            <i class="${iconClass}"></i>
-            <div>
-              <strong style="font-size: 0.9rem;">${title}</strong>
-              <p style="font-size: 0.75rem; margin: 0;">${subtitle}</p>
+          <div class="flow-node__info" style="display: flex; align-items: center; gap: var(--space-md); flex: 1;">
+            <img src="${imgUrl}" style="width: 40px; height: 40px; border-radius: 6px; object-fit: cover; border: 1px solid var(--border-color);">
+            <div style="text-align: left;">
+              <strong style="font-size: 0.85rem; color: var(--text-primary); display: block;">${title}</strong>
+              <p style="font-size: 0.65rem; margin: 0; color: var(--text-secondary); line-height: 1.1;">${subtitle}</p>
             </div>
           </div>
-          <span class="flow-node__delete"><i class="fa-solid fa-circle-minus"></i></span>
+          <span class="flow-node__delete" style="cursor: pointer; color: var(--text-secondary); padding: 4px;"><i class="fa-solid fa-circle-xmark"></i></span>
         `;
 
         // Delete trigger on single node delete
@@ -549,40 +588,43 @@
 
       if (addOptIn) {
         addOptIn.addEventListener('click', () => {
-          appendNode('Opt-In Legal Checkbox Check', 'Confirms explicit prior written consent obtained', 'fa-solid fa-user-check');
+          appendNode('Consent Validation', 'Checks for express prior written consent records', 'fa-solid fa-user-shield', 'https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&q=80&w=200');
         });
       }
       
       if (addQuietHour) {
         addQuietHour.addEventListener('click', () => {
-          appendNode('Quiet Hour Suppressor', 'Enforces strict 8pm-9am silent routing logic', 'fa-solid fa-clock');
+          appendNode('TCPA Quiet Hours', 'Buffers delivery between 8:00 PM and 9:00 AM local', 'fa-solid fa-moon', 'https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?auto=format&fit=crop&q=80&w=200');
         });
       }
 
       if (addDiscount) {
         addDiscount.addEventListener('click', () => {
-          appendNode('Send Automated Code Promo', 'Dispatches SMS code with legal opt-out text', 'fa-solid fa-percent');
+          appendNode('Content Delivery', 'Dispatches code with mandatory opt-out instructions', 'fa-solid fa-tag', 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&q=80&w=200');
         });
       }
 
       if (addStopNode) {
         addStopNode.addEventListener('click', () => {
-          appendNode('Keyword Unsubscribe Router', 'Bridges STOP keyword straight to suppression database', 'fa-solid fa-ban');
+          appendNode('Carrier Opt-Out', 'Immediate removal via STOP/END keywords', 'fa-solid fa-hand', 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=200');
         });
       }
 
       if (clearBtn) {
         clearBtn.addEventListener('click', () => {
           flowCanvas.innerHTML = `
-            <div class="flow-node" id="node-start">
-              <div class="flow-node__info">
-                <i class="fa-solid fa-flag-checkered"></i>
+            <div class="flow-node animate-slide-up" id="node-start" style="background: var(--bg-card); border: 2px solid var(--primary-color); border-radius: var(--radius-md); padding: 12px 20px; box-shadow: var(--shadow-md); display: flex; align-items: center; gap: var(--space-xl); width: 100%; max-width: 440px; justify-content: space-between; position: relative;">
+              <div class="flow-node__info" style="display: flex; align-items: center; gap: var(--space-md); text-align: left;">
+                <div style="position: relative;">
+                  <i class="fa-solid fa-play-circle" style="color: var(--primary-color); font-size: 1.25rem;"></i>
+                  <span style="position: absolute; top: -1px; right: -1px; width: 8px; height: 8px; background: var(--success); border-radius: 50%; border: 1.5px solid var(--bg-card); animation: pulse 2s infinite;"></span>
+                </div>
                 <div>
-                  <strong style="font-size: 0.9rem;">Trigger Event Start</strong>
-                  <p style="font-size: 0.75rem; margin: 0;">Customer signs up to list</p>
+                  <strong style="font-size: 0.9rem; color: var(--text-primary);">Trigger: Event Entry</strong>
+                  <p style="font-size: 0.7rem; margin: 0; color: var(--text-secondary);">Checkout/Sign-up hook</p>
                 </div>
               </div>
-              <span></span>
+              <div style="font-size: 0.65rem; background: var(--primary-light); color: var(--primary-color); padding: 3px 6px; border-radius: 4px; font-weight: 700;">ACTIVE</div>
             </div>
           `;
         });
