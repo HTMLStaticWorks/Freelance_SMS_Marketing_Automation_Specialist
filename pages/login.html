@@ -150,6 +150,9 @@
     }
     
     @media (max-width: 380px) {
+      .login-card {
+        padding: var(--space-xl) var(--space-md);
+      }
       .login-options-row {
         font-size: 0.7rem;
         gap: 5px;
@@ -281,14 +284,14 @@
     <form class="needs-validation" novalidate style="width: 100%;" action="dashboard.html" method="GET">
       <div class="form-group">
         <label class="form-label" for="login-email">Email Address <span>*</span></label>
-        <input type="email" class="form-input" id="login-email" placeholder="name@yourbrand.com" required>
+        <input type="email" class="form-input" id="login-email" placeholder="" required>
         <span class="form-error-msg">Please enter a valid business email.</span>
       </div>
 
       <div class="form-group">
         <label class="form-label" for="login-pass">Password <span>*</span></label>
         <div class="input-wrapper">
-          <input type="password" class="form-input" id="login-pass" placeholder="Enter password" required>
+          <input type="password" class="form-input" id="login-pass" placeholder="" required>
           <span class="input-wrapper__icon" id="toggle-password-visibility" aria-label="Toggle password visibility">
             <i class="fa-regular fa-eye"></i>
           </span>

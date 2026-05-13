@@ -443,7 +443,7 @@
     
     .audit-item__left {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: var(--space-md);
     }
     
@@ -451,6 +451,7 @@
       width: 18px;
       height: 18px;
       accent-color: var(--primary-color);
+      margin-top: 3px; /* Align with the first line of heading */
     }
     
     /* Dynamic Skeleton Switching Loader Overlay */
@@ -520,10 +521,7 @@
     <!-- Navigation Left Sidebar (Fixed on desktop, toggles on mobile) -->
     <aside class="dashboard-sidebar">
       <div class="sidebar-brand">
-        <div class="brand" style="cursor: default;">
-          <div class="brand__logo" style="background-color: var(--primary-color);"><i class="fa-solid fa-gauge-high"></i></div>
-          <span class="brand__name" style="font-size:1.15rem;">SMS Console</span>
-        </div>
+        
         <i class="fa-solid fa-circle-xmark dashboard-sidebar__close" aria-label="Close Sidebar Menu"></i>
       </div>
 
@@ -559,7 +557,7 @@
       </nav>
 
       <div style="padding: var(--space-xl); border-top: 1px solid var(--border-color);">
-        <a href="login.html" class="sidebar-nav__link" style="color:var(--error); background-color: transparent;"><i class="fa-solid fa-right-from-bracket"></i> <span>Logout</span></a>
+        <a href="../index.html" class="sidebar-nav__link" style="color:var(--error); background-color: transparent;"><i class="fa-solid fa-right-from-bracket"></i> <span>Logout</span></a>
       </div>
     </aside>
 
@@ -719,7 +717,6 @@
 
         <!-- Add Keyword Widget Form -->
         <div class="card" style="align-items: center; text-align: center; padding: var(--space-xl);">
-          <h3 style="font-size:1.15rem; font-family:var(--font-headers); margin-bottom:var(--space-md);"><i class="fa-solid fa-plus" style="color:var(--primary-color);"></i> Register New SMS Keyword</h3>
           <div class="keyword-form-grid">
             <div class="form-group" style="margin-bottom:0;">
               <label class="form-label" for="new-keyword">Keyword Code</label>

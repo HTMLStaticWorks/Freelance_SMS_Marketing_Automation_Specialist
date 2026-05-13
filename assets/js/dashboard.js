@@ -13,32 +13,29 @@ document.addEventListener('DOMContentLoaded', () => {
     if (sidebarLinks.length > 0 && dashboardPanels.length > 0) {
       sidebarLinks.forEach(link => {
         link.addEventListener('click', (e) => {
+          const href = link.getAttribute('href');
+          
+          // Only prevent default if it's an internal panel link (starting with #)
+          if (!href || !href.startsWith('#')) {
+            return; // Allow normal navigation for logout or other page links
+          }
+          
           e.preventDefault();
-          const targetPanelId = link.getAttribute('href').replace('#', '');
+          const targetPanelId = href.replace('#', '');
           
           // Remove active states from sidebar
           sidebarLinks.forEach(l => l.classList.remove('active'));
           link.classList.add('active');
           
           // Trigger Loading State Skeleton
-          if (dashboardLoading) {
-            dashboardLoading.style.display = 'flex';
-          }
-          
-          // Simulate dynamic loading sequence
-          setTimeout(() => {
-            if (dashboardLoading) {
-              dashboardLoading.style.display = 'none';
+          // Immediate feedback: Hide all panels, show targeted one
+          dashboardPanels.forEach(panel => {
+            panel.classList.remove('active');
+            if (panel.id === targetPanelId) {
+              panel.classList.add('active');
             }
-            
-            // Hide all panels, show targeted one
-            dashboardPanels.forEach(panel => {
-              panel.classList.remove('active');
-              if (panel.id === targetPanelId) {
-                panel.classList.add('active');
-              }
-            });
-          }, 500); // 500ms feel-good delay for skeleton/indicator
+          });
+
 
           // Close mobile sidebar if open
           const sidebar = document.querySelector('.dashboard-sidebar');

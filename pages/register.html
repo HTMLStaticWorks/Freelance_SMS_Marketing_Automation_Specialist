@@ -152,6 +152,15 @@
       flex-shrink: 0;
     }
 
+    @media (max-width: 380px) {
+      .register-card {
+        padding: var(--space-xl) var(--space-md);
+      }
+      .checkbox-row {
+        font-size: 0.75rem;
+      }
+    }
+
     /* Social Login Styles */
     .social-divider {
       position: relative;
@@ -254,20 +263,20 @@
     <form class="needs-validation" novalidate style="width: 100%;" action="login.html" method="GET">
       <div class="form-group">
         <label class="form-label" for="reg-name">Full Name <span>*</span></label>
-        <input type="text" class="form-input" id="reg-name" placeholder="Johnathan Doe" required>
+        <input type="text" class="form-input" id="reg-name" placeholder="" required>
         <span class="form-error-msg">Please enter your full name.</span>
       </div>
 
       <div class="form-group">
         <label class="form-label" for="reg-email">Email Address <span>*</span></label>
-        <input type="email" class="form-input" id="reg-email" placeholder="name@yourbrand.com" required>
+        <input type="email" class="form-input" id="reg-email" placeholder="" required>
         <span class="form-error-msg">Please supply a valid corporate email.</span>
       </div>
 
       <div class="form-group">
         <label class="form-label" for="reg-pass">Password <span>*</span></label>
         <div class="input-wrapper">
-          <input type="password" class="form-input" id="reg-pass" placeholder="Create a strong password" required>
+          <input type="password" class="form-input" id="reg-pass" placeholder="" required>
           <span class="input-wrapper__icon eye-toggle" data-target="reg-pass" aria-label="Toggle password visibility">
             <i class="fa-regular fa-eye"></i>
           </span>
@@ -278,7 +287,7 @@
       <div class="form-group">
         <label class="form-label" for="reg-confirm">Confirm Password <span>*</span></label>
         <div class="input-wrapper">
-          <input type="password" class="form-input" id="reg-confirm" placeholder="Repeat your password" required>
+          <input type="password" class="form-input" id="reg-confirm" placeholder="" required>
           <span class="input-wrapper__icon eye-toggle" data-target="reg-confirm" aria-label="Toggle password visibility">
             <i class="fa-regular fa-eye"></i>
           </span>
@@ -294,7 +303,7 @@
         </label>
         <label class="checkbox-row">
           <input type="checkbox">
-          <span>Send me platform updates, new workshop announcements, and marketing compliance briefings.</span>
+          <span>Send new workshop announcements.</span>
         </label>
       </div>
 
