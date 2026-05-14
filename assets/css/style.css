@@ -449,7 +449,11 @@ textarea {
   }
 
   .header__controls {
-    gap: var(--space-xs);
+    gap: var(--space-md); /* Increased breathing space between Theme, RTL, and Login */
+  }
+
+  .btn-login {
+    padding: 0 var(--space-lg); /* Reduced length of the login button */
   }
 
   .brand__name {
@@ -691,16 +695,105 @@ textarea {
 .btn--tertiary {
   color: var(--primary-color);
   font-weight: 700;
-  padding: var(--space-sm) 0;
-  border-radius: 0;
-  border-bottom: 2px solid transparent;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-smooth);
 }
 
 .btn--tertiary:hover {
-  border-bottom-color: var(--primary-color);
-  padding-left: var(--space-xs);
-  padding-right: var(--space-xs);
+  background-color: rgba(var(--primary-rgb), 0.1);
+  transform: translateX(5px);
 }
+
+/* Social Logins Component */
+.social-divider {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin: var(--space-xl) 0;
+}
+
+.social-divider::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-color);
+  z-index: 1;
+}
+
+.social-divider span {
+  position: relative;
+  background-color: var(--bg-card);
+  padding: 0 var(--space-md);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  z-index: 2;
+}
+
+.social-btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  width: 100%;
+  margin-bottom: var(--space-xl);
+}
+
+.btn-social {
+  width: 100%;
+  height: 54px; /* Fixed height instead of min-height for absolute equality */
+  padding: 0; /* Remove vertical padding to let height & line-height handle it */
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  display: flex; /* Changed to flex for better centering */
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1; /* Reset line-height to prevent vertical expansion */
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  font-family: inherit;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+.btn-social i, .btn-social svg {
+  flex-shrink: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-social i {
+  font-size: 1.5rem; /* Increased significantly for better visibility */
+  width: 28px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-social svg {
+  width: 24px;
+  height: 24px;
+}
+
+.btn-social:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+
+
+
 
 /* ==========================================================================
    Home & Home 2 Page Components
@@ -1441,6 +1534,68 @@ textarea {
   }
 }
 
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-smooth);
+  box-shadow: var(--shadow-lg);
+  border: none;
+}
+
+.back-to-top.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(190, 90, 43, 0.4);
+}
+
+/* Contact Form Card Padding Fixes */
+.contact-form-card {
+  padding: var(--space-3xl);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+@media (max-width: 1024px) {
+  .contact-form-card {
+    padding: var(--space-2xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-form-card {
+    padding: var(--space-xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form-card {
+    padding: var(--space-lg);
+  }
+}
+
 /* Specialist Section Layout */
 .specialist-grid {
   display: grid;
@@ -1472,5 +1627,4 @@ textarea {
   .specialist-grid h2 {
     font-size: 1.8rem !important;
   }
-}
 }

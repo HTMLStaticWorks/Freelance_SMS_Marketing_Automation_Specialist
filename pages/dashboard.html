@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Client Campaign Dashboard | SMSPulse Specialist Portfolio</title>
-  
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/dark-mode.css">
   <link rel="stylesheet" href="../assets/css/rtl.css">
-  
+
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+
   <style>
     /* Premium Dashboard Core Styling */
     body.dashboard-body {
@@ -22,14 +23,14 @@
       flex-direction: column;
       overflow: hidden;
     }
-    
+
     .dashboard-layout {
       display: flex;
       flex-grow: 1;
       height: calc(100vh - 70px);
       position: relative;
     }
-    
+
     /* Sticky, Non-Scrolling Header as required */
     .dashboard-header {
       background-color: var(--bg-card);
@@ -45,49 +46,50 @@
       width: 100%;
       transition: background-color var(--transition-smooth), border-color var(--transition-smooth);
     }
-    
+
     @media (max-width: 767px) {
       .dashboard-header {
         padding: 0 var(--space-md);
       }
     }
-    
+
     .dashboard-header__left {
       display: flex;
       align-items: center;
       gap: var(--space-md);
     }
-    
+
     .dashboard-header__hamburger {
       display: none;
       font-size: 1.35rem;
       cursor: pointer;
       color: var(--text-primary);
     }
-    
+
     .dashboard-header__right {
       display: flex;
       align-items: center;
       gap: var(--space-lg);
     }
-    
+
     @media (max-width: 480px) {
       .dashboard-header__right {
         gap: var(--space-xs);
       }
+
       .dashboard-header__right .btn-icon {
         width: 34px;
         height: 34px;
         font-size: 0.9rem;
       }
     }
-    
+
     .dashboard-header__profile {
       display: flex;
       align-items: center;
       gap: var(--space-sm);
     }
-    
+
     .profile-avatar {
       width: 38px;
       height: 38px;
@@ -95,12 +97,12 @@
       object-fit: cover;
       border: 2px solid var(--primary-color);
     }
-    
+
     .profile-info {
       font-size: 0.85rem;
       text-align: left;
     }
-    
+
     @media (max-width: 480px) {
       .profile-avatar {
         width: 32px;
@@ -108,16 +110,18 @@
         font-size: 11px !important;
       }
     }
-    
+
     @media (max-width: 1023px) {
       .profile-info {
-        display: none; /* Hide text on mobile for clean UI */
+        display: none;
+        /* Hide text on mobile for clean UI */
       }
+
       .dashboard-header__hamburger {
         display: block;
       }
     }
-    
+
     /* Left Sidebar: Fixed Desktop, Hamburger Drawer on Mobile */
     .dashboard-sidebar {
       width: 280px;
@@ -129,7 +133,7 @@
       z-index: 999;
       transition: transform var(--transition-smooth), background-color var(--transition-smooth), border-color var(--transition-smooth);
     }
-    
+
     .sidebar-brand {
       padding: var(--space-xl);
       border-bottom: 1px solid var(--border-color);
@@ -138,13 +142,19 @@
       align-items: center;
     }
     
+    @media (min-width: 1024px) {
+      .sidebar-brand {
+        display: none;
+      }
+    }
+
     .dashboard-sidebar__close {
       display: none;
       font-size: 1.2rem;
       cursor: pointer;
       color: var(--text-primary);
     }
-    
+
     .sidebar-nav {
       list-style: none;
       padding: var(--space-md);
@@ -154,7 +164,7 @@
       flex-grow: 1;
       overflow-y: auto;
     }
-    
+
     .sidebar-nav__link {
       display: flex;
       align-items: center;
@@ -169,18 +179,19 @@
       text-align: left;
       white-space: nowrap;
     }
-    
+
     .sidebar-nav__link i {
       font-size: 1.1rem;
       width: 20px;
       text-align: center;
     }
-    
-    .sidebar-nav__link:hover, .sidebar-nav__link.active {
+
+    .sidebar-nav__link:hover,
+    .sidebar-nav__link.active {
       color: var(--primary-color);
       background-color: var(--primary-light);
     }
-    
+
     /* Sidebar Mobile Drawer rules */
     @media (max-width: 1023px) {
       .dashboard-sidebar {
@@ -190,61 +201,61 @@
         transform: translateX(-100%);
         box-shadow: var(--shadow-lg);
       }
-      
+
       .dashboard-sidebar.open {
         transform: translateX(0);
       }
-      
+
       .dashboard-sidebar__close {
         display: block;
       }
     }
-    
+
     /* Main Panel Content */
     .dashboard-main {
       flex-grow: 1;
-      padding: var(--space-2xl) var(--space-xl);
+      padding: var(--space-lg) var(--space-xl);
       overflow-y: auto;
       height: 100%;
       position: relative;
     }
-    
+
     @media (max-width: 767px) {
       .dashboard-main {
         padding: var(--space-lg) var(--space-md);
       }
     }
-    
+
     .dashboard-panel {
       display: none;
       flex-direction: column;
       gap: var(--space-2xl);
       animation: fadeIn 0.4s ease forwards;
     }
-    
+
     .dashboard-panel.active {
       display: flex;
     }
-    
+
     /* Stats Layout */
     .stats-row {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: var(--space-lg);
     }
-    
+
     @media (max-width: 1280px) {
       .stats-row {
         grid-template-columns: repeat(2, 1fr);
       }
     }
-    
+
     @media (max-width: 480px) {
       .stats-row {
         grid-template-columns: 1fr;
       }
     }
-    
+
     .stat-card {
       background-color: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -256,7 +267,7 @@
       gap: var(--space-lg);
       transition: background-color var(--transition-smooth), border-color var(--transition-smooth);
     }
-    
+
     .stat-card__icon {
       width: 50px;
       height: 50px;
@@ -268,11 +279,11 @@
       justify-content: center;
       font-size: 1.35rem;
     }
-    
+
     .stat-card__info {
       text-align: left;
     }
-    
+
     .stat-card__num {
       font-size: 1.6rem;
       font-weight: 800;
@@ -280,36 +291,37 @@
       font-family: var(--font-headers);
       line-height: 1.1;
     }
-    
+
     .stat-card__label {
       font-size: 0.8rem;
       color: var(--text-secondary);
       font-weight: 500;
     }
-    
+
     @media (max-width: 380px) {
       .stat-card {
         padding: var(--space-md);
         gap: var(--space-md);
       }
+
       .stat-card__num {
         font-size: 1.3rem;
       }
     }
-    
+
     /* Text Approval Card Deck */
     .approvals-deck {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: var(--space-lg);
     }
-    
+
     @media (max-width: 1023px) {
       .approvals-deck {
         grid-template-columns: 1fr;
       }
     }
-    
+
     .approval-card {
       background-color: var(--bg-card);
       border: 1.5px solid var(--border-color);
@@ -323,7 +335,7 @@
       transition: all var(--transition-fast);
       align-items: center;
     }
-    
+
     .approval-card__meta {
       display: flex;
       justify-content: space-between;
@@ -332,7 +344,7 @@
       border-bottom: 1px solid var(--border-color);
       padding-bottom: var(--space-sm);
     }
-    
+
     .status-badge {
       font-size: 0.75rem;
       font-weight: 700;
@@ -342,27 +354,27 @@
       align-items: center;
       gap: 4px;
     }
-    
+
     .status-badge--pending {
       background-color: rgba(229, 120, 66, 0.15);
       color: var(--primary-color);
     }
-    
+
     .status-badge--approved {
       background-color: rgba(52, 168, 83, 0.15);
       color: var(--success);
     }
-    
+
     .status-badge--rejected {
       background-color: rgba(217, 78, 52, 0.15);
       color: var(--error);
     }
-    
+
     .status-badge--active {
       background-color: rgba(74, 107, 83, 0.15);
       color: var(--accent-color);
     }
-    
+
     .approval-card__msg {
       background-color: var(--bg-secondary);
       border-radius: var(--radius-md);
@@ -372,13 +384,13 @@
       border: 1px solid var(--border-color);
       line-height: 1.4;
     }
-    
+
     .approval-card__actions {
       display: flex;
       gap: var(--space-sm);
       justify-content: center;
     }
-    
+
     /* Table styling for Keyword Triggers */
     .table-container {
       background-color: var(--bg-card);
@@ -388,14 +400,14 @@
       width: 100%;
       box-shadow: var(--shadow-sm);
     }
-    
+
     .dashboard-table {
       width: 100%;
       border-collapse: collapse;
       text-align: left;
       font-size: 0.9rem;
     }
-    
+
     .dashboard-table th {
       background-color: var(--bg-secondary);
       padding: var(--space-md);
@@ -403,28 +415,28 @@
       border-bottom: 1px solid var(--border-color);
       color: var(--text-primary);
     }
-    
+
     .dashboard-table td {
       padding: var(--space-md);
       border-bottom: 1px solid var(--border-color);
       color: var(--text-secondary);
     }
-    
+
     .dashboard-table tr:last-child td {
       border-bottom: none;
     }
-    
+
     .keyword-tr {
       transition: opacity 0.3s ease;
     }
-    
+
     /* Compliance Checklist Checklist inside Dashboard */
     .audit-grid {
       display: flex;
       flex-direction: column;
       gap: var(--space-md);
     }
-    
+
     .audit-item {
       background-color: var(--bg-card);
       border: 1.5px solid var(--border-color);
@@ -436,24 +448,25 @@
       cursor: pointer;
       transition: all var(--transition-fast);
     }
-    
+
     .audit-item:hover {
       border-color: var(--primary-color);
     }
-    
+
     .audit-item__left {
       display: flex;
       align-items: flex-start;
       gap: var(--space-md);
     }
-    
+
     .audit-item input {
       width: 18px;
       height: 18px;
       accent-color: var(--primary-color);
-      margin-top: 3px; /* Align with the first line of heading */
+      margin-top: 3px;
+      /* Align with the first line of heading */
     }
-    
+
     /* Dynamic Skeleton Switching Loader Overlay */
     .dashboard-loading {
       position: absolute;
@@ -467,11 +480,11 @@
       align-items: center;
       justify-content: center;
     }
-    
+
     html[data-theme="dark"] .dashboard-loading {
       background-color: rgba(18, 28, 21, 0.75);
     }
-    
+
     .skeleton-loader-card {
       background-color: var(--bg-card);
       border-radius: var(--radius-lg);
@@ -487,6 +500,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
 </head>
+
 <body class="dashboard-body">
 
   <!-- Fixed Sticky Header for Dashboard (Theme, RTL and profile on the right. Will not scroll) -->
@@ -502,11 +516,13 @@
     <div class="dashboard-header__right">
       <button class="btn-icon rtl-toggle-btn">RTL</button>
       <button class="btn-icon theme-toggle-btn"><i class="fa-solid fa-moon"></i></button>
-      
+
       <!-- Profile section -->
       <div class="dashboard-header__profile">
         <!-- SVG/Profile Mock Image -->
-        <div class="profile-avatar" style="background-color: var(--accent-color); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px;">JD</div>
+        <div class="profile-avatar"
+          style="background-color: var(--accent-color); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px;">
+          JD</div>
         <div class="profile-info">
           <h4 style="font-size:12px; color:var(--text-primary); font-weight:700;">John Doe</h4>
           <p style="font-size:10px; color:var(--text-secondary); margin:0;">The Wellness Depot</p>
@@ -517,11 +533,11 @@
 
   <!-- Main Dashboard Grid Layout -->
   <div class="dashboard-layout">
-    
+
     <!-- Navigation Left Sidebar (Fixed on desktop, toggles on mobile) -->
     <aside class="dashboard-sidebar">
       <div class="sidebar-brand">
-        
+
         <i class="fa-solid fa-circle-xmark dashboard-sidebar__close" aria-label="Close Sidebar Menu"></i>
       </div>
 
@@ -557,13 +573,14 @@
       </nav>
 
       <div style="padding: var(--space-xl); border-top: 1px solid var(--border-color);">
-        <a href="../index.html" class="sidebar-nav__link" style="color:var(--error); background-color: transparent;"><i class="fa-solid fa-right-from-bracket"></i> <span>Logout</span></a>
+        <a href="../index.html" class="sidebar-nav__link" style="color:var(--error); background-color: transparent;"><i
+            class="fa-solid fa-right-from-bracket"></i> <span>Logout</span></a>
       </div>
     </aside>
 
     <!-- Main Scrollable Dashboard Panel Space -->
     <main class="dashboard-main">
-      
+
       <!-- SKELETON LOADING OVERLAY SWITCH TRIGGER -->
       <div class="dashboard-loading" id="dashboard-loading-overlay">
         <div class="skeleton-loader-card">
@@ -581,10 +598,12 @@
 
       <!-- PANEL 1: OVERVIEW/STATISTICS (Active by default) -->
       <div class="dashboard-panel active" id="overview">
-        <div class="section__header" style="text-align: center; margin-bottom: var(--space-xl); max-width: 800px; margin-left: auto; margin-right: auto; align-items: center;">
+        <div class="section__header"
+          style="text-align: center; margin-bottom: var(--space-xl); max-width: 800px; margin-left: auto; margin-right: auto; align-items: center;">
           <span class="section__badge">Real-Time Metrics</span>
           <h1 style="font-size: 1.8rem;">Campaign Analytics Overview</h1>
-          <p style="font-size:0.95rem;">Track SMS opt-in acquisitions, active message deliveries, click rates, and ROI gains in real-time.</p>
+          <p style="font-size:0.95rem;">Track SMS opt-in acquisitions, active message deliveries, click rates, and ROI
+            gains in real-time.</p>
         </div>
 
         <!-- Metric Stat Deck -->
@@ -625,67 +644,85 @@
 
         <!-- Overview campaign summary card -->
         <div class="card" style="align-items: center; text-align: center;">
-          <h3 class="card__title" style="margin-bottom: var(--space-md); font-size: 1.2rem;"><i class="fa-solid fa-bell" style="color:var(--primary-color);"></i> Active Flow Tasks pending action</h3>
-          <p style="font-size:0.9rem; margin-bottom:var(--space-lg); color:var(--text-secondary);">You have <strong>2 campaign copy versions</strong> awaiting prior review and written approval before networks allow active dispatching.</p>
-          <a href="#text-approvals" class="btn btn--primary" style="padding: 10px 20px; font-size: 0.85rem;" onclick="document.querySelector('[href=\'#text-approvals\']').click();">Navigate to Approvals <i class="fa-solid fa-arrow-right"></i></a>
+          <h3 class="card__title" style="margin-bottom: var(--space-md); font-size: 1.2rem;"><i class="fa-solid fa-bell"
+              style="color:var(--primary-color);"></i> Active Flow Tasks pending action</h3>
+          <p style="font-size:0.9rem; margin-bottom:var(--space-lg); color:var(--text-secondary);">You have <strong>2
+              campaign copy versions</strong> awaiting prior review and written approval before networks allow active
+            dispatching.</p>
+          <a href="#text-approvals" class="btn btn--primary" style="padding: 10px 20px; font-size: 0.85rem;"
+            onclick="document.querySelector('[href=\'#text-approvals\']').click();">Navigate to Approvals <i
+              class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
 
       <!-- PANEL 2: CAMPAIGN FLOWS -->
       <div class="dashboard-panel" id="campaign-flows">
-        <div class="section__header" style="text-align: center; margin-bottom: var(--space-xl); max-width: 800px; margin-left: auto; margin-right: auto; align-items: center;">
+        <div class="section__header"
+          style="text-align: center; margin-bottom: var(--space-xl); max-width: 800px; margin-left: auto; margin-right: auto; align-items: center;">
           <span class="section__badge">Automations Pipeline</span>
           <h1 style="font-size: 1.8rem;">Configured Active SMS Flows</h1>
-          <p style="font-size:0.95rem;">Review active checkout hooks, welcome delays, and sequence routing schedules.</p>
+          <p style="font-size:0.95rem;">Review active checkout hooks, welcome delays, and sequence routing schedules.
+          </p>
         </div>
 
         <div class="grid-container">
           <!-- Flow Card 1 -->
           <div class="card" style="align-items: flex-start; text-align: left;">
-            <div style="display:flex; justify-content:space-between; width:100%; margin-bottom:var(--space-md); align-items:center;">
+            <div
+              style="display:flex; justify-content:space-between; width:100%; margin-bottom:var(--space-md); align-items:center;">
               <span class="status-badge status-badge--active"><i class="fa-solid fa-circle"></i> Running</span>
               <span style="font-size:0.75rem; color:var(--text-secondary);"></span>
             </div>
             <h3 class="card__title" style="font-size: 1.2rem;">Compliant Welcome Flow</h3>
-            <p class="card__text">Acquires consent, validates double opt-in, and sends coupon trigger code in 0 seconds.</p>
-            <div style="font-size: 0.8rem; font-weight: 600; color: var(--accent-color);"><i class="fa-solid fa-clock"></i> Quiet hours: Disabled (Opt-in instant rule)</div>
+            <p class="card__text">Acquires consent, validates double opt-in, and sends coupon trigger code in 0 seconds.
+            </p>
+            <div style="font-size: 0.8rem; font-weight: 600; color: var(--accent-color);"><i
+                class="fa-solid fa-clock"></i> Quiet hours: Disabled (Opt-in instant rule)</div>
           </div>
 
           <!-- Flow Card 2 -->
           <div class="card" style="align-items: flex-start; text-align: left;">
-            <div style="display:flex; justify-content:space-between; width:100%; margin-bottom:var(--space-md); align-items:center;">
+            <div
+              style="display:flex; justify-content:space-between; width:100%; margin-bottom:var(--space-md); align-items:center;">
               <span class="status-badge status-badge--active"><i class="fa-solid fa-circle"></i> Running</span>
               <span style="font-size:0.75rem; color:var(--text-secondary);"></span>
             </div>
             <h3 class="card__title" style="font-size: 1.2rem;">Abandoned Cart Recovery</h3>
             <p class="card__text">Triggers 30 minutes post checkout abandon. Recovers lost shopper checkout steps.</p>
-            <div style="font-size: 0.8rem; font-weight: 600; color: var(--primary-color);"><i class="fa-solid fa-clock"></i> Quiet hours: Enforced (8 PM - 9 AM)</div>
+            <div style="font-size: 0.8rem; font-weight: 600; color: var(--primary-color);"><i
+                class="fa-solid fa-clock"></i> Quiet hours: Enforced (8 PM - 9 AM)</div>
           </div>
         </div>
       </div>
 
       <!-- PANEL 3: TEXT COPY APPROVALS -->
       <div class="dashboard-panel" id="text-approvals">
-        <div class="section__header" style="text-align: center; margin-bottom: var(--space-xl); max-width: 800px; margin-left: auto; margin-right: auto; align-items: center;">
+        <div class="section__header"
+          style="text-align: center; margin-bottom: var(--space-xl); max-width: 800px; margin-left: auto; margin-right: auto; align-items: center;">
           <span class="section__badge">Written Approvals Protocol</span>
           <h1 style="font-size: 1.8rem;">Awaiting Client Text Copy Approvals</h1>
-          <p style="font-size:0.95rem;">Review the designed copy drafts. Click "Approve" to authorize launch into the active carrier network flows.</p>
+          <p style="font-size:0.95rem;">Review the designed copy drafts. Click "Approve" to authorize launch into the
+            active carrier network flows.</p>
         </div>
 
         <div class="approvals-deck">
           <!-- Copy Card A -->
           <div class="approval-card">
             <div class="approval-card__meta">
-              <span><strong>Flow:</strong>  Offer Promo</span>
+              <span><strong>Flow:</strong> Offer Promo</span>
               <span class="status-badge status-badge--pending"><i class="fa-regular fa-clock"></i> Awaiting</span>
             </div>
             <h3 style="font-size:1.15rem; font-family:var(--font-headers);">Coupon Offer Campaign</h3>
             <div class="approval-card__msg">
-              "The Wellness Depot: Thank you for opting in! Enjoy 15% off using code RECOVERY15. Terms: wellness.com/terms."
+              "The Wellness Depot: Thank you for opting in! Enjoy 15% off using code RECOVERY15. Terms:
+              wellness.com/terms."
             </div>
             <div class="approval-card__actions">
-              <button class="btn btn--primary btn-approve" style="padding:8px 16px; font-size:0.8rem;"><i class="fa-solid fa-circle-check"></i> Approve</button>
-              <button class="btn btn--secondary btn-reject" style="padding:8px 16px; font-size:0.8rem; border-color:var(--error); color:var(--error);"><i class="fa-solid fa-circle-xmark"></i> Reject</button>
+              <button class="btn btn--primary btn-approve" style="padding:8px 16px; font-size:0.8rem;"><i
+                  class="fa-solid fa-circle-check"></i> Approve</button>
+              <button class="btn btn--secondary btn-reject"
+                style="padding:8px 16px; font-size:0.8rem; border-color:var(--error); color:var(--error);"><i
+                  class="fa-solid fa-circle-xmark"></i> Reject</button>
             </div>
           </div>
 
@@ -697,11 +734,15 @@
             </div>
             <h3 style="font-size:1.15rem; font-family:var(--font-headers);"> Recover Sequence (30m delay)</h3>
             <div class="approval-card__msg">
-              "The Wellness Depot: Hey there! We saved your items. Tap to resume check out: wellness.co/cart38. Reply STOP to cancel."
+              "The Wellness Depot: Hey there! We saved your items. Tap to resume check out: wellness.co/cart38. Reply
+              STOP to cancel."
             </div>
             <div class="approval-card__actions">
-              <button class="btn btn--primary btn-approve" style="padding:8px 16px; font-size:0.8rem;"><i class="fa-solid fa-circle-check"></i> Approve</button>
-              <button class="btn btn--secondary btn-reject" style="padding:8px 16px; font-size:0.8rem; border-color:var(--error); color:var(--error);"><i class="fa-solid fa-circle-xmark"></i> Reject</button>
+              <button class="btn btn--primary btn-approve" style="padding:8px 16px; font-size:0.8rem;"><i
+                  class="fa-solid fa-circle-check"></i> Approve</button>
+              <button class="btn btn--secondary btn-reject"
+                style="padding:8px 16px; font-size:0.8rem; border-color:var(--error); color:var(--error);"><i
+                  class="fa-solid fa-circle-xmark"></i> Reject</button>
             </div>
           </div>
         </div>
@@ -709,10 +750,12 @@
 
       <!-- PANEL 4: KEYWORD TRIGGERS -->
       <div class="dashboard-panel" id="keyword-triggers">
-        <div class="section__header" style="text-align: center; margin-bottom: var(--space-xl); max-width: 800px; margin-left: auto; margin-right: auto; align-items: center;">
+        <div class="section__header"
+          style="text-align: center; margin-bottom: var(--space-xl); max-width: 800px; margin-left: auto; margin-right: auto; align-items: center;">
           <span class="section__badge">Direct Trigger Codes</span>
           <h1 style="font-size: 1.8rem;">Keyword Opt-In Trigger Registry</h1>
-          <p style="font-size:0.95rem;">Manage keywords. Registered triggers instantly initiate the corresponding compliant replies.</p>
+          <p style="font-size:0.95rem;">Manage keywords. Registered triggers instantly initiate the corresponding
+            compliant replies.</p>
         </div>
 
         <!-- Add Keyword Widget Form -->
@@ -720,13 +763,17 @@
           <div class="keyword-form-grid">
             <div class="form-group" style="margin-bottom:0;">
               <label class="form-label" for="new-keyword">Keyword Code</label>
-              <input type="text" class="form-input" id="new-keyword" placeholder="e.g. WELLNESS" style="text-transform: uppercase;">
+              <input type="text" class="form-input" id="new-keyword" placeholder="e.g. WELLNESS"
+                style="text-transform: uppercase;">
             </div>
             <div class="form-group" style="margin-bottom:0;">
               <label class="form-label" for="new-keyword-msg">Automated Reply Text Message Copy</label>
-              <input type="text" class="form-input" id="new-keyword-msg" placeholder="e.g. Thanks! Get 10% off at checkout. Reply STOP to end.">
+              <input type="text" class="form-input" id="new-keyword-msg"
+                placeholder="e.g. Thanks! Get 10% off at checkout. Reply STOP to end.">
             </div>
-            <button class="btn btn--primary btn--center" id="add-keyword-trigger" style="padding:12px 24px; margin-top: var(--space-md);"><i class="fa-solid fa-circle-plus"></i> Add Trigger</button>
+            <button class="btn btn--primary btn--center" id="add-keyword-trigger"
+              style="padding:12px 24px; margin-top: var(--space-md);"><i class="fa-solid fa-circle-plus"></i> Add
+              Trigger</button>
           </div>
         </div>
 
@@ -736,19 +783,23 @@
             grid-template-columns: 1fr 2fr;
             gap: var(--space-md);
           }
+
           .btn--center {
             grid-column: span 2;
             justify-self: center;
           }
+
           @media (max-width: 1023px) {
             .keyword-form-grid {
               grid-template-columns: 1fr 1fr;
             }
           }
+
           @media (max-width: 480px) {
             .keyword-form-grid {
               grid-template-columns: 1fr;
             }
+
             .btn--center {
               grid-column: span 1;
             }
@@ -771,22 +822,26 @@
             <tbody id="keywords-table-body">
               <tr class="keyword-tr">
                 <td><strong>JOIN</strong></td>
-                <td><span class="status-badge status-badge--active"><i class="fa-solid fa-circle"></i> Active</span></td>
+                <td><span class="status-badge status-badge--active"><i class="fa-solid fa-circle"></i> Active</span>
+                </td>
                 <td>"Thank you for opting in! Reply YES to confirm. STOP to opt-out."</td>
                 <td>1,245</td>
                 <td>88.4%</td>
                 <td>
-                  <button class="btn-icon btn-icon--sm delete-keyword-btn" style="width:32px; height:32px;" title="Delete trigger"><i class="fa-solid fa-trash-can"></i></button>
+                  <button class="btn-icon btn-icon--sm delete-keyword-btn" style="width:32px; height:32px;"
+                    title="Delete trigger"><i class="fa-solid fa-trash-can"></i></button>
                 </td>
               </tr>
               <tr class="keyword-tr">
                 <td><strong>OFFERS</strong></td>
-                <td><span class="status-badge status-badge--active"><i class="fa-solid fa-circle"></i> Active</span></td>
+                <td><span class="status-badge status-badge--active"><i class="fa-solid fa-circle"></i> Active</span>
+                </td>
                 <td>"Welcome to the VIP list. Use code DISCOUNTS at checkout. STOP to unsubscribe."</td>
                 <td>850</td>
                 <td>92.1%</td>
                 <td>
-                  <button class="btn-icon btn-icon--sm delete-keyword-btn" style="width:32px; height:32px;" title="Delete trigger"><i class="fa-solid fa-trash-can"></i></button>
+                  <button class="btn-icon btn-icon--sm delete-keyword-btn" style="width:32px; height:32px;"
+                    title="Delete trigger"><i class="fa-solid fa-trash-can"></i></button>
                 </td>
               </tr>
             </tbody>
@@ -796,7 +851,8 @@
 
       <!-- PANEL 5: REPORTS & CTR -->
       <div class="dashboard-panel" id="reports">
-        <div class="section__header" style="text-align: center; margin-bottom: var(--space-xl); max-width: 800px; margin-left: auto; margin-right: auto; align-items: center;">
+        <div class="section__header"
+          style="text-align: center; margin-bottom: var(--space-xl); max-width: 800px; margin-left: auto; margin-right: auto; align-items: center;">
           <span class="section__badge">Performance Chart</span>
           <h1 style="font-size: 1.8rem;">Opt-In Rates & Conversion reports</h1>
           <p style="font-size:0.95rem;">Review weekly list acquisition rates, delivery metrics, and click stats.</p>
@@ -805,14 +861,22 @@
         <div class="grid-container">
           <!-- Graphical mockup card A -->
           <div class="card" style="align-items: stretch; text-align: left;">
-            <h3 class="card__title" style="font-size:1.1rem; border-bottom:1px solid var(--border-color); padding-bottom:var(--space-sm);"><i class="fa-solid fa-chart-line" style="color:var(--primary-color);"></i> Weekly Opt-In Growth Curve</h3>
-            <div style="height:200px; display:flex; align-items:flex-end; justify-content:space-around; padding-top:var(--space-xl); border-bottom:2.5px solid var(--border-color);">
-              <div style="width:35px; height:60px; background-color:var(--primary-color); border-radius:4px 4px 0 0;" title="Week 1: 340"></div>
-              <div style="width:35px; height:100px; background-color:var(--primary-color); border-radius:4px 4px 0 0;" title="Week 2: 520"></div>
-              <div style="width:35px; height:130px; background-color:var(--primary-color); border-radius:4px 4px 0 0;" title="Week 3: 710"></div>
-              <div style="width:35px; height:180px; background-color:var(--primary-color); border-radius:4px 4px 0 0;" title="Week 4: 980"></div>
+            <h3 class="card__title"
+              style="font-size:1.1rem; border-bottom:1px solid var(--border-color); padding-bottom:var(--space-sm);"><i
+                class="fa-solid fa-chart-line" style="color:var(--primary-color);"></i> Weekly Opt-In Growth Curve</h3>
+            <div
+              style="height:200px; display:flex; align-items:flex-end; justify-content:space-around; padding-top:var(--space-xl); border-bottom:2.5px solid var(--border-color);">
+              <div style="width:35px; height:60px; background-color:var(--primary-color); border-radius:4px 4px 0 0;"
+                title="Week 1: 340"></div>
+              <div style="width:35px; height:100px; background-color:var(--primary-color); border-radius:4px 4px 0 0;"
+                title="Week 2: 520"></div>
+              <div style="width:35px; height:130px; background-color:var(--primary-color); border-radius:4px 4px 0 0;"
+                title="Week 3: 710"></div>
+              <div style="width:35px; height:180px; background-color:var(--primary-color); border-radius:4px 4px 0 0;"
+                title="Week 4: 980"></div>
             </div>
-            <div style="display:flex; justify-content:space-around; font-size:0.8rem; color:var(--text-secondary); margin-top:var(--space-sm);">
+            <div
+              style="display:flex; justify-content:space-around; font-size:0.8rem; color:var(--text-secondary); margin-top:var(--space-sm);">
               <span>Week 1</span>
               <span>Week 2</span>
               <span>Week 3</span>
@@ -822,14 +886,17 @@
 
           <!-- Graphical mockup card B -->
           <div class="card" style="align-items: stretch; text-align: left;">
-            <h3 class="card__title" style="font-size:1.1rem; border-bottom:1px solid var(--border-color); padding-bottom:var(--space-sm);"><i class="fa-solid fa-chart-pie" style="color:var(--accent-color);"></i> Campaign Delivery Statistics</h3>
+            <h3 class="card__title"
+              style="font-size:1.1rem; border-bottom:1px solid var(--border-color); padding-bottom:var(--space-sm);"><i
+                class="fa-solid fa-chart-pie" style="color:var(--accent-color);"></i> Campaign Delivery Statistics</h3>
             <div style="display:flex; flex-direction:column; gap:var(--space-md); padding-top:var(--space-md);">
               <div>
                 <div style="display:flex; justify-content:space-between; font-size:0.85rem; margin-bottom:4px;">
                   <span>Success Delivery</span>
                   <strong>99.4%</strong>
                 </div>
-                <div style="width:100%; height:8px; background-color:var(--border-color); border-radius:4px; overflow:hidden;">
+                <div
+                  style="width:100%; height:8px; background-color:var(--border-color); border-radius:4px; overflow:hidden;">
                   <div style="width:99.4%; height:100%; background-color:var(--success);"></div>
                 </div>
               </div>
@@ -838,7 +905,8 @@
                   <span>Average CTR Ratio</span>
                   <strong>24.2%</strong>
                 </div>
-                <div style="width:100%; height:8px; background-color:var(--border-color); border-radius:4px; overflow:hidden;">
+                <div
+                  style="width:100%; height:8px; background-color:var(--border-color); border-radius:4px; overflow:hidden;">
                   <div style="width:24.2%; height:100%; background-color:var(--primary-color);"></div>
                 </div>
               </div>
@@ -849,19 +917,26 @@
 
       <!-- PANEL 6: TCPA LIVE AUDITS -->
       <div class="dashboard-panel" id="tcpa-audits">
-        <div class="section__header" style="text-align: center; margin-bottom: var(--space-xl); max-width: 800px; margin-left: auto; margin-right: auto; align-items: center;">
+        <div class="section__header"
+          style="text-align: center; margin-bottom: var(--space-xl); max-width: 800px; margin-left: auto; margin-right: auto; align-items: center;">
           <span class="section__badge">Brand Compliance Protection</span>
           <h1 style="font-size: 1.8rem;">Interactive Brand TCPA Compliance Auditor</h1>
-          <p style="font-size:0.95rem;">Review policy settings. Select checkboxes to trigger active safety logic parameters.</p>
+          <p style="font-size:0.95rem;">Review policy settings. Select checkboxes to trigger active safety logic
+            parameters.</p>
         </div>
 
         <!-- Compliance Dynamic Progress bar -->
         <div class="card" style="align-items: stretch; text-align: left;">
-          <h3 class="card__title" style="font-size: 1.2rem;" id="audit-compliance-text">Audit Rating Assessment: 0% Compliant</h3>
-          <div style="width:100%; height:14px; background-color:var(--border-color); border-radius:var(--radius-round); overflow:hidden; margin:var(--space-md) 0;">
-            <div id="audit-compliance-bar" style="width:0%; height:100%; background-color:var(--success); transition: width var(--transition-smooth);"></div>
+          <h3 class="card__title" style="font-size: 1.2rem;" id="audit-compliance-text">Audit Rating Assessment: 0%
+            Compliant</h3>
+          <div
+            style="width:100%; height:14px; background-color:var(--border-color); border-radius:var(--radius-round); overflow:hidden; margin:var(--space-md) 0;">
+            <div id="audit-compliance-bar"
+              style="width:0%; height:100%; background-color:var(--success); transition: width var(--transition-smooth);">
+            </div>
           </div>
-          <p style="font-size:0.85rem; color:var(--text-secondary);">Toggle checked items in the checklist below. Keeping lists audit compliant isolates brands from FTC or FCC legal penalties.</p>
+          <p style="font-size:0.85rem; color:var(--text-secondary);">Toggle checked items in the checklist below.
+            Keeping lists audit compliant isolates brands from FTC or FCC legal penalties.</p>
         </div>
 
         <!-- Audit checklist -->
@@ -872,7 +947,8 @@
               <input type="checkbox" class="audit-checkbox" checked>
               <div>
                 <strong style="font-size:0.95rem;">Prior Express Consent</strong>
-                <p style="font-size:0.8rem; color:var(--text-secondary); margin:0;">Disclosures exist on checkout checkboxes.</p>
+                <p style="font-size:0.8rem; color:var(--text-secondary); margin:0;">Disclosures exist on checkout
+                  checkboxes.</p>
               </div>
             </div>
             <span class="status-badge status-badge--active"><i class="fa-solid fa-shield"></i> Safe</span>
@@ -884,7 +960,8 @@
               <input type="checkbox" class="audit-checkbox">
               <div>
                 <strong style="font-size:0.95rem;">Quiet Hour suppression Delays</strong>
-                <p style="font-size:0.8rem; color:var(--text-secondary); margin:0;">Suppress all dispatch rules from triggering between 8:00 PM and 9:00 AM.</p>
+                <p style="font-size:0.8rem; color:var(--text-secondary); margin:0;">Suppress all dispatch rules from
+                  triggering between 8:00 PM and 9:00 AM.</p>
               </div>
             </div>
             <span class="status-badge status-badge--pending"><i class="fa-solid fa-clock"></i> Inactive</span>
@@ -896,7 +973,8 @@
               <input type="checkbox" class="audit-checkbox" checked>
               <div>
                 <strong style="font-size:0.95rem;">STOP Unsubscribe keyword routing</strong>
-                <p style="font-size:0.8rem; color:var(--text-secondary); margin:0;">Automated suppression router processes cancels immediately.</p>
+                <p style="font-size:0.8rem; color:var(--text-secondary); margin:0;">Automated suppression router
+                  processes cancels immediately.</p>
               </div>
             </div>
             <span class="status-badge status-badge--active"><i class="fa-solid fa-shield"></i> Safe</span>
@@ -906,14 +984,16 @@
 
       <!-- PANEL 7: SETTINGS -->
       <div class="dashboard-panel" id="settings">
-        <div class="section__header" style="text-align: center; margin-bottom: var(--space-xl); max-width: 800px; margin-left: auto; margin-right: auto; align-items: center;">
+        <div class="section__header"
+          style="text-align: center; margin-bottom: var(--space-xl); max-width: 800px; margin-left: auto; margin-right: auto; align-items: center;">
           <span class="section__badge">Console Config</span>
           <h1 style="font-size: 1.8rem;">System Settings & API Keys</h1>
           <p style="font-size:0.95rem;">Review 10DLC registrations, sync variables, and profile information.</p>
         </div>
 
         <div class="card" style="align-items: center; text-align: center; max-width:700px; margin: 0 auto;">
-          <form class="needs-validation" novalidate style="width:100%; display: flex; flex-direction: column; align-items: center;">
+          <form class="needs-validation" novalidate
+            style="width:100%; display: flex; flex-direction: column; align-items: center;">
             <div style="display:grid; grid-template-columns: 1fr 1fr; gap:var(--space-md);">
               <div class="form-group">
                 <label class="form-label" for="set-fname">Full Name</label>
@@ -935,7 +1015,9 @@
               <input type="password" class="form-input" id="set-carrier" value="">
             </div>
 
-            <button type="submit" class="btn btn--primary" style="padding:10px 24px; font-size:0.85rem; align-self: center;"><i class="fa-solid fa-floppy-disk"></i> Save Configurations</button>
+            <button type="submit" class="btn btn--primary"
+              style="padding:10px 24px; font-size:0.85rem; align-self: center;"><i class="fa-solid fa-floppy-disk"></i>
+              Save Configurations</button>
           </form>
         </div>
       </div>
@@ -947,4 +1029,5 @@
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/dashboard.js"></script>
 </body>
+
 </html>

@@ -37,7 +37,19 @@
     @media (max-width: 1023px) {
       .featured-blog-card {
         grid-template-columns: 1fr;
-        text-align: center;
+      }
+    }
+
+    .newsletter-btn {
+      width: 100%;
+    }
+
+    @media (min-width: 768px) {
+      .newsletter-btn {
+        width: auto !important;
+        min-width: 250px;
+        margin: 0 auto;
+        display: flex;
       }
     }
   </style>
@@ -183,28 +195,34 @@
         <!-- Article 1 -->
         <article class="card-glass">
           <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=600&h=600" alt="Scribbling Compliant Promos" style="aspect-ratio: 1/1; height: auto;">
-          <span style="font-size:0.75rem; color: var(--text-secondary); margin-bottom:var(--space-sm); font-weight: 600;">Copywriting Tips &bull; May 2026</span>
-          <h3 class="card__title">Scribbling Promos</h3>
-          <p class="card__text">Master the layout of brief campaign alerts. Integrate mandatory STOP and MSG rules seamlessly.</p>
-          <a href="contact.html" class="btn btn--tertiary">Read Guide <i class="fa-solid fa-book-open"></i></a>
+          <div class="card__content">
+            <span style="font-size:0.75rem; color: var(--text-secondary); margin-bottom:var(--space-sm); font-weight: 600;">Copywriting Tips &bull; May 2026</span>
+            <h3 class="card__title">Scribbling Promos</h3>
+            <p class="card__text">Master the layout of brief campaign alerts. Integrate mandatory STOP and MSG rules seamlessly.</p>
+            <a href="contact.html" class="btn btn--tertiary">Read Guide <i class="fa-solid fa-book-open"></i></a>
+          </div>
         </article>
 
         <!-- Article 2 -->
         <article class="card-glass">
           <img src="https://www.sendhub.com/wp-content/uploads/2025/05/10DLC-Texting.png" alt="10DLC Delivery" style="aspect-ratio: 1/1; height: auto;">
-          <span style="font-size:0.75rem; color: var(--text-secondary); margin-bottom:var(--space-sm); font-weight: 600;">Carrier Network &bull; April 2026</span>
-          <h3 class="card__title">What Blocks 10DLC?</h3>
-          <p class="card__text">Understand how spam rating systems filter non-registered company phone lines and keyword links.</p>
-          <a href="contact.html" class="btn btn--tertiary">Read Guide <i class="fa-solid fa-book-open"></i></a>
+          <div class="card__content">
+            <span style="font-size:0.75rem; color: var(--text-secondary); margin-bottom:var(--space-sm); font-weight: 600;">Carrier Network &bull; April 2026</span>
+            <h3 class="card__title">What Blocks 10DLC?</h3>
+            <p class="card__text">Understand how spam rating systems filter non-registered company phone lines and links.</p>
+            <a href="contact.html" class="btn btn--tertiary">Read Guide <i class="fa-solid fa-book-open"></i></a>
+          </div>
         </article>
 
         <!-- Article 3 -->
         <article class="card-glass">
           <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600&h=600" alt="Opt-In Growth" style="aspect-ratio: 1/1; height: auto;">
-          <span style="font-size:0.75rem; color: var(--text-secondary); margin-bottom:var(--space-sm); font-weight: 600;">List Growth &bull; March 2026</span>
-          <h3 class="card__title">Opt-In Growth Incentives</h3>
-          <p class="card__text">How premium brands safely double opt-in list sizes by offering legal downloadable guides and codes.</p>
-          <a href="contact.html" class="btn btn--tertiary">Read Guide <i class="fa-solid fa-book-open"></i></a>
+          <div class="card__content">
+            <span style="font-size:0.75rem; color: var(--text-secondary); margin-bottom:var(--space-sm); font-weight: 600;">List Growth &bull; March 2026</span>
+            <h3 class="card__title">Opt-In Growth Incentives</h3>
+            <p class="card__text">How premium brands safely double opt-in list sizes by offering legal downloadable guides and codes.</p>
+            <a href="contact.html" class="btn btn--tertiary">Read Guide <i class="fa-solid fa-book-open"></i></a>
+          </div>
         </article>
       </div>
     </section>
@@ -217,14 +235,14 @@
         <p class="section__subtitle">Get short, critical compliance changes, copywriting models, and regulatory alerts dispatched directly to your inbox. No fluff, ever.</p>
       </div>
 
-      <div class="card-glass" style="width: 100%; text-align: left;">
+      <div class="card-glass contact-form-card">
         <form class="needs-validation" novalidate style="width: 100%;">
           <div class="form-group">
             <label class="form-label" for="sub-email">Your Work Email Address <span>*</span></label>
             <input type="email" class="form-input" id="sub-email" placeholder="compliance@yourbrand.com" required style="width:100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px;">
             <span class="form-error-msg">Please input a valid work email.</span>
           </div>
-          <button type="submit" class="btn btn--primary" style="width: 100%;"><i class="fa-solid fa-envelope-circle-check"></i> Join Briefing List</button>
+          <button type="submit" class="btn btn--primary newsletter-btn"><i class="fa-solid fa-envelope-circle-check"></i> Join </button>
         </form>
       </div>
     </section>

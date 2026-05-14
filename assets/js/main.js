@@ -351,6 +351,30 @@ document.addEventListener('DOMContentLoaded', () => {
     rtlBtns.forEach(btn => btn.addEventListener('click', toggleRTL));
   };
 
+  // --- Back to Top Functionality ---
+  const initBackToTop = () => {
+    const backToTopBtn = document.createElement('button');
+    backToTopBtn.className = 'back-to-top';
+    backToTopBtn.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
+    backToTopBtn.setAttribute('aria-label', 'Back to Top');
+    document.body.appendChild(backToTopBtn);
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTopBtn.classList.add('active');
+      } else {
+        backToTopBtn.classList.remove('active');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  };
+
   // Running initializations
   initTheme();
   initRTL();
@@ -361,4 +385,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initRoiCalculator();
   initFormValidation();
   setupToggleListeners();
+  initBackToTop();
 });

@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (dHeaderHamburger && dSidebar) {
       dHeaderHamburger.addEventListener('click', () => {
-        dSidebar.classList.add('open');
+        dSidebar.classList.toggle('open');
       });
     }
     
