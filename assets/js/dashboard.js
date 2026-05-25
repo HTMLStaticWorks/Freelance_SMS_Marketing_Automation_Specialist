@@ -36,11 +36,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           });
 
-
           // Close mobile sidebar if open
           const sidebar = document.querySelector('.dashboard-sidebar');
           if (sidebar) {
             sidebar.classList.remove('open');
+          }
+
+          // Scroll to top of the dashboard content container on mobile
+          if (window.innerWidth <= 1023) {
+            const dashboardMain = document.querySelector('.dashboard-main');
+            if (dashboardMain) {
+              dashboardMain.scrollTop = 0;
+            }
+            window.scrollTo(0, 0);
           }
         });
       });
