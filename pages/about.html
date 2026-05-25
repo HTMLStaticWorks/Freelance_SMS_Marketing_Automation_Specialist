@@ -310,6 +310,18 @@
     .specialist-badge-item--accent {
       background-color: var(--accent-color);
     }
+
+    /* Mobile: stack concern checkboxes one by one */
+    @media (max-width: 767px) {
+      .audit-concern-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    /* Fix audit button text to stay on single line */
+    .audit-form-footer .btn {
+      white-space: nowrap;
+    }
   </style>
 </head>
 
@@ -630,7 +642,7 @@
               <label class="audit-form-label" style="margin-bottom: var(--space-sm); display: block;">What are your
                 primary areas of concern? (Select all that apply)</label>
 
-              <div
+              <div class="audit-concern-grid"
                 style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-sm); margin-top: var(--space-sm);">
                 <label class="audit-form-checkbox">
                   <input type="checkbox" name="concern" value="checkout_compliance">

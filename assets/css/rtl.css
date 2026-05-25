@@ -32,7 +32,31 @@ html[dir="rtl"] .nav__link.active::after {
   transform: translateX(50%) scaleX(1);
 }
 
-/* Footer elements */
+/* ==========================================================================
+   Footer RTL Fixes - Brand & Logo Alignment
+   ========================================================================== */
+html[dir="rtl"] .footer__brand {
+  align-items: flex-start;
+}
+
+html[dir="rtl"] .footer__brand .brand {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .footer__text {
+  text-align: right;
+}
+
+html[dir="rtl"] .footer__socials {
+  justify-content: flex-start;
+}
+
+@media (max-width: 767px) {
+  html[dir="rtl"] .footer__container {
+    text-align: right;
+  }
+}
+
 html[dir="rtl"] .footer__title::after {
   left: auto;
   right: 0;
@@ -40,8 +64,9 @@ html[dir="rtl"] .footer__title::after {
 
 @media (max-width: 767px) {
   html[dir="rtl"] .footer__title::after {
-    right: 50%;
-    transform: translateX(50%);
+    right: 0;
+    left: auto;
+    transform: none;
   }
 }
 
@@ -52,6 +77,23 @@ html[dir="rtl"] .footer__link:hover {
 @media (max-width: 767px) {
   html[dir="rtl"] .footer__link:hover {
     transform: translateY(-2px);
+  }
+}
+
+/* Footer contact info icon margins swap */
+html[dir="rtl"] .footer__link i {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+html[dir="rtl"] .footer__bottom {
+  direction: rtl;
+}
+
+@media (max-width: 767px) {
+  html[dir="rtl"] .footer__bottom {
+    text-align: right;
+    align-items: flex-end;
   }
 }
 
@@ -83,9 +125,39 @@ html[dir="rtl"] .form-group {
   text-align: right;
 }
 
-/* Sidebar structure inside Dashboard */
+/* ==========================================================================
+   Login & Sign-Up RTL - Eye Icon Position Swap
+   ========================================================================== */
+html[dir="rtl"] .input-wrapper input {
+  padding-right: 16px;
+  padding-left: 48px;
+}
+
+html[dir="rtl"] .input-wrapper__icon {
+  right: auto;
+  left: 16px;
+}
+
+/* Login controls position swap */
+html[dir="rtl"] .login-controls,
+html[dir="rtl"] .register-controls {
+  right: auto;
+  left: 16px;
+}
+
+@media (max-width: 480px) {
+  html[dir="rtl"] .login-controls,
+  html[dir="rtl"] .register-controls {
+    left: 8px;
+    right: auto;
+  }
+}
+
+/* ==========================================================================
+   Dashboard RTL - Sidebar Switches to Right Side
+   ========================================================================== */
 html[dir="rtl"] .dashboard-layout {
-  flex-direction: row-reverse;
+  /* Let flexbox natural RTL order place sidebar on the right */
 }
 
 html[dir="rtl"] .dashboard-sidebar {
@@ -93,9 +165,22 @@ html[dir="rtl"] .dashboard-sidebar {
   border-left: 1px solid var(--border-color);
 }
 
+/* Mobile sidebar: switch from left to right in RTL */
+@media (max-width: 1023px) {
+  html[dir="rtl"] .dashboard-sidebar {
+    left: auto;
+    right: 0;
+    transform: translateX(100%);
+  }
+
+  html[dir="rtl"] .dashboard-sidebar.open {
+    transform: translateX(0);
+  }
+}
+
 html[dir="rtl"] .sidebar-nav__link {
   text-align: right;
-  flex-direction: row-reverse;
+  /* flex-direction naturally handles RTL, no need for row-reverse */
   justify-content: flex-start;
 }
 
@@ -106,4 +191,28 @@ html[dir="rtl"] .sidebar-nav__link i {
 
 html[dir="rtl"] .dashboard-header__profile {
   flex-direction: row-reverse;
+}
+
+/* Dashboard header left section in RTL */
+html[dir="rtl"] .dashboard-header__left {
+  flex-direction: row-reverse;
+}
+
+/* ==========================================================================
+   About Page RTL - Audit form checkbox alignment
+   ========================================================================== */
+html[dir="rtl"] .audit-form-checkbox {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+html[dir="rtl"] .audit-form-group {
+  text-align: right;
+}
+
+/* Select dropdown arrow on left side in RTL */
+html[dir="rtl"] select.audit-form-input {
+  background-position: left 16px center;
+  padding-left: 40px;
+  padding-right: var(--space-md);
 }
