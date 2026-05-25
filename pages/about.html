@@ -1,24 +1,318 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SMSPulse | About the SMS Automation & TCPA Specialist</title>
-  
+  <title>Lucas Vance | About the SMS Automation & TCPA Specialist</title>
+
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Learn about our mission, TCPA certifications, and legal-first SMS automation design methodology. Experience safe e-commerce scale.">
+  <meta name="description"
+    content="Learn about my mission, TCPA certifications, and legal-first SMS automation design methodology. Experience safe e-commerce scale.">
   <meta name="keywords" content="SMS Expert, TCPA Certified, Klaviyo partner, SMS Marketing Specialist">
-  
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/dark-mode.css">
   <link rel="stylesheet" href="../assets/css/rtl.css">
-  
+
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <style>
+    /* Metric Success Panel */
+    .success-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-lg);
+      margin-top: var(--space-2xl);
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    @media (max-width: 1023px) {
+      .success-metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 580px) {
+      .success-metrics-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .metric-card-trust {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: var(--space-xl) var(--space-lg);
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-smooth);
+    }
+
+    .metric-card-trust:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary-color);
+      box-shadow: var(--shadow-lg), var(--shadow-glow);
+    }
+
+    .metric-card-trust__value {
+      font-size: 2.8rem;
+      font-weight: 500;
+      color: var(--primary-color);
+      font-family: var(--font-headers);
+      line-height: 1.1;
+      margin-bottom: var(--space-xs);
+    }
+
+    .metric-card-trust__title {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: var(--space-xs);
+    }
+
+    .metric-card-trust__desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    /* Conversion Audit Section */
+    .audit-section-container {
+      max-width: 900px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .audit-form-card {
+      background-color: var(--bg-card);
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: var(--space-3xl) var(--space-2xl);
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      text-align: left;
+      margin-top: var(--space-2xl);
+      width: 100%;
+    }
+
+    .audit-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-lg);
+      margin-top: var(--space-lg);
+      width: 100%;
+    }
+
+    @media (max-width: 767px) {
+      .audit-form-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+      }
+    }
+
+    .audit-form-footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-md);
+      margin-top: var(--space-xl);
+      text-align: center;
+      width: 100%;
+    }
+
+    .audit-form-checkbox {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-sm);
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+    }
+
+    .audit-form-checkbox input {
+      margin-top: 3.5px;
+      width: 16px;
+      height: 16px;
+      accent-color: var(--primary-color);
+      flex-shrink: 0;
+    }
+
+    /* Form Input & Label System */
+    .audit-form-group {
+      margin-bottom: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .audit-form-label {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: var(--space-xs);
+    }
+
+    .audit-form-label span {
+      color: var(--primary-color);
+    }
+
+    .audit-form-input {
+      width: 100%;
+      padding: 12px var(--space-md);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      background-color: var(--bg-secondary);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      transition: all var(--transition-fast);
+    }
+
+    .audit-form-input:focus {
+      border-color: var(--primary-color);
+      box-shadow: var(--shadow-glow);
+      background-color: var(--bg-card);
+    }
+
+    select.audit-form-input {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23be5a2b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      background-size: 16px;
+      padding-right: 40px;
+    }
+
+    /* Specialist grid, image scaling, and alignment overrides */
+    .specialist-grid {
+      display: grid !important;
+      gap: var(--space-3xl) !important;
+      max-width: 1100px !important;
+      width: 100% !important;
+      margin: 0 auto !important;
+    }
+
+    .specialist-content {
+      text-align: center !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      height: 100% !important;
+    }
+
+    /* Badges alignment - Center them globally on all screens (including 1024px, 1440px) */
+    .specialist-badges {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: var(--space-md) !important;
+      margin-top: var(--space-lg) !important;
+      justify-content: center !important;
+      width: 100% !important;
+    }
+
+    @media (min-width: 1024px) {
+      .specialist-grid {
+        grid-template-columns: 1fr 1fr !important;
+        align-items: center !important;
+        /* Center columns vertically */
+      }
+
+      .specialist-grid .hero__visual {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+      }
+
+      .specialist-grid .hero__visual .card-glass {
+        max-width: 480px !important;
+        /* Cap width to look elegant at 1440px */
+        width: 100% !important;
+        height: 520px !important;
+        /* Capped aesthetic height for desktop */
+        display: flex !important;
+        flex-direction: column !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+      }
+
+      .specialist-grid .hero__visual img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+      }
+    }
+
+    @media (max-width: 1023px) {
+      .specialist-grid {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+      }
+
+      .specialist-grid .hero__visual {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+      }
+
+      .specialist-grid .hero__visual .card-glass {
+        max-width: 500px !important;
+        width: 100% !important;
+      }
+
+      .specialist-grid .hero__visual img {
+        width: 100% !important;
+        height: 480px !important;
+        /* Increased height at 768px */
+        object-fit: cover !important;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .specialist-grid .hero__visual img {
+        height: 320px !important;
+        /* Beautiful proportions on mobile */
+      }
+    }
+
+    .specialist-story__p {
+      color: var(--text-secondary);
+      margin-bottom: var(--space-md);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .specialist-badge-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+      font-weight: 500;
+      color: var(--white);
+      background-color: var(--primary-color);
+      padding: var(--space-xs) var(--space-md);
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .specialist-badge-item--accent {
+      background-color: var(--accent-color);
+    }
+  </style>
 </head>
+
 <body>
 
   <!-- Header Section -->
@@ -26,7 +320,7 @@
     <div class="header__container">
       <a href="index.html" class="brand">
         <div class="brand__logo"><i class="fa-solid fa-comment-sms"></i></div>
-        <span class="brand__name">SMSPulse</span>
+        <span class="brand__name">Lucas Vance</span>
       </a>
 
       <nav class="nav" id="main-nav">
@@ -35,22 +329,22 @@
           <li><a href="home2.html" class="nav__link">Home 2</a></li>
           <li><a href="about.html" class="nav__link active">About</a></li>
           <li><a href="services.html" class="nav__link">Services</a></li>
-          <li><a href="blog.html" class="nav__link">Blog</a></li>
+          <li><a href="blog.html" class="nav__link">Projects</a></li>
           <li><a href="contact.html" class="nav__link">Contact</a></li>
           <li><a href="dashboard.html" class="nav__link nav__dashboard-link">Dashboard</a></li>
         </ul>
-        
+
         <div class="nav__mobile-controls">
           <button class="btn-icon rtl-toggle-btn">RTL</button>
           <button class="btn-icon theme-toggle-btn"><i class="fa-solid fa-moon"></i></button>
-          <a href="login.html" class="btn btn-login"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+          <a href="login.html" class="btn btn-login">Login</a>
         </div>
       </nav>
 
       <div class="header__controls">
         <button class="btn-icon rtl-toggle-btn">RTL</button>
         <button class="btn-icon theme-toggle-btn"><i class="fa-solid fa-moon"></i></button>
-        <a href="login.html" class="btn btn-login"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+        <a href="login.html" class="btn btn-login">Login</a>
       </div>
 
       <button class="hamburger" aria-label="Toggle Mobile Navigation">
@@ -64,11 +358,13 @@
   <main>
     <!-- HERO SECTION -->
     <section class="hero animate-fade">
-      <div class="hero__container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+      <div class="hero__container"
+        style="display: flex; flex-direction: column; align-items: center; text-align: center;">
         <div class="hero__content" style="text-align: center; align-items: center; max-width: 800px; margin: 0 auto;">
           <span class="section__badge hero__badge">The Specialist Story</span>
           <h1 class="hero__title">Blending High Revenue with <span>Total Compliance</span></h1>
-          <p class="hero__text">SMSPulse was founded to solve a critical issue: helping e-commerce and retail brands capture high SMS profits without risking legal penalties.</p>
+          <p class="hero__text">I established my independent consulting practice to solve a critical issue: helping
+            e-commerce and retail brands capture high SMS profits without risking legal penalties.</p>
           <div class="hero__actions">
             <a href="contact.html" class="btn btn--primary">Book a Compliance Audit</a>
             <a href="#specialist" class="btn btn--secondary">Meet the Specialist</a>
@@ -81,25 +377,83 @@
     <section class="section section--secondary" id="specialist">
       <div class="specialist-grid">
         <div class="hero__visual" style="display: flex; align-items: center; justify-content: center;">
-          <div class="card-glass" style="padding: 0; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-xl); border: 2px solid var(--primary-color);">
-            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600" alt="SMS Specialist" style="width: 100%; height: 450px; object-fit: cover;">
+          <div class="card-glass"
+            style="padding: 0; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-xl); border: 2.5px solid var(--primary-color); transition: transform var(--transition-smooth);"
+            onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+            <img src="https://vancewealth.com/wp-content/uploads/2026/05/lucas-mendoza.jpg"
+              alt="Lucas Vance - SMS Specialist" style="width: 100%; height: 480px; object-fit: cover;">
           </div>
         </div>
-        
-        <div class="specialist-content" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
-          <span class="section__badge" style="margin-bottom: var(--space-md); align-self: center;">Founded on Integrity</span>
-          <h2 style="font-family: var(--font-headers); margin-bottom: var(--space-md); font-weight: 800; text-align: center;">Meet Your Specialist</h2>
-          <p style="color: var(--text-secondary); margin-bottom: var(--space-md); font-size: 1.05rem; line-height: 1.7; text-align: center;">Hello! I am a Freelance SMS Marketing Automation Specialist with active background in legal privacy frameworks, mobile carrier protocols (10DLC), and revenue funnel configurations.</p>
-          <p style="color: var(--text-secondary); margin-bottom: var(--space-xl); font-size: 1.05rem; line-height: 1.7; text-align: center;">I work hand-in-hand with brands on platforms like Klaviyo, Attentive, and Salesforce to design, build, and optimize automated text message funnels that drive sustainable, compliance-safe customer relationships.</p>
-          
-          <div style="display: flex; flex-direction: column; gap: var(--space-md); align-items: center;">
-            <div style="display: flex; align-items: center; gap: var(--space-sm); font-weight: 700; color: var(--primary-color); text-align: center;">
-              <i class="fa-solid fa-certificate"></i> TCPA & CTIA CERTIFIED SPECIALIST
+
+        <div class="specialist-content">
+          <span class="section__badge" style="margin-bottom: var(--space-md);">Founded on Integrity & Results</span>
+          <h2 style="font-family: var(--font-headers); margin-bottom: var(--space-md); font-weight: 500;">Meet Lucas
+            Vance</h2>
+          <p class="specialist-story__p">Hello! I am a Freelance SMS Marketing Automation Specialist with an active
+            background in legal privacy frameworks, mobile carrier protocols (10DLC), and revenue funnel configurations.
+          </p>
+          <p class="specialist-story__p">My path to specializing in compliant SMS automation started in the trenches of
+            high-growth e-commerce. I saw firsthand how agencies deployed cookie-cutter campaigns that violated quiet
+            hours, sent spammy checkout sequences, and placed brands at catastrophic legal risk.</p>
+          <p class="specialist-story__p">When you work with me, you get a dedicated specialist managing every detail—no
+            junior account managers, no automated templates, just a manual, highly optimized approach designed for
+            sustainable scale.</p>
+
+          <div class="specialist-badges">
+            <div class="specialist-badge-item">
+              <i class="fa-solid fa-certificate"></i> TCPA & CTIA Certified
             </div>
-            <div style="display: flex; align-items: center; gap: var(--space-sm); font-weight: 700; color: var(--accent-color); text-align: center;">
-              <i class="fa-solid fa-check-double"></i> 10DLC BRAND REGISTRATION EXPERT
+            <div class="specialist-badge-item specialist-badge-item--accent">
+              <i class="fa-solid fa-check-double"></i> 10DLC Registration Expert
+            </div>
+            <div class="specialist-badge-item">
+              <i class="fa-solid fa-code"></i> Klaviyo Elite Developer
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1B: VERIFIED SUCCESS RATES & TRUST -->
+    <section class="section" style="padding-top: var(--space-xl); padding-bottom: 0;">
+      <div style="text-align: center; max-width: 800px; margin: 0 auto var(--space-xl) auto;">
+        <span class="section__badge">Verified Track Record</span>
+        <h2 style="font-family: var(--font-headers); margin-bottom: var(--space-sm); font-weight: 500;">Performance
+          Meets Absolute Safety</h2>
+        <p style="color: var(--text-secondary); font-size: 1.05rem;">I help brands maximize their retention revenue
+          while maintaining an ironclad layer of legal protection. Here is what my clients achieve on average:</p>
+      </div>
+      <div class="success-metrics-grid" style="margin-left: auto; margin-right: auto;">
+        <!-- Metric 1 -->
+        <div class="metric-card-trust">
+          <div class="metric-card-trust__value">99.2%</div>
+          <div class="metric-card-trust__title">Average Deliverability</div>
+          <div class="metric-card-trust__desc">Through direct 10DLC registration, carrier route pre-validation, and
+            active spam-filter avoidance protocols.</div>
+        </div>
+
+        <!-- Metric 2 -->
+        <div class="metric-card-trust">
+          <div class="metric-card-trust__value">25.4x</div>
+          <div class="metric-card-trust__title">Average ROI</div>
+          <div class="metric-card-trust__desc">Generated via high-intent checkout triggers, transactional flow hooks,
+            and hyper-segmented campaigns.</div>
+        </div>
+
+        <!-- Metric 3 -->
+        <div class="metric-card-trust">
+          <div class="metric-card-trust__value">100%</div>
+          <div class="metric-card-trust__title">TCPA Pass Rate</div>
+          <div class="metric-card-trust__desc">Perfect record under rigorous carrier compliance checks, checkout
+            disclosures, and double-opt-in audits.</div>
+        </div>
+
+        <!-- Metric 4 -->
+        <div class="metric-card-trust">
+          <div class="metric-card-trust__value">$4.8M+</div>
+          <div class="metric-card-trust__title">Attributed Revenue</div>
+          <div class="metric-card-trust__desc">Verifiably generated for e-commerce and retail brands over the last 18
+            months of active consulting.</div>
         </div>
       </div>
     </section>
@@ -107,7 +461,9 @@
     <!-- SECTION 2: MISSION QUOTE -->
     <section class="section">
       <div class="card-glass" style="max-width: 900px; width: 100%; text-align: center; padding: var(--space-xl);">
-        <p style="color: var(--text-secondary); font-style: italic; font-size: 1.1rem; line-height: 1.6; margin: 0;">"A list that does not comply with TCPA rules is not a business asset—it is a legal liability waiting to explode. I ensure your list remains your most powerful revenue engine."</p>
+        <p style="color: var(--text-secondary); font-style: italic; font-size: 1.1rem; line-height: 1.6; margin: 0;">"A
+          list that does not comply with TCPA rules is not a business asset—it is a legal liability waiting to explode.
+          I ensure your list remains your most powerful revenue engine."</p>
       </div>
     </section>
 
@@ -115,38 +471,43 @@
     <section class="section section--secondary">
       <div class="section__header">
         <span class="section__badge">Compliance Framework</span>
-        <h2 class="section__title">Our Safe Scaling Blueprint</h2>
-        <p class="section__subtitle">We do not just connect systems; we audit every trigger, opt-in checkout, and data disclosure to create a robust legal shield around your text operations.</p>
+        <h2 class="section__title">My Safe Scaling Blueprint</h2>
+        <p class="section__subtitle">I do not just connect systems; I audit every trigger, opt-in checkout, and data
+          disclosure to create a robust legal shield around your text operations.</p>
       </div>
 
       <div class="grid-container pricing-grid center-last-card">
         <!-- Step 1 -->
         <article class="card-glass">
-          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800" alt="Consent Records">
+          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800"
+            alt="Consent Records">
           <div class="card__content">
-            <div class="card__icon"><i class="fa-solid fa-signature"></i></div>
             <h3 class="card__title">1. Written Consent</h3>
-            <p class="card__text">We configure legal checkbox disclosures, opt-in terms, and dual opt-in confirmations to guarantee clear consent records for carriers.</p>
+            <p class="card__text">I configure legal checkbox disclosures, opt-in terms, and dual opt-in confirmations to
+              guarantee clear consent records for carriers.</p>
           </div>
         </article>
 
         <!-- Step 2 -->
         <article class="card-glass">
-          <img src="https://i.ytimg.com/vi/wbZqwbhz00U/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYACugWKAgwIABABGC4gXShyMA8=&rs=AOn4CLB8Pr_et_P6oZrf4nMqTheKqmxORw" alt="Quiet Hours">
+          <img
+            src="https://i.ytimg.com/vi/wbZqwbhz00U/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYACugWKAgwIABABGC4gXShyMA8=&rs=AOn4CLB8Pr_et_P6oZrf4nMqTheKqmxORw"
+            alt="Quiet Hours">
           <div class="card__content">
-            <div class="card__icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
             <h3 class="card__title">2. Silent Quiet Hours</h3>
-            <p class="card__text">We inject active quiet-hour delays into your flows, preventing texts from triggering during restricted evening slots (8 PM - 9 AM).</p>
+            <p class="card__text">I inject active quiet-hour delays into your flows, preventing texts from triggering
+              during restricted evening slots (8 PM - 9 AM).</p>
           </div>
         </article>
 
         <!-- Step 3 -->
         <article class="card-glass">
-          <img src="https://snov.io/blog/wp-content/uploads/2024/12/Opt-in-opt-out-strategies-1024x586.png" alt="Opt-Out Automation">
+          <img src="https://snov.io/blog/wp-content/uploads/2024/12/Opt-in-opt-out-strategies-1024x586.png"
+            alt="Opt-Out Automation">
           <div class="card__content">
-            <div class="card__icon"><i class="fa-solid fa-database"></i></div>
             <h3 class="card__title">3. Instant Opt-Out</h3>
-            <p class="card__text">We engineer automated STOP triggers that instantly flag and remove opting-out clients, neutralizing major legal risk indicators.</p>
+            <p class="card__text">I engineer automated STOP triggers that instantly flag and remove opting-out clients,
+              neutralizing major legal risk indicators.</p>
           </div>
         </article>
       </div>
@@ -157,29 +518,161 @@
       <div class="section__header">
         <span class="section__badge">Accredited Expertise</span>
         <h2 class="section__title">Industry Memberships & Credentials</h2>
-        <p class="section__subtitle">We maintain top certification tiers across leading mobile compliance associations and technology ecosystems.</p>
+        <p class="section__subtitle">I maintain top certification tiers across leading mobile compliance associations
+          and technology ecosystems.</p>
       </div>
 
       <div class="grid-container" style="max-width: 900px;">
         <!-- Certification 1 -->
         <article class="card-glass">
-          <img src="https://www.lawcrossing.com/images/articleimages/Compliance-Specialist-is-a-New-Role-Law-Firms-are-Considering-Join-the-Crowd.jpg" alt="TCPA Certification">
+          <img
+            src="https://www.lawcrossing.com/images/articleimages/Compliance-Specialist-is-a-New-Role-Law-Firms-are-Considering-Join-the-Crowd.jpg"
+            alt="TCPA Certification">
           <div class="card__content">
-            <div class="card__icon" style="background: var(--accent-light); color: var(--accent-color);"><i class="fa-solid fa-graduation-cap"></i></div>
+            
             <h3 class="card__title">Compliance Specialist</h3>
-            <p class="card__text">Expert certificate verifying knowledge of the Telephone Consumer Protection Act and list consent scrubbing laws.</p>
+            <p class="card__text">Expert certificate verifying knowledge of the Telephone Consumer Protection Act and
+              list consent scrubbing laws.</p>
           </div>
         </article>
 
         <!-- Certification 2 -->
         <article class="card-glass">
-          <img src="https://i.vimeocdn.com/video/2041563772-44f3eaa1376ede91a63169551d0a365d58807cad2ec0c6bb0929d44a41d31f34-d?f=webp" alt="Klaviyo Partner">
+          <img
+            src="https://i.vimeocdn.com/video/2041563772-44f3eaa1376ede91a63169551d0a365d58807cad2ec0c6bb0929d44a41d31f34-d?f=webp"
+            alt="Klaviyo Partner">
           <div class="card__content">
-            <div class="card__icon" style="background: var(--accent-light); color: var(--accent-color);"><i class="fa-solid fa-handshake-angle"></i></div>
+       
             <h3 class="card__title">Klaviyo Certified Partner</h3>
-            <p class="card__text">Certified developer capability for advanced segment configuration, checkouts trigger hooks, and custom integrations.</p>
+            <p class="card__text">Certified developer capability for advanced segment configuration, checkouts trigger
+              hooks, and custom integrations.</p>
           </div>
         </article>
+      </div>
+    </section>
+
+    <!-- SECTION 4: GET A FREE SMS COMPLIANCE AUDIT -->
+    <section class="section section--secondary" id="audit">
+      <div class="audit-section-container">
+        <div class="section__header" style="margin-bottom: var(--space-xl);">
+          <span class="section__badge">Zero Risk. High Reward.</span>
+          <h2 class="section__title">Get a Free SMS Compliance Audit</h2>
+          <p class="section__subtitle">Protect your e-commerce store from expensive legal pitfalls. Provide your details
+            below, and I will personally run a comprehensive compliance check on your opt-in checkout forms, carrier
+            records, and subscriber funnels.</p>
+        </div>
+
+        <div class="audit-form-card">
+          <h3
+            style="font-family: var(--font-headers); font-weight: 500; font-size: 1.4rem; color: var(--text-primary); margin-bottom: var(--space-sm); border-bottom: 1.5px solid var(--border-color); padding-bottom: var(--space-sm);">
+            Audit Request Details</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: var(--space-lg);">Fill out the
+            details below. Most audits are completed and delivered via a personalized screencast in less than 48 hours.
+          </p>
+
+          <form action="#" method="POST"
+            onsubmit="event.preventDefault(); alert('Thank you! Lucas will review your SMS compliance audit details and get back to you shortly.');">
+            <div class="audit-form-grid">
+              <div class="audit-form-group">
+                <label class="audit-form-label" for="audit-name">Full Name <span>*</span></label>
+                <input type="text" id="audit-name" class="audit-form-input" placeholder="Lucas Vance" required>
+              </div>
+
+              <div class="audit-form-group">
+                <label class="audit-form-label" for="audit-email">Work Email <span>*</span></label>
+                <input type="email" id="audit-email" class="audit-form-input" placeholder="lucas@yourbrand.com"
+                  required>
+              </div>
+
+              <div class="audit-form-group">
+                <label class="audit-form-label" for="audit-website">Brand Website URL <span>*</span></label>
+                <input type="url" id="audit-website" class="audit-form-input" placeholder="https://yourbrand.com"
+                  required>
+              </div>
+
+              <div class="audit-form-group">
+                <label class="audit-form-label" for="audit-platform">Current SMS Platform <span>*</span></label>
+                <select id="audit-platform" class="audit-form-input" required>
+                  <option value="" disabled selected>Select your platform...</option>
+                  <option value="klaviyo">Klaviyo</option>
+                  <option value="attentive">Attentive</option>
+                  <option value="postscript">Postscript</option>
+                  <option value="smsbump">Yotpo SMSBump</option>
+                  <option value="other">Other / Custom Integration</option>
+                </select>
+              </div>
+
+              <div class="audit-form-group">
+                <label class="audit-form-label" for="audit-listsize">Estimated Subscriber Count <span>*</span></label>
+                <select id="audit-listsize" class="audit-form-input" required>
+                  <option value="" disabled selected>Select list size...</option>
+                  <option value="under5k">Under 5,000 subscribers</option>
+                  <option value="5k-25k">5,000 – 25,000 subscribers</option>
+                  <option value="25k-100k">25,000 – 100,000 subscribers</option>
+                  <option value="over100k">Over 100,000 subscribers</option>
+                </select>
+              </div>
+
+              <div class="audit-form-group">
+                <label class="audit-form-label" for="audit-country">Primary Client Target Region <span>*</span></label>
+                <select id="audit-country" class="audit-form-input" required>
+                  <option value="us" selected>United States (TCPA/CTIA Rules)</option>
+                  <option value="ca">Canada (CASL Rules)</option>
+                  <option value="uk">United Kingdom (GDPR Rules)</option>
+                  <option value="au">Australia (Spam Act Rules)</option>
+                  <option value="multinational">Global / Multinational</option>
+                </select>
+              </div>
+            </div>
+
+            <div
+              style="margin-top: var(--space-lg); border-top: 1.5px solid var(--border-color); padding-top: var(--space-lg);">
+              <label class="audit-form-label" style="margin-bottom: var(--space-sm); display: block;">What are your
+                primary areas of concern? (Select all that apply)</label>
+
+              <div
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-sm); margin-top: var(--space-sm);">
+                <label class="audit-form-checkbox">
+                  <input type="checkbox" name="concern" value="checkout_compliance">
+                  <span>Checkout flow disclosure / TCPA Consent compliance</span>
+                </label>
+                <label class="audit-form-checkbox">
+                  <input type="checkbox" name="concern" value="deliverability">
+                  <span>Low click-through rates / High carrier blockages</span>
+                </label>
+                <label class="audit-form-checkbox">
+                  <input type="checkbox" name="concern" value="10dlc_tcr">
+                  <span>10DLC carrier registration & Trust score issues</span>
+                </label>
+                <label class="audit-form-checkbox">
+                  <input type="checkbox" name="concern" value="automations">
+                  <span>Ineffective welcome, cart-abandonment or SMS flows</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="audit-form-footer">
+              <label class="audit-form-checkbox"
+                style="max-width: 600px; text-align: center; justify-content: center; margin-bottom: var(--space-xs);">
+                <input type="checkbox" required checked>
+                <span>I authorize Lucas Vance to run a public compliance and DNS query review of my website for the
+                  audit.</span>
+              </label>
+
+              <button type="submit" class="btn btn--primary"
+                style="margin-top: var(--space-md); width: 100%; max-width: 320px; font-weight: 500; font-size: 1.05rem;">
+                <i class="fa-solid fa-shield-halved" style="margin-right: 8px;"></i> Request Free Audit
+              </button>
+
+              <p
+                style="color: var(--text-secondary); font-size: 0.8rem; max-width: 650px; margin-top: var(--space-sm);">
+                <i class="fa-solid fa-lock" style="margin-right: 4px; color: var(--accent-color);"></i> <strong>100%
+                  Confidential:</strong> Your data is safe. I will never sell, lease, or share your details with third
+                parties, and this audit is entirely complimentary.
+              </p>
+            </div>
+          </form>
+        </div>
       </div>
     </section>
   </main>
@@ -191,9 +684,10 @@
       <div class="footer__brand">
         <a href="index.html" class="brand">
           <div class="brand__logo"><i class="fa-solid fa-comment-sms"></i></div>
-          <span class="brand__name">SMSPulse</span>
+          <span class="brand__name">Lucas Vance</span>
         </a>
-        <p class="footer__text">Compliance-first SMS automation design helping retail and e-commerce brands capture secure revenue triggers safely.</p>
+        <p class="footer__text">Compliance-first SMS automation design helping retail and e-commerce brands capture
+          secure revenue triggers safely.</p>
         <div class="footer__socials">
           <a href="#" class="social-link" aria-label="Twitter"><i class="fa-brands fa-apple"></i></a>
           <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -206,7 +700,7 @@
       <div class="footer__column">
         <h4 class="footer__title">Automations</h4>
         <ul class="footer__links">
-          <li><a href="services.html" class="footer__link">Welcome SMS Sequences</a></li>
+          <li><a href="services.html" class="footer__link">Welcome SMS</a></li>
           <li><a href="services.html" class="footer__link">Cart Recovery Flows</a></li>
           <li><a href="services.html" class="footer__link">Keyword Trigger Codes</a></li>
           <li><a href="services.html" class="footer__link">VIP Customer Tiers</a></li>
@@ -214,15 +708,15 @@
       </div>
 
       <!-- Topic Column 2 (Contact Info) -->
-      
+
 
       <!-- Topic Column 3 (Resource Hub) -->
       <div class="footer__column">
         <h4 class="footer__title">Resources</h4>
         <ul class="footer__links">
-          <li><a href="blog.html" class="footer__link">Marketing Compliance Blog</a></li>
+          <li><a href="blog.html" class="footer__link">Marketing Compliance</a></li>
           <li><a href="blog.html" class="footer__link">SMS Copywriter Guides</a></li>
-          <li><a href="blog.html" class="footer__link">CTR Benchmark Reports</a></li>
+          <li><a href="blog.html" class="footer__link">CTR Benchmark</a></li>
           <li><a href="blog.html" class="footer__link">Opt-In Incentive Ideas</a></li>
         </ul>
       </div>
@@ -230,22 +724,26 @@
       <div class="footer__column">
         <h4 class="footer__title">Contact Info</h4>
         <ul class="footer__links">
-          <li><a href="mailto:support@smspulse.com" class="footer__link"><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i> suppo@smlse.com</a></li>
-          <li><a href="tel:+15558882000" class="footer__link"><i class="fa-solid fa-phone" style="margin-right: 8px;"></i> +1 (555) 888-2000</a></li>
-          <li><span class="footer__link"><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i> Global Remote / NY</span></li>
-          <li><span class="footer__link"><i class="fa-solid fa-clock" style="margin-right: 8px;"></i> Mon-Fri: 9am-5pm</span></li>
+          <li><a href="mailto:support@smspulse.com" class="footer__link"><i class="fa-solid fa-envelope"
+                style="margin-right: 8px;"></i> lucas@gmail.com</a></li>
+          <li><a href="tel:+15558882000" class="footer__link"><i class="fa-solid fa-phone"
+                style="margin-right: 8px;"></i> +1 (555) 888-2000</a></li>
+          <li><span class="footer__link"><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i> Global
+              Remote / NY</span></li>
+          <li><span class="footer__link"><i class="fa-solid fa-clock" style="margin-right: 8px;"></i> Mon-Fri:
+              9am-5pm</span></li>
         </ul>
       </div>
     </div>
 
     <!-- Bottom footer details -->
     <div class="footer__bottom">
-      <p>&copy; 2026 SMSPulse. Crafted with extreme premium care. All rights reserved.</p>
-      <p>TCPA/CTIA Specialist Portfolio. Compliance does not represent certified legal counsel.</p>
+      <p>&copy; 2026 Lucas Vance. All rights reserved.</p>
     </div>
   </footer>
 
   <!-- Scripts -->
   <script src="../assets/js/main.js"></script>
 </body>
+
 </html>

@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SMSPulse | Compliant SMS Marketing Automation Specialist</title>
+  <title>Lucas Vance | Compliant SMS Marketing Automation Specialist</title>
 
   <!-- SEO Meta Tags -->
   <meta name="description"
     content="Portfolio and interactive dashboard of a compliance-focused SMS Marketing Automation Specialist. Boost opt-ins, scale revenue, and stay TCPA/10DLC compliant.">
   <meta name="keywords"
     content="SMS Marketing, SMS Automation, TCPA Compliance, 10DLC, Klaviyo SMS, Attentive SMS, Freelance SMS Developer">
-  <meta name="author" content="SMSPulse">
+  <meta name="author" content="Lucas Vance">
 
   <!-- Open Graph -->
   <meta property="og:title" content="SMSPulse | Compliant SMS Marketing Automation Specialist">
@@ -39,7 +39,7 @@
       <!-- Brand Logo and Name (Left Side) -->
       <a href="index.html" class="brand" id="brand-logo">
         <div class="brand__logo"><i class="fa-solid fa-comment-sms"></i></div>
-        <span class="brand__name">SMSPulse</span>
+        <span class="brand__name">Lucas Vance</span>
       </a>
 
       <!-- Main Navigation Menu (Center/Right-Center on Desktop, Mobile Toggle Hamburger) -->
@@ -49,7 +49,7 @@
           <li><a href="home2.html" class="nav__link">Home 2</a></li>
           <li><a href="about.html" class="nav__link">About</a></li>
           <li><a href="services.html" class="nav__link">Services</a></li>
-          <li><a href="blog.html" class="nav__link">Blog</a></li>
+          <li><a href="blog.html" class="nav__link">Projects</a></li>
           <li><a href="contact.html" class="nav__link">Contact</a></li>
           <!-- Dashboard menu link appears in center right-side after contact on desktop -->
           <li><a href="dashboard.html" class="nav__link nav__dashboard-link">Dashboard</a></li>
@@ -60,7 +60,7 @@
           <button class="btn-icon rtl-toggle-btn" aria-label="Toggle Layout Direction">RTL</button>
           <button class="btn-icon theme-toggle-btn" aria-label="Toggle Dark Theme"><i
               class="fa-solid fa-moon"></i></button>
-          <a href="login.html" class="btn btn-login"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+          <a href="login.html" class="btn btn-login">Login</a>
         </div>
       </nav>
 
@@ -69,7 +69,7 @@
         <button class="btn-icon rtl-toggle-btn" aria-label="Toggle Layout Direction">RTL</button>
         <button class="btn-icon theme-toggle-btn" aria-label="Toggle Dark Theme"><i
             class="fa-solid fa-moon"></i></button>
-        <a href="login.html" class="btn btn-login"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+        <a href="login.html" class="btn btn-login">Login</a>
       </div>
 
       <!-- Hamburger Menu Icon (Mobile Right Side) -->
@@ -83,15 +83,22 @@
 
   <main>
     <!-- SECTION 1: HERO SECTION -->
-    <section class="hero animate-fade">
+    <!-- 
+      TO CHANGE THE BACKGROUND IMAGE: 
+      Just replace the URL inside `url('...')` in the `style` attribute below!
+      You can use any local image path or public web URL.
+      Example: style="--hero-bg-url: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1920');"
+    -->
+    <section class="hero hero--home1 animate-fade"
+      style="--hero-bg-url: url('https://textellent.com/wp-content/uploads/2024/03/elevating-modern-business-paradigms-businessman-s-laptop-smartphone-transcend-conventions-elevating-social-media-sns-online-marketing-new-heights-beacon-digital-age-scaled.jpg'); padding: 80px 40px !important;">
       <div class="hero__container">
         <div class="hero__content">
           <span class="section__badge hero__badge">Compliance-First Growth</span>
           <h1 class="hero__title">Scale Your Sales Compliantly via <span>Automated SMS</span></h1>
-          <p class="hero__text">We engineer automated text message sequences that secure 98% open rates, drive 25x ROI,
+          <p class="hero__text">I engineer automated text message sequences that secure 98% open rates, drive 25x ROI,
             and comply 100% with TCPA and carrier rules.</p>
           <div class="hero__actions">
-            <a href="contact.html" class="btn btn--primary"><i class=""></i> Book TCPA
+            <a href="contact.html" class="btn btn--primary"><i class=""></i> Book My
               Audit</a>
             <a href="dashboard.html" class="btn btn--secondary"><i class=""></i> View
               Dashboard</a>
@@ -112,35 +119,8 @@
           </div>
         </div>
 
-        <!-- Live SMS Interactive Phone Simulator -->
-        <div class="hero__visual">
-          <div class="phone-mockup" id="hero-phone">
-            <div class="phone-header">
-              <div class="phone-status-bar">
-                <span>9:41</span>
-                <div>
-                  <i class="fa-solid fa-signal"></i>
-                  <i class="fa-solid fa-wifi"></i>
-                  <i class="fa-solid fa-battery-full"></i>
-                </div>
-              </div>
-              <div class="phone-contact">
-                <div class="phone-avatar">SP</div>
-                <div>
-                  <h4 style="font-size:12px; color:#fff; line-height:1.1;">SMSPulse Automations</h4>
-                  <p style="font-size:9px; color:#aaa; margin:0;">Active Now</p>
-                </div>
-              </div>
-            </div>
-            <div class="phone-screen" id="chat-screen">
-              <!-- Messages will load dynamically from main.js -->
-            </div>
-            <div class="phone-input-bar">
-              <input type="text" class="phone-input" placeholder="Text JOIN or START..." aria-label="Type message">
-              <button class="phone-send" aria-label="Send SMS"><i class="fa-solid fa-paper-plane"></i></button>
-            </div>
-          </div>
-        </div>
+        <!-- Hero Visual Section: Featured Brand Graphic Card -->
+
       </div>
     </section>
 
@@ -159,7 +139,6 @@
           <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=800"
             alt="Welcome Automation">
           <div class="card__content">
-            <div class="card__icon"><i class="fa-solid fa-bolt"></i></div>
             <h3 class="card__title">Welcome Triggers</h3>
             <p class="card__text">Acquire compliant subscribers and deliver instant, tailored welcome discounts with
               double opt-in validation systems.</p>
@@ -172,7 +151,6 @@
           <img src="https://www.evendigit.com/wp-content/uploads/Abandoned-Cart-Recovery-Tactics-1024x683.png"
             alt="Abandoned Cart Recovery">
           <div class="card__content">
-            <div class="card__icon"><i class="fa-solid fa-cart-shopping"></i></div>
             <h3 class="card__title">Abandoned Carts</h3>
             <p class="card__text">Recover lost e-commerce carts with compliant, personalized reminder flows structured
               inside TCPA-approved hours late.</p>
@@ -185,7 +163,6 @@
           <img src="https://activeprospect.com/wp-content/uploads/2025/06/TCPA_guidelines_feat.png"
             alt="TCPA Compliance">
           <div class="card__content">
-            <div class="card__icon"><i class="fa-solid fa-shield-halved"></i></div>
             <h3 class="card__title">TCPA Audit & Fix</h3>
             <p class="card__text">Review your subscriber lists, opt-in disclosures, and quiet-hour rules to protect your
               brand from catastrophic compliance fines.</p>
@@ -198,7 +175,6 @@
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROcIZ9abv5KE7m10fJ1o4yBKmt4oytRVu9Bw&s"
             alt="Post-Purchase Delight">
           <div class="card__content">
-            <div class="card__icon"><i class="fa-solid fa-heart-circle-check"></i></div>
             <h3 class="card__title">Post-Purchase Delight</h3>
             <p class="card__text">Automate shipping updates, review requests, and loyalty-building cross-sell sequences
               that feel personal and timely.</p>
@@ -212,7 +188,6 @@
             src="https://lifesight.io/wp-content/uploads/62e3888add6d204e844bff40-6447c6b25bbb94961313bddb-Browse-20-Abandonment-20-Email-20-Examples-2e6d152318-1.webp"
             alt="Browse Abandonment">
           <div class="card__content">
-            <div class="card__icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
             <h3 class="card__title">Browse Abandonment</h3>
             <p class="card__text">Re-engage high-intent window shoppers who viewed products but didn't add to cart with
               soft, high-converting reminders.</p>
@@ -226,7 +201,6 @@
             src="https://cdn.prod.website-files.com/65ce1f0a85671121f6dab2e8/680b3ecc9888cfa5dde5122d_10DLC-header.png"
             alt="10DLC Registration">
           <div class="card__content">
-            <div class="card__icon"><i class="fa-solid fa-tower-broadcast"></i></div>
             <h3 class="card__title">10DLC Registration</h3>
             <p class="card__text">Navigate carrier vetting, brand registrations, and campaign approvals to ensure
               maximum deliverability and trust.</p>
@@ -241,7 +215,7 @@
       <div class="section__header">
         <span class="section__badge">Compliance Risk Analyzer</span>
         <h2 class="section__title">Is Your SMS Program Actually Legal?</h2>
-        <p class="section__subtitle">Take our 30-second rapid TCPA audit to discover vulnerability indicators and
+        <p class="section__subtitle">Take my 30-second rapid TCPA audit to discover vulnerability indicators and
           security score in real-time.</p>
       </div>
 
@@ -346,12 +320,12 @@
             <div class="form-group">
               <label class="form-label" for="sms-preview-input">Message Copy</label>
               <textarea class="form-input" id="sms-preview-input" rows="5" style="resize: none;"
-                aria-label="Write message to preview">SMSPulse: Join our priority program! Reply YES for early VIP offers, coupon triggers, and automated updates. Msg&data rates may apply. Reply STOP to end.</textarea>
+                aria-label="Write message to preview">WellnessCo: Join our priority program! Reply YES for early VIP offers, coupon triggers, and automated updates. Msg&data rates may apply. Reply STOP to end.</textarea>
             </div>
 
             <div
               style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-secondary); margin-top: -10px;">
-              <span id="char-count">175 chars | 2 SMS Segments</span>
+              <span id="char-count">177 chars | 2 SMS Segments</span>
               <span>Max 160 chars / segment</span>
             </div>
           </div>
@@ -370,7 +344,7 @@
             <div class="phone-screen" style="justify-content: flex-end; padding: var(--space-md);">
               <div class="sms-bubble sms-bubble--primary animate-fade" id="live-sms-bubble"
                 style="font-size: 11.5px; line-height: 1.4;">
-                SMSPulse: Join our priority program! Reply YES for early VIP offers, coupon triggers, and automated
+                WellnessCo: Join our priority program! Reply YES for early VIP offers, coupon triggers, and automated
                 updates. Msg&data rates may apply. Reply STOP to end.
               </div>
             </div>
@@ -516,7 +490,7 @@
       <div class="footer__brand">
         <a href="index.html" class="brand">
           <div class="brand__logo"><i class="fa-solid fa-comment-sms"></i></div>
-          <span class="brand__name">SMSPulse</span>
+          <span class="brand__name">Lucas Vance</span>
         </a>
         <p class="footer__text">Compliance-first SMS automation design helping retail and e-commerce brands capture
           secure revenue triggers safely.</p>
@@ -532,7 +506,7 @@
       <div class="footer__column">
         <h4 class="footer__title">Automations</h4>
         <ul class="footer__links">
-          <li><a href="services.html" class="footer__link">Welcome SMS Sequences</a></li>
+          <li><a href="services.html" class="footer__link">Welcome SMS</a></li>
           <li><a href="services.html" class="footer__link">Cart Recovery Flows</a></li>
           <li><a href="services.html" class="footer__link">Keyword Trigger Codes</a></li>
           <li><a href="services.html" class="footer__link">VIP Customer Tiers</a></li>
@@ -546,9 +520,9 @@
       <div class="footer__column">
         <h4 class="footer__title">Resources</h4>
         <ul class="footer__links">
-          <li><a href="blog.html" class="footer__link">Marketing Compliance Blog</a></li>
+          <li><a href="blog.html" class="footer__link">Marketing Compliance</a></li>
           <li><a href="blog.html" class="footer__link">SMS Copywriter Guides</a></li>
-          <li><a href="blog.html" class="footer__link">CTR Benchmark Reports</a></li>
+          <li><a href="blog.html" class="footer__link">CTR Benchmark</a></li>
           <li><a href="blog.html" class="footer__link">Opt-In Incentive Ideas</a></li>
         </ul>
       </div>
@@ -557,7 +531,7 @@
         <h4 class="footer__title">Contact Info</h4>
         <ul class="footer__links">
           <li><a href="mailto:support@smspulse.com" class="footer__link"><i class="fa-solid fa-envelope"
-                style="margin-right: 8px;"></i> suppo@smlse.com</a></li>
+                style="margin-right: 8px;"></i> lucas@gmail.com</a></li>
           <li><a href="tel:+15558882000" class="footer__link"><i class="fa-solid fa-phone"
                 style="margin-right: 8px;"></i> +1 (555) 888-2000</a></li>
           <li><span class="footer__link"><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i> Global
@@ -570,8 +544,7 @@
 
     <!-- Bottom footer details -->
     <div class="footer__bottom">
-      <p>&copy; 2026 SMSPulse. Crafted with extreme premium care. All rights reserved.</p>
-      <p>TCPA/CTIA Specialist Portfolio. Compliance does not represent certified legal counsel.</p>
+      <p>&copy; 2026 Lucas Vance. All rights reserved.</p>
     </div>
   </footer>
 

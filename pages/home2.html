@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SMSPulse | Marketing Funnels & Flow Builder (Home 2)</title>
-  
+  <title>Lucas Vance | Marketing Funnels & Flow Builder (Home 2)</title>
+
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Discover alternative high-impact, legal-compliant SMS flows. Connect Shopify checkout triggers, analyze ROI margins, and design custom marketing flows.">
+  <meta name="description"
+    content="Discover alternative high-impact, legal-compliant SMS flows. Connect Shopify checkout triggers, analyze ROI margins, and design custom marketing flows.">
   <meta name="keywords" content="SMS Marketing Flow, Klaviyo, Shopify SMS Triggers, Attentive, TCPA, 10DLC">
-  
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/dark-mode.css">
   <link rel="stylesheet" href="../assets/css/rtl.css">
-  
+
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+
   <style>
     /* Unique Home 2 Interactive Flow Builder CSS */
     .flow-builder-widget {
@@ -32,14 +34,14 @@
       gap: var(--space-lg);
       margin: 0 auto;
     }
-    
+
     .builder-controls {
       display: flex;
       flex-wrap: wrap;
       gap: var(--space-md);
       justify-content: center;
     }
-    
+
     .builder-flow {
       border: 1.5px dashed var(--border-color);
       border-radius: var(--radius-md);
@@ -52,7 +54,7 @@
       background-color: var(--bg-secondary);
       position: relative;
     }
-    
+
     .flow-node {
       background-color: var(--bg-card);
       border: 1.5px solid var(--border-color);
@@ -67,35 +69,35 @@
       max-width: 400px;
       justify-content: space-between;
     }
-    
+
     .flow-node__info {
       display: flex;
       align-items: center;
       gap: var(--space-md);
       text-align: left;
     }
-    
+
     .flow-node i {
       color: var(--primary-color);
       font-size: 1.25rem;
     }
-    
+
     .flow-node__delete {
       cursor: pointer;
       color: var(--text-secondary);
       transition: color var(--transition-fast);
     }
-    
+
     .flow-node__delete:hover {
       color: var(--error);
     }
-    
+
     .flow-arrow {
       color: var(--text-secondary);
       font-size: 1.2rem;
       animation: fadeIn 0.3s ease;
     }
-    
+
     /* FAQ Accordion Styling */
     .faq-container {
       max-width: 800px;
@@ -105,7 +107,7 @@
       flex-direction: column;
       gap: var(--space-md);
     }
-    
+
     .faq-item {
       background-color: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -113,7 +115,7 @@
       overflow: hidden;
       transition: all var(--transition-smooth);
     }
-    
+
     .faq-trigger {
       width: 100%;
       padding: var(--space-lg);
@@ -126,7 +128,7 @@
       font-size: 1.1rem;
       text-align: left;
     }
-    
+
     .faq-content {
       max-height: 0;
       overflow: hidden;
@@ -136,27 +138,27 @@
       font-size: 0.95rem;
       text-align: left;
     }
-    
+
     .faq-item.active .faq-content {
       max-height: 1000px;
       padding: 0 var(--space-lg) var(--space-lg);
       transition: max-height 1s cubic-bezier(0.99, 0.01, 0.45, 1);
     }
-    
+
     .faq-item.active {
       border-color: var(--primary-color);
       box-shadow: var(--shadow-sm);
     }
-    
+
     .faq-icon {
       transition: transform var(--transition-smooth);
     }
-    
+
     .faq-item.active .faq-icon {
       transform: rotate(180deg);
       color: var(--primary-color);
     }
-    
+
     .hero__visual-card {
       background-color: var(--bg-card);
       border: 1.5px solid var(--border-color);
@@ -167,15 +169,17 @@
       box-shadow: var(--shadow-md);
       transition: all var(--transition-smooth);
     }
-    
+
     @media (min-width: 1440px) {
       .hero__visual-card {
         max-width: 550px;
         padding: var(--space-2xl);
       }
+
       .hero__visual-card h4 {
         font-size: 1.5rem;
       }
+
       .flow-pipeline-step {
         padding: 15px !important;
         font-size: 1rem !important;
@@ -185,6 +189,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
 </head>
+
 <body>
 
   <!-- Header Section (Identical responsive rules) -->
@@ -192,7 +197,7 @@
     <div class="header__container">
       <a href="index.html" class="brand">
         <div class="brand__logo"><i class="fa-solid fa-comment-sms"></i></div>
-        <span class="brand__name">SMSPulse</span>
+        <span class="brand__name">Lucas Vance</span>
       </a>
 
       <nav class="nav" id="main-nav">
@@ -201,22 +206,22 @@
           <li><a href="home2.html" class="nav__link active">Home 2</a></li>
           <li><a href="about.html" class="nav__link">About</a></li>
           <li><a href="services.html" class="nav__link">Services</a></li>
-          <li><a href="blog.html" class="nav__link">Blog</a></li>
+          <li><a href="blog.html" class="nav__link">Projects</a></li>
           <li><a href="contact.html" class="nav__link">Contact</a></li>
           <li><a href="dashboard.html" class="nav__link nav__dashboard-link">Dashboard</a></li>
         </ul>
-        
+
         <div class="nav__mobile-controls">
           <button class="btn-icon rtl-toggle-btn">RTL</button>
           <button class="btn-icon theme-toggle-btn"><i class="fa-solid fa-moon"></i></button>
-          <a href="login.html" class="btn btn-login"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+          <a href="login.html" class="btn btn-login">Login</a>
         </div>
       </nav>
 
       <div class="header__controls">
         <button class="btn-icon rtl-toggle-btn">RTL</button>
         <button class="btn-icon theme-toggle-btn"><i class="fa-solid fa-moon"></i></button>
-        <a href="login.html" class="btn btn-login"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+        <a href="login.html" class="btn btn-login">Login</a>
       </div>
 
       <button class="hamburger" aria-label="Toggle Mobile Navigation">
@@ -229,16 +234,19 @@
 
   <main>
     <!-- SECTION 1: HERO (Alternative Style) -->
-    <section class="hero animate-fade">
+    <section class="hero hero--home2 animate-fade">
       <div class="hero__container">
         <div class="hero__content">
           <span class="section__badge hero__badge">Interactive Funnel Strategy</span>
           <h1 class="hero__title">Turn Passive Visitors Into <span>Loyal Buyers</span></h1>
-          <p class="hero__text">We configure compliant and smart trigger logic designed to reach customers on their phones instantly. Accelerate conversion flow rates automatically.</p>
+          <p class="hero__text">I configure compliant and smart trigger logic designed to reach customers on their
+            phones instantly. Accelerate conversion flow rates automatically.</p>
           <div class="hero__actions">
-            <a href="#flow-builder-section" class="btn btn--primary"><i class="fa-solid fa-wand-magic-sparkles"></i> Try Live Flow Builder</a>
+            <a href="#flow-builder-section" class="btn btn--primary"><i class="fa-solid fa-wand-magic-sparkles"></i> Try
+              Live Flow Builder</a>
           </div>
-          <div style="margin-top:var(--space-md); font-size:0.9rem; color:var(--text-secondary); display:flex; align-items:center; gap:var(--space-sm);">
+          <div
+            style="margin-top:var(--space-md); font-size:0.9rem; color:var(--text-secondary); display:flex; align-items:center; gap:var(--space-sm);">
             <i class="fa-solid fa-shield-halved" style="color:var(--accent-color);"></i> TCPA compliant, CTIA & 10DLC
           </div>
         </div>
@@ -246,13 +254,20 @@
         <!-- Flowchart Style Visual Pattern -->
         <div class="hero__visual" style="display: flex; justify-content: center;">
           <div class="hero__visual-card">
-            <h4 style="text-align: center; margin-bottom: var(--space-md); font-family: var(--font-headers);">Compliant Flow Pipeline</h4>
+            <h4 style="text-align: center; margin-bottom: var(--space-md); font-family: var(--font-headers);">Compliant
+              Flow Pipeline</h4>
             <div style="display: flex; flex-direction: column; gap: var(--space-md); align-items: center;">
-              <div class="flow-pipeline-step" style="background-color: var(--primary-light); color: var(--primary-color); padding: 10px; border-radius: 8px; font-weight: 600; width: 100%; text-align: center; font-size: 0.85rem;">1. Double Opt-In Checked</div>
+              <div class="flow-pipeline-step"
+                style="background-color: var(--primary-light); color: var(--primary-color); padding: 10px; border-radius: 8px; font-weight: 600; width: 100%; text-align: center; font-size: 0.85rem;">
+                1. Double Opt-In Checked</div>
               <div style="color: var(--text-secondary);"><i class="fa-solid fa-down-long"></i></div>
-              <div class="flow-pipeline-step" style="background-color: var(--accent-light); color: var(--accent-color); padding: 10px; border-radius: 8px; font-weight: 600; width: 100%; text-align: center; font-size: 0.85rem;">2. Enforce Quiet Hours Suppress</div>
+              <div class="flow-pipeline-step"
+                style="background-color: var(--accent-light); color: var(--accent-color); padding: 10px; border-radius: 8px; font-weight: 600; width: 100%; text-align: center; font-size: 0.85rem;">
+                2. Enforce Quiet Hours Suppress</div>
               <div style="color: var(--text-secondary);"><i class="fa-solid fa-down-long"></i></div>
-              <div class="flow-pipeline-step" style="background-color: var(--primary-light); color: var(--primary-color); padding: 10px; border-radius: 8px; font-weight: 600; width: 100%; text-align: center; font-size: 0.85rem;">3. Deliver Personalized Code</div>
+              <div class="flow-pipeline-step"
+                style="background-color: var(--primary-light); color: var(--primary-color); padding: 10px; border-radius: 8px; font-weight: 600; width: 100%; text-align: center; font-size: 0.85rem;">
+                3. Deliver Personalized Code</div>
             </div>
           </div>
         </div>
@@ -264,33 +279,257 @@
       <div class="section__header">
         <span class="section__badge">Interactive Sandbox</span>
         <h2 class="section__title">Build Your Custom SMS Flow</h2>
-        <p class="section__subtitle">Click triggers below to see how automated compliance check nodes stack together to build a robust SMS marketing campaign pipeline.</p>
+        <p class="section__subtitle">Click triggers below to see how automated compliance check nodes stack together to
+          build a robust SMS marketing campaign pipeline.</p>
       </div>
 
       <div class="card-glass flow-builder-widget">
         <!-- Builder Controls Buttons -->
         <div class="builder-controls">
-          <button class="btn btn--secondary" id="add-opt-in" style="padding: 10px 20px; font-size: 0.85rem;"><i class="fa-solid fa-user-shield"></i> Consent Step</button>
-          <button class="btn btn--secondary" id="add-quiet-hour" style="padding: 10px 20px; font-size: 0.85rem;"><i class="fa-solid fa-moon"></i> Time Filter</button>
-          <button class="btn btn--secondary" id="add-discount" style="padding: 10px 20px; font-size: 0.85rem;"><i class="fa-solid fa-tag"></i> Message Content</button>
-          <button class="btn btn--secondary" id="add-stop-node" style="padding: 10px 20px; font-size: 0.85rem;"><i class="fa-solid fa-hand"></i> Stop Filter</button>
-          <button class="btn btn--primary" id="clear-flow-builder" style="padding: 10px 20px; font-size: 0.85rem; background-color: var(--error);"><i class="fa-solid fa-trash-can"></i> Clear All</button>
+          <button class="btn btn--secondary" id="add-opt-in" style="padding: 10px 20px; font-size: 0.85rem;"><i
+              class="fa-solid fa-user-shield"></i> Consent Step</button>
+          <button class="btn btn--secondary" id="add-quiet-hour" style="padding: 10px 20px; font-size: 0.85rem;"><i
+              class="fa-solid fa-moon"></i> Time Filter</button>
+          <button class="btn btn--secondary" id="add-discount" style="padding: 10px 20px; font-size: 0.85rem;"><i
+              class="fa-solid fa-tag"></i> Message Content</button>
+          <button class="btn btn--secondary" id="add-stop-node" style="padding: 10px 20px; font-size: 0.85rem;"><i
+              class="fa-solid fa-hand"></i> Stop Filter</button>
+          <button class="btn btn--primary" id="clear-flow-builder"
+            style="padding: 10px 20px; font-size: 0.85rem; background-color: var(--error);"><i
+              class="fa-solid fa-trash-can"></i> Clear All</button>
         </div>
 
         <!-- Wireframe Flow Canvas -->
-        <div class="builder-flow" id="flow-canvas" style="background: rgba(var(--primary-rgb), 0.03); border: 1px dashed var(--border-color); border-radius: var(--radius-md); padding: var(--space-md); min-height: 120px; display: flex; flex-direction: column; align-items: center; gap: var(--space-md);">
+        <div class="builder-flow" id="flow-canvas"
+          style="background: rgba(var(--primary-rgb), 0.03); border: 1px dashed var(--border-color); border-radius: var(--radius-md); padding: var(--space-md); min-height: 120px; display: flex; flex-direction: column; align-items: center; gap: var(--space-md);">
           <!-- Default Node -->
-          <div class="flow-node animate-slide-up" id="node-start" style="background: var(--bg-card); border: 2px solid var(--primary-color); border-radius: var(--radius-md); padding: 12px 20px; box-shadow: var(--shadow-md); display: flex; align-items: center; gap: var(--space-xl); width: 100%; max-width: 440px; justify-content: space-between; position: relative;">
-            <div class="flow-node__info" style="display: flex; align-items: center; gap: var(--space-md); text-align: left;">
+          <div class="flow-node animate-slide-up" id="node-start"
+            style="background: var(--bg-card); border: 2px solid var(--primary-color); border-radius: var(--radius-md); padding: 12px 20px; box-shadow: var(--shadow-md); display: flex; align-items: center; gap: var(--space-xl); width: 100%; max-width: 440px; justify-content: space-between; position: relative;">
+            <div class="flow-node__info"
+              style="display: flex; align-items: center; gap: var(--space-md); text-align: left;">
               <div style="position: relative;">
                 <i class="fa-solid fa-play-circle" style="color: var(--primary-color); font-size: 1.25rem;"></i>
-                <span style="position: absolute; top: -1px; right: -1px; width: 8px; height: 8px; background: var(--success); border-radius: 50%; border: 1.5px solid var(--bg-card); animation: pulse 2s infinite;"></span>
+                <span
+                  style="position: absolute; top: -1px; right: -1px; width: 8px; height: 8px; background: var(--success); border-radius: 50%; border: 1.5px solid var(--bg-card); animation: pulse 2s infinite;"></span>
               </div>
               <div>
                 <strong style="font-size: 0.9rem; color: var(--text-primary);">Trigger</strong>
               </div>
             </div>
-            <div style="font-size: 0.65rem; background: var(--primary-light); color: var(--primary-color); padding: 3px 6px; border-radius: 4px; font-weight: 700;">ACTIVE</div>
+            <div
+              style="font-size: 0.65rem; background: var(--primary-light); color: var(--primary-color); padding: 3px 6px; border-radius: 4px; font-weight: 700;">
+              ACTIVE</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: MY SMS PROJECT TIMELINE -->
+    <section class="section section--secondary" id="timeline">
+      <div class="section__header">
+        <span class="section__badge">My Process</span>
+        <h2 class="section__title">From Kickoff to <span
+            style="background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Launch
+            in 4 Steps</span></h2>
+        <p class="section__subtitle">Every client engagement follows my proven high-touch process — no junior account
+          managers, no cookie-cutter setups.</p>
+      </div>
+
+      <style>
+        .timeline {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+          max-width: 800px;
+          margin: 0 auto;
+          position: relative;
+        }
+
+        .timeline::before {
+          content: '';
+          position: absolute;
+          left: 40px;
+          top: 0;
+          bottom: 0;
+          width: 2px;
+          background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+          opacity: 0.3;
+        }
+
+        .timeline__item {
+          display: flex;
+          gap: var(--space-xl);
+          padding: var(--space-xl) 0;
+          position: relative;
+        }
+
+        .timeline__icon {
+          flex-shrink: 0;
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          background: var(--bg-card);
+          border: 2px solid var(--primary-color);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--primary-color);
+          box-shadow: 0 0 0 6px rgba(var(--primary-rgb), 0.08);
+          transition: all 0.3s ease;
+          position: relative;
+          z-index: 1;
+        }
+
+        .timeline__item:hover .timeline__icon {
+          background: var(--primary-color);
+          color: #fff;
+          box-shadow: 0 0 0 8px rgba(var(--primary-rgb), 0.15), var(--shadow-glow);
+          transform: scale(1.08);
+        }
+
+        .timeline__body {
+          flex: 1;
+          padding-top: var(--space-md);
+        }
+
+        .timeline__step {
+          font-size: 0.75rem;
+          font-weight: 700;
+          color: var(--primary-color);
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          margin-bottom: var(--space-xs);
+        }
+
+        .timeline__title {
+          font-size: 1.25rem;
+          font-weight: 500;
+          font-family: var(--font-headers);
+          color: var(--text-primary);
+          margin-bottom: var(--space-sm);
+        }
+
+        .timeline__desc {
+          font-size: 0.92rem;
+          color: var(--text-secondary);
+          line-height: 1.65;
+        }
+
+        .timeline__icon svg {
+          width: 32px;
+          height: 32px;
+          stroke: currentColor;
+          fill: none;
+          stroke-width: 1.75;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          transition: stroke var(--transition-fast);
+        }
+
+        .timeline__item:hover .timeline__icon svg {
+          stroke: #fff;
+        }
+
+        @media (max-width: 580px) {
+          .timeline::before {
+            left: 28px;
+          }
+
+          .timeline__icon {
+            width: 56px;
+            height: 56px;
+          }
+
+          .timeline__icon svg {
+            width: 24px;
+            height: 24px;
+          }
+
+          .timeline__title {
+            font-size: 1.05rem;
+          }
+        }
+      </style>
+
+      <div class="timeline">
+        <!-- Step 1 -->
+        <div class="timeline__item">
+          <div class="timeline__icon">
+            <!-- Search / Audit icon -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <line x1="16.5" y1="16.5" x2="22" y2="22" />
+              <line x1="11" y1="8" x2="11" y2="14" />
+              <line x1="8" y1="11" x2="14" y2="11" />
+            </svg>
+          </div>
+          <div class="timeline__body">
+            <div class="timeline__step">Step 01</div>
+            <h3 class="timeline__title">Free SMS Compliance Audit</h3>
+            <p class="timeline__desc">I personally review your current opt-in flows, consent checkboxes, existing list
+              health, and platform setup. You receive a detailed screencast within 24–48 hours outlining every risk and
+              opportunity.</p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="timeline__item">
+          <div class="timeline__icon">
+            <!-- Legal document / contract icon -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="9" y1="13" x2="15" y2="13" />
+              <line x1="9" y1="17" x2="13" y2="17" />
+              <line x1="9" y1="9" x2="11" y2="9" />
+            </svg>
+          </div>
+          <div class="timeline__body">
+            <div class="timeline__step">Step 02</div>
+            <h3 class="timeline__title">10DLC Registration &amp; Legal Opt-In Build</h3>
+            <p class="timeline__desc">I handle your 10DLC carrier registration with TCR directly. I rebuild your
+              checkout opt-in forms to include individual, TCPA-compliant consent checkboxes — eliminating your legal
+              exposure before we send a single message.</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="timeline__item">
+          <div class="timeline__icon">
+            <!-- Settings / flow build icon -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="3" />
+              <path
+                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+            </svg>
+          </div>
+          <div class="timeline__body">
+            <div class="timeline__step">Step 03</div>
+            <h3 class="timeline__title">Custom Flow Build &amp; Copywriting</h3>
+            <p class="timeline__desc">I build your full automated SMS sequence inside Klaviyo, Attentive, or your chosen
+              platform — welcome flows, abandoned cart alerts, post-purchase follow-ups, and VIP win-back campaigns. All
+              copy is personally written for your brand's voice.</p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="timeline__item">
+          <div class="timeline__icon">
+            <!-- Rocket / launch icon -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+              <path
+                d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+              <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+              <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+            </svg>
+          </div>
+          <div class="timeline__body">
+            <div class="timeline__step">Step 04</div>
+            <h3 class="timeline__title">Launch, Monitor &amp; Optimise</h3>
+            <p class="timeline__desc">I oversee your live launch, monitor deliverability rates, A/B test subject lines
+              and send times, and provide a 30-day post-launch performance report with actionable optimisations — direct
+              access to me, no intermediaries.</p>
           </div>
         </div>
       </div>
@@ -301,37 +540,41 @@
       <div class="section__header">
         <span class="section__badge">High Impact Performance</span>
         <h2 class="section__title">SMS vs. Standard Digital Channels</h2>
-        <p class="section__subtitle">Direct communication represents the most personal, fast-acting channel to engage and convert shoppers.</p>
+        <p class="section__subtitle">Direct communication represents the most personal, fast-acting channel to engage
+          and convert shoppers.</p>
       </div>
 
       <div class="grid-container pricing-grid center-last-card">
         <!-- Card 1 -->
         <div class="card-glass">
-          <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=800" alt="SMS Open Rates">
+          <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=800"
+            alt="SMS Open Rates">
           <div class="card__content">
-            <div class="card__icon"><i class="fa-solid fa-eye"></i></div>
             <h3 class="card__title">98% Avg Open Rate</h3>
-            <p class="card__text">Compare this directly to email's average 20% open rate. Over 90% of text messages are opened within the initial three minutes of arrival.</p>
+            <p class="card__text">Compare this directly to email's average 20% open rate. Over 90% of text messages are
+              opened within the initial three minutes of arrival.</p>
           </div>
         </div>
 
         <!-- Card 2 -->
         <div class="card-glass">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" alt="SMS Speed">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
+            alt="SMS Speed">
           <div class="card__content">
-            <div class="card__icon"><i class="fa-solid fa-gauge-high"></i></div>
             <h3 class="card__title">90s Response</h3>
-            <p class="card__text">SMS driving rapid engagement creates unparalleled momentum for flash offers, urgent cart checkout alerts, and live responses.</p>
+            <p class="card__text">SMS driving rapid engagement creates unparalleled momentum for flash offers, urgent
+              cart checkout alerts, and live responses.</p>
           </div>
         </div>
 
         <!-- Card 3 -->
         <div class="card-glass">
-          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800" alt="SMS ROI">
+          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800"
+            alt="SMS ROI">
           <div class="card__content">
-            <div class="card__icon"><i class="fa-solid fa-sack-dollar"></i></div>
             <h3 class="card__title">25x Verified ROI</h3>
-            <p class="card__text">With fractional setup expenditures and extremely low carrier utility cost, automated text copy triggers deliver unprecedented return margins.</p>
+            <p class="card__text">With fractional setup expenditures and extremely low carrier utility cost, automated
+              text copy triggers deliver unprecedented return margins.</p>
           </div>
         </div>
       </div>
@@ -342,17 +585,26 @@
       <div class="section__header">
         <span class="section__badge">TCPA Regulation Guidelines</span>
         <h2 class="section__title">SMS Policy Protocols</h2>
-        <p class="section__subtitle">Learn the exact carrier laws and legal mechanisms we implement into your portfolio setup to avoid liability issues.</p>
+        <p class="section__subtitle" style="font-size: 1.25rem;">Learn the exact carrier laws and legal mechanisms I
+          implement into your portfolio setup to avoid liability issues.</p>
       </div>
 
       <div class="faq-container" style="max-width: 900px;">
         <div class="card" style="align-items: flex-start; text-align: left; width: 100%;">
-          <h3 style="font-size:1.3rem; margin-bottom:var(--space-md); font-family:var(--font-headers);"><i class="fa-solid fa-clipboard-list" style="color:var(--primary-color);"></i> Essential Brand Audit Protocol</h3>
-          <ul style="padding-left:var(--space-lg); display:flex; flex-direction:column; gap:var(--space-sm); font-size:0.95rem; color:var(--text-secondary);">
-            <li><strong>Express Written Consent:</strong> Never buy cold phone lead lists. Every contact on your phone file list must explicitly click to join.</li>
-            <li><strong>Direct Disclosure Terms:</strong> Pop-up checkouts must include legal links to Privacy Policy and terms highlighting that message & data rates can apply.</li>
-            <li><strong>CTIA Compliant Keywords:</strong> Carriers mandate keyword recognition. Sending STOP or END must block outgoing sequences in 0 seconds.</li>
-            <li><strong>Carrier Registry (10DLC):</strong> Brands must register brand identity and campaign flow copy directly with cellular networks to ensure high delivery.</li>
+          <h3
+            style="font-size:1.55rem; margin-bottom:var(--space-md); font-family:var(--font-headers); font-weight: 500;">
+            <i class="fa-solid fa-clipboard-list" style="color:var(--primary-color);"></i> Essential Brand Audit
+            Protocol</h3>
+          <ul
+            style="padding-left:var(--space-lg); display:flex; flex-direction:column; gap:var(--space-sm); font-size:1.1rem; color:var(--text-secondary);">
+            <li><strong>Express Written Consent:</strong> Never buy cold phone lead lists. Every contact on your phone
+              file list must explicitly click to join.</li>
+            <li><strong>Direct Disclosure Terms:</strong> Pop-up checkouts must include legal links to Privacy Policy
+              and terms highlighting that message & data rates can apply.</li>
+            <li><strong>CTIA Compliant Keywords:</strong> Carriers mandate keyword recognition. Sending STOP or END must
+              block outgoing sequences in 0 seconds.</li>
+            <li><strong>Carrier Registry (10DLC):</strong> Brands must register brand identity and campaign flow copy
+              directly with cellular networks to ensure high delivery.</li>
           </ul>
         </div>
       </div>
@@ -363,7 +615,8 @@
       <div class="section__header">
         <span class="section__badge">Transparent Setup Fees</span>
         <h2 class="section__title">High-Value Service Tiers</h2>
-        <p class="section__subtitle">Select a package tailored for your exact campaign scales, with double opt-in integrations and carrier registration handling.</p>
+        <p class="section__subtitle">Select a package tailored for your exact campaign scales, with double opt-in
+          integrations and carrier registration handling.</p>
       </div>
 
       <div class="grid-container pricing-grid center-last-card">
@@ -372,9 +625,13 @@
           <div class="card__content">
             <span class="section__badge" style="margin-bottom:var(--space-md);">Automations Core</span>
             <h3 class="card__title">Standard Funnels</h3>
-            <p style="font-size: 2.2rem; font-weight: 800; font-family: var(--font-headers); color: var(--text-primary); margin: var(--space-md) 0;">$1,499</p>
-            <p class="card__text">Perfect for growing Shopify/SaaS setups needing fundamental compliance-safe triggers.</p>
-            <ul style="list-style: none; padding: 0; margin: 0 auto var(--space-xl); font-size: 0.9rem; text-align: left; display: inline-block; gap: var(--space-sm);">
+            <p
+              style="font-size: 2.2rem; font-weight: 800; font-family: var(--font-headers); color: var(--text-primary); margin: var(--space-md) 0;">
+              $1,499</p>
+            <p class="card__text">Perfect for growing Shopify/SaaS setups needing fundamental compliance-safe triggers.
+            </p>
+            <ul
+              style="list-style: none; padding: 0; margin: 0 auto var(--space-xl); font-size: 0.9rem; text-align: left; display: inline-block; gap: var(--space-sm);">
               <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Welcome Core Flow Setup</li>
               <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> 10DLC Brand Registration </li>
               <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Compliant Pop-up Layout </li>
@@ -385,18 +642,26 @@
         </div>
 
         <!-- Premium Plan -->
-        <div class="card-glass" style="border-color: var(--primary-color); box-shadow: var(--shadow-lg), var(--shadow-glow);">
+        <div class="card-glass"
+          style="border-color: var(--primary-color); box-shadow: var(--shadow-lg), var(--shadow-glow);">
           <div class="card__content">
-            <span class="section__badge" style="margin-bottom:var(--space-md); background-color: var(--primary-color); color: var(--white);">Most High-Yield</span>
+            <span class="section__badge"
+              style="margin-bottom:var(--space-md); background-color: var(--primary-color); color: var(--white);">Most
+              High-Yield</span>
             <h3 class="card__title">Automation Suite</h3>
-            <p style="font-size: 2.2rem; font-weight: 800; font-family: var(--font-headers); color: var(--primary-color); margin: var(--space-md) 0;">$2,999</p>
-            <p class="card__text">Enterprise-level dual-opt-in configurations with dynamic client approval dashboards and audits.</p>
-            <ul style="list-style: none; padding: 0; margin: 0 auto var(--space-xl); font-size: 0.9rem; text-align: left; display: inline-block; gap: var(--space-sm);">
+            <p
+              style="font-size: 2.2rem; font-weight: 800; font-family: var(--font-headers); color: var(--primary-color); margin: var(--space-md) 0;">
+              $2,999</p>
+            <p class="card__text">Enterprise-level dual-opt-in configurations with dynamic client approval dashboards
+              and audits.</p>
+            <ul
+              style="list-style: none; padding: 0; margin: 0 auto var(--space-xl); font-size: 0.9rem; text-align: left; display: inline-block; gap: var(--space-sm);">
               <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> All Core Automation Flow </li>
               <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Abandoned Checkout Cart </li>
               <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Custom Live Dashboard </li>
               <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Complete TCPA Compliance </li>
-              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> 30-Day Launch Copy Support</li>
+              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> 30-Day Launch Copy Support
+              </li>
             </ul>
             <a href="contact.html" class="btn btn--primary" style="width: 100%;">Select Suite Plan</a>
           </div>
@@ -407,15 +672,20 @@
           <div class="card__content">
             <span class="section__badge" style="margin-bottom:var(--space-md);">Compliance Shield</span>
             <h3 class="card__title">Enterprise TCPA</h3>
-            <p style="font-size: 2.2rem; font-weight: 800; font-family: var(--font-headers); color: var(--text-primary); margin: var(--space-md) 0;">$4,499</p>
-            <p class="card__text">For brands facing high carrier blockages or list health liabilities. Absolute compliance protection.</p>
-            <ul style="list-style: none; padding: 0; margin: 0 auto var(--space-xl); font-size: 0.9rem; text-align: left; display: inline-block; gap: var(--space-sm);">
+            <p
+              style="font-size: 2.2rem; font-weight: 800; font-family: var(--font-headers); color: var(--text-primary); margin: var(--space-md) 0;">
+              $4,499</p>
+            <p class="card__text">For brands facing high carrier blockages or list health liabilities. Absolute
+              compliance protection.</p>
+            <ul
+              style="list-style: none; padding: 0; margin: 0 auto var(--space-xl); font-size: 0.9rem; text-align: left; display: inline-block; gap: var(--space-sm);">
               <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Complete System Redesign </li>
               <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Full Carrier Approval </li>
-              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Integration of Quiet-Hours </li>
+              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Integration of Quiet-Hours
+              </li>
               <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Double Opt-In Legal </li>
             </ul>
-            <a href="contact.html" class="btn btn--secondary" style="width: 100%;">Select  Plan</a>
+            <a href="contact.html" class="btn btn--secondary" style="width: 100%;">Select Plan</a>
           </div>
         </div>
       </div>
@@ -426,7 +696,8 @@
       <div class="section__header">
         <span class="section__badge">FAQ</span>
         <h2 class="section__title">Compliance & Automation Answers</h2>
-        <p class="section__subtitle">Common questions regarding legal requirements, 10DLC registrations, and integration procedures.</p>
+        <p class="section__subtitle">Common questions regarding legal requirements, 10DLC registrations, and integration
+          procedures.</p>
       </div>
 
       <div class="faq-container">
@@ -437,7 +708,10 @@
             <i class="fa-solid fa-chevron-down faq-icon"></i>
           </button>
           <div class="faq-content">
-            <p>The Telephone Consumer Protection Act (TCPA) is a federal law regulating telemarketing. Violations carry massive penalties: $500 to $1,500 *per text message sent* without prior express written consent. Our compliance setup structures checkbox consent legal terms and dynamic opt-out keywords to insulate your business from these penalties.</p>
+            <p>The Telephone Consumer Protection Act (TCPA) is a federal law regulating telemarketing. Violations carry
+              massive penalties: $500 to $1,500 *per text message sent* without prior express written consent. My
+              compliance setup structures checkbox consent legal terms and dynamic opt-out keywords to insulate your
+              business from these penalties.</p>
           </div>
         </div>
 
@@ -448,7 +722,10 @@
             <i class="fa-solid fa-chevron-down faq-icon"></i>
           </button>
           <div class="faq-content">
-            <p>10-Digit Long Code (10DLC) is the system carrier networks (AT&T, Verizon, T-Mobile) require for business texting. If your brand is not registered, carrier spam filters will block up to 80% of your messages. We handle your registry submission, campaign descriptions, and use-case approvals to ensure high delivery scores.</p>
+            <p>10-Digit Long Code (10DLC) is the system carrier networks (AT&T, Verizon, T-Mobile) require for business
+              texting. If your brand is not registered, carrier spam filters will block up to 80% of your messages. I
+              handle your registry submission, campaign descriptions, and use-case approvals to ensure high delivery
+              scores.</p>
           </div>
         </div>
 
@@ -459,7 +736,9 @@
             <i class="fa-solid fa-chevron-down faq-icon"></i>
           </button>
           <div class="faq-content">
-            <p>Absolutely. We build setups natively inside Klaviyo, Attentive, Shopify, or Salesforce SMS. We structure the campaign flows, consent collection fields, and automatic unsubscribes inside your current marketing platform.</p>
+            <p>Absolutely. I build setups natively inside Klaviyo, Attentive, Shopify, or Salesforce SMS. I structure
+              the campaign flows, consent collection fields, and automatic unsubscribes inside your current marketing
+              platform.</p>
           </div>
         </div>
       </div>
@@ -473,9 +752,10 @@
       <div class="footer__brand">
         <a href="index.html" class="brand">
           <div class="brand__logo"><i class="fa-solid fa-comment-sms"></i></div>
-          <span class="brand__name">SMSPulse</span>
+          <span class="brand__name">Lucas Vance</span>
         </a>
-        <p class="footer__text">Compliance-first SMS automation design helping retail and e-commerce brands capture secure revenue triggers safely.</p>
+        <p class="footer__text">Compliance-first SMS automation design helping retail and e-commerce brands capture
+          secure revenue triggers safely.</p>
         <div class="footer__socials">
           <a href="#" class="social-link" aria-label="Twitter"><i class="fa-brands fa-apple"></i></a>
           <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -488,7 +768,7 @@
       <div class="footer__column">
         <h4 class="footer__title">Automations</h4>
         <ul class="footer__links">
-          <li><a href="services.html" class="footer__link">Welcome SMS Sequences</a></li>
+          <li><a href="services.html" class="footer__link">Welcome SMS</a></li>
           <li><a href="services.html" class="footer__link">Cart Recovery Flows</a></li>
           <li><a href="services.html" class="footer__link">Keyword Trigger Codes</a></li>
           <li><a href="services.html" class="footer__link">VIP Customer Tiers</a></li>
@@ -496,15 +776,15 @@
       </div>
 
       <!-- Topic Column 2 (Contact Info) -->
-      
+
 
       <!-- Topic Column 3 (Resource Hub) -->
       <div class="footer__column">
         <h4 class="footer__title">Resources</h4>
         <ul class="footer__links">
-          <li><a href="blog.html" class="footer__link">Marketing Compliance Blog</a></li>
+          <li><a href="blog.html" class="footer__link">Marketing Compliance</a></li>
           <li><a href="blog.html" class="footer__link">SMS Copywriter Guides</a></li>
-          <li><a href="blog.html" class="footer__link">CTR Benchmark Reports</a></li>
+          <li><a href="blog.html" class="footer__link">CTR Benchmark</a></li>
           <li><a href="blog.html" class="footer__link">Opt-In Incentive Ideas</a></li>
         </ul>
       </div>
@@ -512,24 +792,27 @@
       <div class="footer__column">
         <h4 class="footer__title">Contact Info</h4>
         <ul class="footer__links">
-          <li><a href="mailto:support@smspulse.com" class="footer__link"><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i> suppo@smlse.com</a></li>
-          <li><a href="tel:+15558882000" class="footer__link"><i class="fa-solid fa-phone" style="margin-right: 8px;"></i> +1 (555) 888-2000</a></li>
-          <li><span class="footer__link"><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i> Global Remote / NY</span></li>
-          <li><span class="footer__link"><i class="fa-solid fa-clock" style="margin-right: 8px;"></i> Mon-Fri: 9am-5pm</span></li>
+          <li><a href="mailto:support@smspulse.com" class="footer__link"><i class="fa-solid fa-envelope"
+                style="margin-right: 8px;"></i> lucas@gmail.com</a></li>
+          <li><a href="tel:+15558882000" class="footer__link"><i class="fa-solid fa-phone"
+                style="margin-right: 8px;"></i> +1 (555) 888-2000</a></li>
+          <li><span class="footer__link"><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i> Global
+              Remote / NY</span></li>
+          <li><span class="footer__link"><i class="fa-solid fa-clock" style="margin-right: 8px;"></i> Mon-Fri:
+              9am-5pm</span></li>
         </ul>
       </div>
     </div>
 
     <!-- Bottom footer details -->
     <div class="footer__bottom">
-      <p>&copy; 2026 SMSPulse. Crafted with extreme premium care. All rights reserved.</p>
-      <p>TCPA/CTIA Specialist Portfolio. Compliance does not represent certified legal counsel.</p>
+      <p>&copy; 2026 Lucas Vance. All rights reserved.</p>
     </div>
   </footer>
 
   <!-- Scripts -->
   <script src="../assets/js/main.js"></script>
-  
+
   <script>
     // Home 2 Specific Accordion and Sandbox code
     document.addEventListener('DOMContentLoaded', () => {
@@ -539,10 +822,10 @@
         trigger.addEventListener('click', () => {
           const item = trigger.closest('.faq-item');
           const isOpen = item.classList.contains('active');
-          
+
           // Close all items
           document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-          
+
           if (!isOpen) {
             item.classList.add('active');
           }
@@ -566,7 +849,7 @@
 
         // Append node card
         node.style.cssText = 'background: var(--bg-card); border: 1.5px solid var(--border-color); border-radius: var(--radius-md); padding: 12px 20px; box-shadow: var(--shadow-sm); display: flex; align-items: center; gap: var(--space-xl); width: 100%; max-width: 440px; justify-content: space-between; overflow: hidden;';
-        
+
         node.innerHTML = `
           <div class="flow-node__info" style="display: flex; align-items: center; gap: var(--space-md); flex: 1;">
             <img src="${imgUrl}" style="width: 40px; height: 40px; border-radius: 6px; object-fit: cover; border: 1px solid var(--border-color);">
@@ -592,7 +875,7 @@
           appendNode('Consent Validation', 'Checks for express prior written consent records', 'fa-solid fa-user-shield', 'https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&q=80&w=200');
         });
       }
-      
+
       if (addQuietHour) {
         addQuietHour.addEventListener('click', () => {
           appendNode('TCPA Quiet Hours', 'Buffers delivery between 8:00 PM and 9:00 AM local', 'fa-solid fa-moon', 'https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?auto=format&fit=crop&q=80&w=200');
@@ -633,4 +916,5 @@
     });
   </script>
 </body>
+
 </html>

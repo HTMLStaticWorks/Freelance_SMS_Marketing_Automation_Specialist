@@ -123,13 +123,13 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           const query = text.toLowerCase();
           if (query.includes('join') || query.includes('start') || query.includes('offers')) {
-            appendMessage('SMSPulse: Thank you for opting in! Reply YES to confirm. Msg&data rates may apply. Reply STOP to cancel at any time.', false, 'sms-bubble--primary');
+            appendMessage('WellnessCo: Thank you for opting in! Reply YES to confirm. Msg&data rates may apply. Reply STOP to cancel at any time.', false, 'sms-bubble--primary');
           } else if (query.includes('yes')) {
-            appendMessage('SMSPulse: Subscription Confirmed! Here is your compliant code: COMPLIANT15. Get 15% off your next checkout. Enjoy!', false, 'sms-bubble--primary');
+            appendMessage('WellnessCo: Subscription Confirmed! Here is your compliant code: COMPLIANT15. Get 15% off your next checkout. Enjoy!', false, 'sms-bubble--primary');
           } else if (query.includes('stop')) {
-            appendMessage('SMSPulse: You have unsubscribed and will receive no further messages. Reply START to join again.', false);
+            appendMessage('WellnessCo: You have unsubscribed and will receive no further messages. Reply START to join again.', false);
           } else {
-            appendMessage('SMSPulse: Welcome! Text "JOIN" to subscribe to automated marketing flows or "COMPLIANCE" to check your status.', false);
+            appendMessage('WellnessCo: Welcome! Text "JOIN" to subscribe to automated marketing flows or "COMPLIANCE" to check your status.', false);
           }
         }, 1000);
       };
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 2000);
 
       setTimeout(() => {
-        appendMessage('SMSPulse: Thank you for opting in! Reply YES to confirm. Msg&data rates may apply. Reply STOP to cancel at any time.', false, 'sms-bubble--primary');
+        appendMessage('WellnessCo: Thank you for opting in! Reply YES to confirm. Msg&data rates may apply. Reply STOP to cancel at any time.', false, 'sms-bubble--primary');
       }, 3500);
 
       setTimeout(() => {
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 5500);
 
       setTimeout(() => {
-        appendMessage('SMSPulse: Subscription Confirmed! Here is your compliant code: COMPLIANT15. Get 15% off your next checkout. Enjoy!', false, 'sms-bubble--primary');
+        appendMessage('WellnessCo: Subscription Confirmed! Here is your compliant code: COMPLIANT15. Get 15% off your next checkout. Enjoy!', false, 'sms-bubble--primary');
       }, 7000);
     }
   };

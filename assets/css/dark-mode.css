@@ -9,7 +9,8 @@ html[data-theme="dark"] {
   --bg-card: #18261e;
   --text-primary: #f5eedc;
   --text-secondary: #a3b2a8;
-  --primary-color: #e57842; /* Glowing warm terracotta for high visibility */
+  --primary-color: #e57842;
+  /* Glowing warm terracotta for high visibility */
   --primary-hover: #f19163;
   --primary-light: rgba(229, 120, 66, 0.15);
   --accent-color: #6f9f7d;
@@ -60,14 +61,16 @@ html[data-theme="dark"] .checker-option:hover {
 
 /* Skeleton animation adjustment for dark environment */
 @keyframes loading-skeleton {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 html[data-theme="dark"] .skeleton {
   background: linear-gradient(90deg, #18261e 25%, #283a30 50%, #18261e 75%);
   background-size: 200% 100%;
 }
-
-
-
